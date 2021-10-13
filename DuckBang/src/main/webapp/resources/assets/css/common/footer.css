@@ -1,1 +1,42 @@
 @charset "UTF-8";
+*{
+    box-sizing: border-box;
+}
+#container{
+	border: 1px solid black;
+}
+
+#header{
+	display:flex;
+}
+
+#header > * {
+	flex:none;
+}
+
+#header > .left, p{
+	margin-left : 100px;
+	padding-top : 15px;
+	padding-bottom : 15px;	
+}
+
+#header > .right {
+	margin-left:auto;
+	display: flex;
+}
+
+input{
+	flex:1;
+}
+
+ul{
+	list-style: none;
+}
+
+#center{
+	display: flex;
+}
+
+#center > :nth-child(1){
+	margin-right: 500px;
+}

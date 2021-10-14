@@ -1,1 +1,54 @@
 @charset "EUC-KR";
+
+*{
+	box-sizing: border-box;
+}
+
+#container{
+	border: solid 2px black;
+}
+
+.swiper-button-prev{
+	color: red;
+}
+
+.text{
+	height: 60px;
+	margin-top: 30px;
+	margin-left: 20px;
+}
+
+.info{
+	display: flex;
+	overflow-x: auto;
+    white-space: nowrap;
+    width: 1000px;
+    height: 300px;
+
+}
+
+.info > div{
+	border: solid 1px black;
+	padding: 30px;
+	height: 250px;
+	margin-left: 20px;
+}
+
+.info > .info4{
+	width: 700px;
+	height: 250px;
+}
+
+.info > .info4 > .info4_1{
+	display: flex;
+}
+
+.info > .info4 > .info4_1 > div > img{
+	width: 2.5rem;
+}
+
+.info > .info4 > .info4_1 > *{
+	margin: 20px;
+	text-align: center;
+}
+

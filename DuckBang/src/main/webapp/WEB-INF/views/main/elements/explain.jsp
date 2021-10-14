@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="./resources/assets/css/main/explain.css" type="text/css" />
 
-<div id="container">
+<div id="explain_container">
 
-	<div class="text"><b style="color:blue">강남역</b>은 어떤 동네일까요?</div>
-	<div class="info">
+	<div class="explain_info_text"><b style="color:blue">강남역</b>은 어떤 동네일까요?</div>
+	<div class="explain_info">
 		<div>
 			<p>원룸 평균 매물가</p>
 			<hr>
@@ -26,10 +26,10 @@
 			<p>전세 1억4500</p>
 			<h5>※ 전용면적 33㎡(10평)이하</h5>
 		</div>	
-		<div class="info4">
+		<div class="explain_info4">
 			<p>편의시설</p>
 			<hr>
-			<div class="info4_1">
+			<div class="explain_info4_1">
 			<div>
 				<img src="https://cdn-icons.flaticon.com/png/512/4836/premium/4836802.png?token=exp=1634137166~hmac=4be1b0a23fbb57e2568f2fe6cb3b1c81"; />
 				<p>카페</p>
@@ -62,27 +62,25 @@
 			</div>	
 		</div>
 		</div>
-		<div class="info5">
+		<div class="explain_info5">
 			<div>
-				신대방동에서는 <br>
+				<p>신대방동에서는</p>
 				<b>원룸 상담이 가장 많아요</b>
+				<hr>
 			</div>
-			<hr>
-			<div class="info5_1">
+			<div class="explain_info5_1">
 				<div>
-					<p>원룸</p>
-					<div></div>
+					<div>원룸</div>
+					<div>투쓰리룸</div>
+					<div>아파트</div>
 				</div>
 				<div>
-					<p>투쓰리룸</p>
-					<div></div>
-				</div>
-				<div>
-					<p>아파트</p>
-					<div></div>
+					<div class="one">56.2%</div>
+					<div class="two">40.6%</div>
+					<div class="apart">20%</div>
 				</div>
 			</div>
-			<h5 style="color:gray">※ 최근 7일간 문자/전화문의 수 기준</h5>			
+			<h5 class="explain_info5_text">※ 최근 7일간 문자/전화문의 수 기준</h5>			
 		</div>
 	</div>
 </div>	

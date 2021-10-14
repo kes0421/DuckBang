@@ -22,6 +22,11 @@ public class HomeController {
 		return "/map/index";
 	}
 	
+	@RequestMapping("/info")
+	public String info() {
+		return "/info/index";
+	}
+	
 	@RequestMapping("/main/tou")
 	public String tou() {
 		return "/details/tou";

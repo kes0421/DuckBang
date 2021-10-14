@@ -4,9 +4,9 @@
 <link href="./resources/assets/css/common/footer.css" rel="stylesheet" type="text/css">
  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
     rel="stylesheet">
- <footer class="footer">
+ <footer class="footer_footer">
     <div>
-        <div class="top">
+        <div class="footer_top">
             <nav class="bar">
                 <ul class="list">
                     <li><a href="">회사소개</a></li>

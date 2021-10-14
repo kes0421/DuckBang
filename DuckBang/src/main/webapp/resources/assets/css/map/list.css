@@ -1,1 +1,83 @@
-@charset "EUC-KR";
+@charset "UTF-8";
+
+* {
+	box-sizing: border-box;
+	padding: 2px;
+}
+
+#area_list {
+	display: flex;
+	flex-direction: row;
+	border-bottom: 1px solid gray;
+}
+
+#list_count {
+	width: 80%;
+}
+
+#list_unit_btn {
+	width: 20%;
+}
+
+.room_info_list {
+	display: flex;
+	flex-direction: row;
+}
+
+.room_image {
+	width: 140px;
+	height: 120px;
+}
+
+.room_info_list {
+	width: 45%;
+}
+
+.room_info_list:hover {
+	background-color: #c8c8c8;
+	cursor: pointer;
+}
+
+.room_info {
+	width: 55%;
+}
+
+.room_reco_sort {
+	display: flex;
+	flex-direction: row;
+}
+
+.room_recommend {
+	font-size: 10px;
+}
+
+.room_sort {
+	font-size: 10px;
+}
+
+.room_type {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.room_size {
+	font-size: 12px;
+}
+
+.room_area {
+	font-size: 12px;
+}
+
+.room_one_line {
+	font-size: 12px;
+}
+
+#paging_list {
+	display: flex;
+	flex-direction: row;
+	visibility: hidden;
+}
+
+#paging_list > * {
+	padding-left: 23px;
+}

@@ -13,6 +13,7 @@
 		<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
 	</div>
 	<div>
+		<!-- 의성 -->
 		<div>
 			<!-- 월세/전용면적/주거비 / 중개사무소/연락처보기 -->
 			<jsp:include page="./elements/header.jsp"></jsp:include>
@@ -21,6 +22,7 @@
 			<!-- 표(세부정보) -->
 			<jsp:include page="./elements/info.jsp"></jsp:include>
 		</div>
+		<!-- 한나 -->
 		<div>
 			<!-- 이미지 -->
 			<jsp:include page="./elements/gallary.jsp"></jsp:include>
@@ -30,6 +32,7 @@
 			<jsp:include page="./elements/memo.jsp"></jsp:include>
 		</div>
 		<div>
+			<!-- 덕중 -->
 			<div>
 				<!-- 센터고정메뉴바 -->
 				<jsp:include page="./elements/menubar.jsp"></jsp:include>	
@@ -42,6 +45,7 @@
 				<!-- 가격정보 -->
 				<jsp:include page="./elements/price.jsp"></jsp:include>
 			</div>
+			<!-- 천혁 -->
 			<div>
 				<!-- 옵션 + 보안/안전시설 -->
 				<jsp:include page="./elements/option.jsp"></jsp:include>

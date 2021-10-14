@@ -3,16 +3,26 @@
 
 
 .css-search1{
-	-webkit-box-align: stretch;
-	-webkit-box-direction: normal;
+	-webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
+    -webkit-flex-basis: auto;
+    -webkit-flex-direction: column;
+    -webkit-flex-shrink: 0;
     align-items: stretch;
-	border: 0 solid black;
+    border: 0 solid black;
     box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
     flex-basis: auto;
     flex-direction: column;
     flex-shrink: 0;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
     min-height: 0px;
     min-width: 0px;
     padding-bottom: 0px;
@@ -20,7 +30,7 @@
     padding-right: 0px;
     padding-top: 0px;
     position: relative;
-    z-index: 0;	
+    z-index: 0;
 }
 
 .css-search1-1{	
@@ -82,17 +92,18 @@
 
 .h01_slide-1{	
 	width: 684px;
-	height: 46px;
-	text-shadow: 0px 16px 40px rgb(255, 255, 255);
-	font-size: 40px;
-	font-weight: bold;
-	font-stretch: normal;
-	line-height: 1.15;
-	letter-spacing: normal;
-	text-align: center;
-	color: rgb(0, 0, 0);
-	margin: 0 auto;
-	cursor: default;	
+    height: 46px;
+    text-shadow: rgb(255 255 255) 0px 16px 40px;
+    font-size: 40px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.15;
+    letter-spacing: normal;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin: 0px auto;
+    cursor: default;	
 }
 
 .h01_searchBar{	

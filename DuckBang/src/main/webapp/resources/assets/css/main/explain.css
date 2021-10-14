@@ -1,4 +1,4 @@
-@charset "EUC-KR";
+@charset "UTF-8";
 
 *{
 	box-sizing: border-box;
@@ -6,10 +6,8 @@
 
 #container{
 	border: solid 2px black;
-}
-
-.swiper-button-prev{
-	color: red;
+	width: 1005px;
+	margin-left: 250px;
 }
 
 .text{
@@ -24,14 +22,32 @@
     white-space: nowrap;
     width: 1000px;
     height: 300px;
-
 }
+
+.info::-webkit-scrollbar {
+    width: 10px;
+    height: 15px;
+  }
+.info::-webkit-scrollbar-thumb {
+    background-color: blue;
+    border-radius: 10px;
+  }
+.info::-webkit-scrollbar-track {
+    background-color: gray;
+    width: 100px;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+  }
 
 .info > div{
 	border: solid 1px black;
 	padding: 30px;
 	height: 250px;
 	margin-left: 20px;
+}
+
+.info > div > h5 {
+	color: gray;
 }
 
 .info > .info4{
@@ -51,4 +67,6 @@
 	margin: 20px;
 	text-align: center;
 }
+
+
 

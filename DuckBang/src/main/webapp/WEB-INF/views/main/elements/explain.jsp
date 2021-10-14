@@ -3,7 +3,7 @@
 
 <div id="container">
 
-	<div class="text"><b>강남역</b>은 어떤 동네일까요?</div>
+	<div class="text"><b style="color:blue">강남역</b>은 어떤 동네일까요?</div>
 	<div class="info">
 		<div>
 			<p>원룸 평균 매물가</p>
@@ -67,15 +67,23 @@
 				신대방동에서는 <br>
 				<b>원룸 상담이 가장 많아요</b>
 			</div>
-			<div>
-				<p>원룸</p>
-				<p>투쓰리룸</p>
-				<p>아파트</p>
-				<h5>※ 최근 7일간 문자/전화문의 수 기준</h5>
+			<hr>
+			<div class="info5_1">
+				<div>
+					<p>원룸</p>
+					<div></div>
+				</div>
+				<div>
+					<p>투쓰리룸</p>
+					<div></div>
+				</div>
+				<div>
+					<p>아파트</p>
+					<div></div>
+				</div>
 			</div>
+			<h5 style="color:gray">※ 최근 7일간 문자/전화문의 수 기준</h5>			
 		</div>
-			
-
 	</div>
 </div>	
 

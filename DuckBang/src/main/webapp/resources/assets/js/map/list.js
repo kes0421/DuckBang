@@ -1,97 +1,61 @@
-const room_info = document.getElementsByClassName('room_info_list');
-const paging_list = document.getElementById('paging_list');
+const room_info = document.getElementsByClassName('list_room_info');
+const list_count = document.getElementById('list_count');
 
-let totalData = room_info.length; // 총 데이터 수
-let dataPerPage = 20; // 한 페이지에 나타낼 게시글 수
-let pageCount = 5; // 페이징에 나타낼 페이지 수
-let currentPage = 1; // 현재 페이지
+list_count.innerText = '지역 목록 ' + room_info.length + '개';
+
+var totalData = room_info.length;	// 총 데이터 수
+var dataPerPage = 20;				// 한 페이지에 나타낼 데이터 수
+var pageCount = 5;					// 한 화면에 나타낼 페이지 수
 
 function paging(totalData, dataPerPage, pageCount, currentPage){
 
-    // ceil(): 올림
-    totalPage = Math.ceil(totalData / dataPerPage);  // 총 페이지 수
+	var totalPage = Math.ceil(totalData/dataPerPage);    // 총 페이지 수
+	var pageGroup = Math.ceil(currentPage/pageCount);    // 페이지 그룹
 
-    if(tatalPage < pageCount) {
-        pageCount= totalPage;
-    }
+	var last = pageGroup * pageCount;    // 화면에 보여질 마지막 페이지 번호
+	if(last > totalPage)
+		last = totalPage;
+	var first = last - (pageCount-1);    // 화면에 보여질 첫번째 페이지 번호
+	var next = last+1;
+	var prev = first-1;
 
-    let pageGroup = Math.ceil(currentPage / pageCount); // 페이지 그룹
-    let last = pageGroup * pageCount; // 화면에 보여질 마지막 페이지 번호
+	if(last <= pageCount) {
+		first = 1;
+	}
 
-    if(last > totalPage) {
-        last = totalPage;
-    }
+	var $pingingView = $("#paging");
 
-    let first = last - (pageCount - 1); // 화면에 보여질 첫번째 페이지 번호
-    let next = last + 1;
-    let prev = first -1;
+	var html = "";
 
-    let pageHTML = "";
+	if(prev > 0)
+		html += "<a href=# id='prev'><</a> ";
 
-    if(prev > 0) {
-        pageHTML += "<li><a href='#' id='prev'>이전</a></li>";
-    }
+	for(var i=first; i <= last; i++){
+		html += "<a href='#' id=" + i + ">" + i + "</a> ";
+	}
+    
+	if(last < totalPage)
+		html += "<a href=# id='next'>></a>";
 
-    // 페이징 번호 표시
-    for(var i = first; i <= last; i++){
-        if(currentPage == i) {
-            pageHTML += "<li class='on'><a href='#' id='" + i + "'>" + i + "</a></li>";
-        } else {
-            pageHTML += "<li><a href='#' id='" + i + "'>" + i + "</a></li>";
-        }
-    }
+	$("#paging").html(html);    // 페이지 목록 생성
+	$("#paging a").css("color", "black");
+	$("#paging a#" + currentPage).css({"text-decoration":"none", 
+										"color":"red", 
+										"font-weight":"bold"});    // 현재 페이지 표시
+                                        
+	$("#paging a").click(function(){
 
-    if(last < totalPage) {
-        pageHTML += "<li><a href='#' id='next'>다음</a></li>";
-    }
+		var $item = $(this);
+		var $id = $item.attr("id");
+		var selectedPage = $item.text();
 
-    //페이징 번호 클릭 이벤트 
-    $("#pagingul li a").click(function () {
-    let $id = $(this).attr("id");
-    selectedPage = $(this).text();
+		if($id == "next")    selectedPage = next;
+		if($id == "prev")    selectedPage = prev;
 
-    if ($id == "next") selectedPage = next;
-    if ($id == "prev") selectedPage = prev;
-        
-    //전역변수에 선택한 페이지 번호를 담는다...
-    globalCurrentPage = selectedPage;
-    //페이징 표시 재호출
-    paging(totalData, dataPerPage, pageCount, selectedPage);
-    //글 목록 표시 재호출
-    displayData(selectedPage, dataPerPage);
-    });
-
+		paging(totalData, dataPerPage, pageCount, selectedPage);
+	});
 }
-
-//현재 페이지(currentPage)와 페이지당 글 개수(dataPerPage) 반영
-function displayData(currentPage, dataPerPage) {
-
-  let chartHtml = "";
-
-//Number로 변환하지 않으면 아래에서 +를 할 경우 스트링 결합이 되어버림.. 
-  currentPage = Number(currentPage);
-  dataPerPage = Number(dataPerPage);
-  
-  for (
-    var i = (currentPage - 1) * dataPerPage;
-    i < (currentPage - 1) * dataPerPage + dataPerPage;
-    i++
-  ) {
-    chartHtml +=
-      "<tr><td>" +
-      dataList[i].d1 +
-      "</td><td>" +
-      dataList[i].d2 +
-      "</td><td>" +
-      dataList[i].d3 +
-      "</td></tr>";
-  }
-  $("#dataTableBody").html(chartHtml);
-}
-
-$("#dataPerPage").change(function () {
-    dataPerPage = $("#dataPerPage").val();
-    //전역 변수에 담긴 globalCurrent 값을 이용하여 페이지 이동없이 글 표시개수 변경 
-    paging(totalData, dataPerPage, pageCount, globalCurrentPage);
-    displayData(globalCurrentPage, dataPerPage);
- });
+    
+$("document").ready(function(){        
+    paging(totalData, dataPerPage, pageCount, 1);
+});

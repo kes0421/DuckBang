@@ -1,22 +1,26 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<link rel="stylesheet" href="<c:url value='/resources/assets/css/map/index.css'/>">
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
-<div>
-	<!-- »ó´Ü ¸Ş´º¹Ù -->
-	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
-</div>
-<div>
+<div id="mapMainBody">
 	<div>
-		<jsp:include page="./elements/map.jsp"></jsp:include>
+		<!-- ìƒë‹¨ ë©”ë‰´ë°” -->
+		<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
 	</div>
-	<div>
-		<jsp:include page="./elements/list.jsp"></jsp:include>
+	<div id="mapMainContainer">
+		<div id="mapContainer">
+			<jsp:include page="./elements/map.jsp"></jsp:include>
+		</div>
+		<div id="listContainer">
+			<jsp:include page="./elements/list.jsp"></jsp:include>
+		</div>
 	</div>
 </div>
 </body>

@@ -1,1 +1,19 @@
-@charset "EUC-KR";
+@charset "UTF-8";
+
+#mapMainBody {
+	display: flex;
+	flex-direction: column;
+}
+
+#mapMainContainer {
+	display: flex;
+	flex-direction: row;
+}
+
+#mapContainer {
+	width: 70%;
+}
+
+#listContainer {
+	width: 30%;
+}

@@ -1,83 +1,78 @@
 @charset "UTF-8";
 
-* {
-	box-sizing: border-box;
+#list_body {
 	padding: 2px;
 }
 
-#area_list {
+#list_room_infos {
+	height: 530px;
+	overflow: auto;
+}
+
+#list_area {
 	display: flex;
 	flex-direction: row;
 	border-bottom: 1px solid gray;
 }
 
 #list_count {
+	padding: 5px;
 	width: 80%;
+	font-size: 20px;
+	font-weight: bold;
 }
 
 #list_unit_btn {
 	width: 20%;
 }
 
-.room_info_list {
+.list_room_info {
 	display: flex;
 	flex-direction: row;
+	padding: 10px;
 }
 
-.room_image {
+.list_room_image {
 	width: 140px;
 	height: 120px;
 }
 
-.room_info_list {
-	width: 45%;
-}
-
-.room_info_list:hover {
+.list_room_info:hover {
 	background-color: #c8c8c8;
 	cursor: pointer;
 }
 
 .room_info {
-	width: 55%;
+	padding-top: 10px;
+	padding-left: 10px;
 }
 
-.room_reco_sort {
+.list_room_reco_sort {
 	display: flex;
 	flex-direction: row;
 }
 
-.room_recommend {
+.list_room_recommend {
 	font-size: 10px;
 }
 
-.room_sort {
-	font-size: 10px;
+.list_room_sort {
+	font-size: 12px;
 }
 
-.room_type {
-	font-size: 16px;
+.list_room_type {
+	font-size: 18px;
 	font-weight: bold;
 }
 
-.room_size {
-	font-size: 12px;
+.list_room_size {
+	font-size: 14px;
 }
 
-.room_area {
-	font-size: 12px;
+.list_room_area {
+	font-size: 14px;
 }
 
-.room_one_line {
-	font-size: 12px;
-}
-
-#paging_list {
-	display: flex;
-	flex-direction: row;
-	visibility: hidden;
-}
-
-#paging_list > * {
-	padding-left: 23px;
+.list_room_one_line {
+	font-size: 14px;
 }

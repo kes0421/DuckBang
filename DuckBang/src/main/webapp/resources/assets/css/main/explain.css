@@ -4,69 +4,119 @@
 	box-sizing: border-box;
 }
 
-#container{
-	border: solid 2px black;
+#explain_container{
 	width: 1005px;
 	margin-left: 250px;
 }
 
-.text{
+.explain_info_text{
 	height: 60px;
 	margin-top: 30px;
 	margin-left: 20px;
 }
 
-.info{
+.explain_info{
 	display: flex;
 	overflow-x: auto;
     white-space: nowrap;
     width: 1000px;
-    height: 300px;
+    height: 250px;
 }
 
-.info::-webkit-scrollbar {
+.explain_info::-webkit-scrollbar {
     width: 10px;
     height: 15px;
   }
-.info::-webkit-scrollbar-thumb {
+.explain_info::-webkit-scrollbar-thumb {
     background-color: blue;
     border-radius: 10px;
   }
-.info::-webkit-scrollbar-track {
+.explain_info::-webkit-scrollbar-track {
     background-color: gray;
     width: 100px;
     border-radius: 10px;
     box-shadow: inset 0px 0px 5px white;
   }
 
-.info > div{
-	border: solid 1px black;
+.explain_info > div{
+	border: solid 1px gray;
 	padding: 30px;
-	height: 250px;
+	height: 200px;
 	margin-left: 20px;
 }
 
-.info > div > h5 {
+.explain_info > div > h5 {
 	color: gray;
 }
 
-.info > .info4{
+.explain_info4{
 	width: 700px;
-	height: 250px;
+	height: 200px;
 }
 
-.info > .info4 > .info4_1{
+.explain_info4_1{
 	display: flex;
 }
 
-.info > .info4 > .info4_1 > div > img{
+.explain_info4_1 > div > img{
 	width: 2.5rem;
 }
 
-.info > .info4 > .info4_1 > *{
+.explain_info4_1 > *{
 	margin: 20px;
 	text-align: center;
 }
+
+.explain_info5_1{
+	display: flex;
+}
+
+.explain_info5 > :nth-child(1){
+	margin-top: -15px;
+}
+
+.explain_info5_1 > :nth-child(1) > * {
+	margin-bottom: 7px;
+}
+
+.explain_info5_1 > :nth-child(1) {
+	margin-top: 5px;
+}
+
+.explain_info5_1 > :nth-child(2) > *{
+	margin-bottom: 7px;
+	margin-left: 10px;
+}
+
+.explain_info5_1 > :nth-child(2) > .one{
+	border-radius: 30px;
+	background-color: #1aa4e9;
+	color: white;
+	text-align: right;
+	width: 150px;
+}
+
+.explain_info5_1 > :nth-child(2) > .two{
+	border-radius: 30px;
+	background-color: #00994c;
+	color: white;
+	text-align: right;
+	width: 100px;
+}
+
+.explain_info5_1 > :nth-child(2) > .apart{
+	border-radius: 30px;
+	background-color: #b465e9;
+	color: white;
+	text-align: right;
+	width: 50px;
+}
+
+.explain_info5_text{
+	margin-top: -1px;
+	color: gray;
+}
+
 
 
 

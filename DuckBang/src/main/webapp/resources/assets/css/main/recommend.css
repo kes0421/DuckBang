@@ -1,5 +1,77 @@
 @charset "UTF-8";
 
-#wrap{
-	border: 1px solid black;
+*{
+	box-sizing: border-box;
 }
+
+
+#recommend_wrap{
+	margin-top: 80px;
+	width: 65%;
+	margin-left: 17.5%;
+}
+
+#recommend_title{
+	font-size: 25px;
+	height: 15%;
+	margin-bottom:20px;
+}
+
+#recommend_subTitle {
+	height: 15%;
+	display: flex;
+}
+
+#recommend_subTitle > *{
+	border: 1px solid #868686;
+	font-size: 15px;
+	margin-right:10px;
+	margin-bottom:10px;
+	color: #868686;
+	float: left;
+	padding: 7px;
+}
+
+#recommend_moreRoom{
+	border: none;
+	float: right;
+	margin-left: 59%;
+}
+
+#recommend_roomInfo{
+	display: flex;
+	justify-content: space-between;
+}
+
+.recommend_bSize{
+	margin-top:5px; 
+	margin-bottom:5px;
+	font-size: 20px;
+}
+
+.recommend_detailImage{
+	width: 300px;
+	height: 200px;
+}
+
+.recommend_detailText{
+	margin-top: 10px;
+	color: #868686;
+	font-size: 15px;
+	line-height: 1.5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

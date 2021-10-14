@@ -42,18 +42,56 @@ function paging(totalData, dataPerPage, pageCount, currentPage){
     }
 
     if(last < totalPage) {
-        pageHTML += "<li><a href='#' id='next'> 다음 </a></li>";
+        pageHTML += "<li><a href='#' id='next'>다음</a></li>";
     }
 
-    
+    //페이징 번호 클릭 이벤트 
+    $("#pagingul li a").click(function () {
+    let $id = $(this).attr("id");
+    selectedPage = $(this).text();
+
+    if ($id == "next") selectedPage = next;
+    if ($id == "prev") selectedPage = prev;
+        
+    //전역변수에 선택한 페이지 번호를 담는다...
+    globalCurrentPage = selectedPage;
+    //페이징 표시 재호출
+    paging(totalData, dataPerPage, pageCount, selectedPage);
+    //글 목록 표시 재호출
+    displayData(selectedPage, dataPerPage);
+    });
 
 }
 
+//현재 페이지(currentPage)와 페이지당 글 개수(dataPerPage) 반영
+function displayData(currentPage, dataPerPage) {
 
+  let chartHtml = "";
 
-// room_info.length: 개별 방 정보의 div개수
-if(room_info.length >= 2){
-    
-    paging_list.style.visibility = "visible";
-    
+//Number로 변환하지 않으면 아래에서 +를 할 경우 스트링 결합이 되어버림.. 
+  currentPage = Number(currentPage);
+  dataPerPage = Number(dataPerPage);
+  
+  for (
+    var i = (currentPage - 1) * dataPerPage;
+    i < (currentPage - 1) * dataPerPage + dataPerPage;
+    i++
+  ) {
+    chartHtml +=
+      "<tr><td>" +
+      dataList[i].d1 +
+      "</td><td>" +
+      dataList[i].d2 +
+      "</td><td>" +
+      dataList[i].d3 +
+      "</td></tr>";
+  }
+  $("#dataTableBody").html(chartHtml);
 }
+
+$("#dataPerPage").change(function () {
+    dataPerPage = $("#dataPerPage").val();
+    //전역 변수에 담긴 globalCurrent 값을 이용하여 페이지 이동없이 글 표시개수 변경 
+    paging(totalData, dataPerPage, pageCount, globalCurrentPage);
+    displayData(globalCurrentPage, dataPerPage);
+ });

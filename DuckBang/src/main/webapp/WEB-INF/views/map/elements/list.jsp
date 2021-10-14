@@ -29,21 +29,23 @@
 			</div>
 		</div>
 		
-		<div class="room_info_list">
-			<div class="room_image_div">
-				<img class="room_image" src="https://cdn.ggumim.co.kr/cache/star/600/20201222151726uFqauJF8wD.jpg"/>
-			</div>
-			<div class="room_info">
-				<div class="room_reco_sort">
-					<div class="room_recommend">추천</div>
-					<div class="room_sort">원룸 오픈형 원룸</div>
+		<c:forEach begin="0" end="21" var="i">
+			<div class="room_info_list">
+				<div class="room_image_div">
+					<img class="room_image" src="https://cdn.ggumim.co.kr/cache/star/600/20201222151726uFqauJF8wD.jpg"/>
 				</div>
-				<div class="room_type">전세 7500</div>
-				<div class="room_size">23m 4층</div>
-				<div class="room_area">성북구 돈암동</div>
-				<div class="room_one_line">풀옵션에 깔끔한 원룸</div>
+				<div class="room_info">
+					<div class="room_reco_sort">
+						<div class="room_recommend">추천</div>
+						<div class="room_sort">원룸 오픈형 원룸</div>
+					</div>
+					<div class="room_type">전세 7500 ${i }</div>
+					<div class="room_size">23m 4층</div>
+					<div class="room_area">성북구 돈암동</div>
+					<div class="room_one_line">풀옵션에 깔끔한 원룸</div>
+				</div>
 			</div>
-		</div>
+		</c:forEach>
 		
 		<div id="paging_list">
 			<div>&lt;</div>
@@ -55,6 +57,9 @@
 			<div>&gt;</div>
 		</div>
 		
+		<ul id="pagingul">
+		
+		</ul>
 	</div>
 </div>
 

@@ -36,13 +36,19 @@
 .css-search1-1{	
 	border: 0 solid black;
     box-sizing: border-box;
+    color: rgba(0,0,0,1.00);
     display: inline;
+    line-height: inherit;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
     padding-bottom: 0px;
     padding-left: 0px;
     padding-right: 0px;
     padding-top: 0px;
     white-space: pre-wrap;
-    word-wrap: break-word;   
+    word-wrap: break-word;
 }
 
 .css-search_option{	
@@ -103,7 +109,8 @@
     text-align: center;
     color: rgb(0, 0, 0);
     margin: 0px auto;
-    cursor: default;	
+    cursor: default;
+    
 }
 
 .h01_searchBar{	

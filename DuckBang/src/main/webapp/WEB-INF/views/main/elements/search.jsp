@@ -3,9 +3,7 @@
 <link rel = "stylesheet" href ="${pageContext.request.contextPath}/resources/assets/css/main/search.css">
 <div class = "h01_bg css-search1">
 	<div class = "h01_slide css-search1">
-		<div class = "h01_slide-1 css-search1-1 f01_search">
-			어떤 집을 찾고 계세요?
-		</div>
+		<div class = "h01_slide-1 css-search1-1 f01_search">어떤 집을 찾고 계세요?</div>
 	</div>
 	<div class = "h01_searchBar css-search1">
 		<div class = "h01_searchBar-1 css-search1">

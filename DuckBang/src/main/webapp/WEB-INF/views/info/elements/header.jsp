@@ -4,32 +4,35 @@
 <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
 <div id="header_container">
-<div class="header_container_second">
 	<ul class="header_ul">
-		<li>
+		<li class="header_li">
+			<p class="header_p1"></p>
 			<div class="header_price">
 				<h1>전세 1억4000</h1>
 				<span>만원</span>
 			</div>
 		</li>
-		<li>
+		<li class="header_li">
 			<p class="header_width">전용면적</p>
 			<div class="header_width_2">
-				<h1>23㎥</h1>
-				<div><i class='bx bx-refresh'>평</i></div>
+				<h1 class="header_h1">23㎥</h1>
+				<button class="header_btn1"><span>평</span></button>
 			</div>
 		</li>
-		<li>
+		<li class="header_li">
 			<p class="header_month">한달 예상 주거비</p>
-			<h1><span>3.5만원 + α</span></h1>
+			<h1 class="header_h2"><span>3.5만원 + α</span></h1>
 		</li>
-		<li>
-			<div class="header_info">
-				<p>수지공인중개사사무소</p>
-				<p>강미경</p>
+		<li class="header_li2">
+			<div>
+				<p class="header_p2">수지공인중개사사무소</p>
+				<p class="header_p3">강미경</p>
 			</div>
-			<button class="header_phone_btn"><i class='bx bx-phone' >연락처보기</i>	</button>
-			<div class="header_phone_popup popup_hidden">
+			<button class="header_phone_btn"><span>연락처보기</span></button>
+			
+			
+			<div class="header_phone_popup hidden">
+				<div class="header_bg"></div>
 				<div class="header_box">
 					<div class="header_popup_1">
 						<h1>연락처 보기</h1>
@@ -56,13 +59,13 @@
 					</div>
 					<div class="header_popup_3">
 						<div class="header_popup_3_1">
-							<p>다방이 해당 공인중개사무소에</p>
+								<p>다방이 해당 공인중개사무소에</p>
 							<p>계약 가능 여부를 확인하여 알려드립니다.</p>
 						</div>
 						<button class="header_popup_question_btn">간편문의</button>
 						<div class="header_popup_3_2">
 							<div>
-								<p>*중개사무소에서 계약 가능여부를 확인하여 48시간 이내</p>
+								<p>중개사무소에서 계약 가능여부를 확인하여 48시간 이내</p>
 								<p>카카오 알림톡으로 알려드립니다. (알림시간 : 오전 9시 ~</p>
 								<p>오후 7시)</p>
 							</div>
@@ -96,12 +99,11 @@
 					</div>
 					<div class="header_popup_5">
 						<i class='bx bx-info-circle'></i><p>다방앱을 이용하시면 문자로 연락요청이 가능합니다.</p>
-					</div>			
+					</div>
 				</div>
-							
 			</div>
-			
 		</li>
-	</ul>
-	</div>
+	</ul>	
 </div>
+
+<script type="text/javascript" src="./resources/assets/js/info/header.js"></script>

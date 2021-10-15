@@ -10,7 +10,7 @@
 			<col width="15%">
 			<col width="15%">
 		</colgroup>
-		<thead>
+		<thead>  
 			<tr>
 				<th>월세</th>
 				<th>관리비</th>

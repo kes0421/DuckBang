@@ -11,7 +11,7 @@
         <div id="navi_flex">
             <div id="header_area_logo">
             </div>
-            <div>
+            <div> 
                 <ul id="header_area_top_menu">
                     <li>
                         <span>아파트 </span> <br>

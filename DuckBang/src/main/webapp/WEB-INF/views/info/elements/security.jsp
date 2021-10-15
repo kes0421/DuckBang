@@ -21,7 +21,7 @@
 		<div class="security_icon_list">
 			<div id="videophone"></div> 
 			<p>인터폰</p>
-		</div>
+		</div> 
 		<div class="security_icon_list">
 			<div id="windowguard"></div> 
 			<p>방법창</p>

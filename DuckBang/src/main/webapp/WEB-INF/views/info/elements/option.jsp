@@ -17,7 +17,7 @@
 		<div class="option_icon_list">
 			<div id="bed"></div> 
 			<p>침대</p>
-		</div>
+		</div> 
 		<div class="option_icon_list">
 			<div id="closet"></div> 
 			<p>옷장</p>

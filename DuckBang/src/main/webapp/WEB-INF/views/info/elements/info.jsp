@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<<<<<<< HEAD
 <link href="./resources/assets/css/info/info.css" rel="stylesheet" type="text/css">
 <div class="info_a">
 	<div class="info_a_1">
@@ -116,3 +117,15 @@
 </div>
 
 <script type="text/javascript" src="./resources/assets/js/info/info.js"></script>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>
+>>>>>>> refs/remotes/origin/jisu2

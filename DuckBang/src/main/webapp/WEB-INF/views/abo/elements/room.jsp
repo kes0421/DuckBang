@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3># header.jsp</h3>
+	<h3># room.jsp</h3>
 </body>
 </html>

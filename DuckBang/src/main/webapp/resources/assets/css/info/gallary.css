@@ -97,13 +97,12 @@
 
 .gallary_modal_wrap{
     display: none;
-    width: 1200px;
-    height: 550px;
+    width: 100%;
+    height: 100%;
     position: absolute;
     top:50%;
     left: 50%;
     margin: -250px 0 0 -590px;
-	background:#eee;
 	z-index: 2;
 	background-image: url("https://cdn.ggumim.co.kr/cache/star/600/20201222151726uFqauJF8wD.jpg");
 	background-repeat: no-repeat;
@@ -112,7 +111,7 @@
   
 .gallary_black_bg{
     display: none;
-    position: absolute;
+    position: fixed;
     content: "";
     width: 100%;
     height: 100%;
@@ -125,8 +124,8 @@
     width: 26px;
     height: 26px;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    margin-top: 10px;
+    margin-left: 1160px;
 }
 .gallary_modal_close> a{
     display: block;

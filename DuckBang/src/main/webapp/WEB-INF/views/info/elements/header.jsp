@@ -105,5 +105,3 @@
 	</ul>
 	</div>
 </div>
-
-<script src="<c:url value='/resources/assets/js/info/header.js'/>"></script>

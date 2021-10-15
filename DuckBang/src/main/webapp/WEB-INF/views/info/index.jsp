@@ -45,10 +45,9 @@
 		<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
 	</div>
 	<div>
-		<!-- 의성 
 		<div>
-				<jsp:include page="./elements/header.jsp"></jsp:include>
-			</div>-->
+			<jsp:include page="./elements/header.jsp"></jsp:include>
+		</div>
 	
 		
 		<div>
@@ -60,14 +59,11 @@
 			<!-- 이미지 -->
 			<jsp:include page="./elements/gallary.jsp"></jsp:include>
 		</div>
-		<div>
-			<!-- 집주인 메모(투표로 넣을지 정하기) -->
-			<jsp:include page="./elements/memo.jsp"></jsp:include>
+
+		<div id="menubar_area">
+			<!-- 센터고정메뉴바 -->
+			<jsp:include page="./elements/menubar.jsp"></jsp:include>	
 		</div>
-			<div id="menubar_area">
-				<!-- 센터고정메뉴바 -->
-				<jsp:include page="./elements/menubar.jsp"></jsp:include>	
-			</div>
 		<div id="content_area">
 			<!-- 덕중 -->
 			<div id="price_area">

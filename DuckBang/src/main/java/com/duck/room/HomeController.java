@@ -31,4 +31,9 @@ public class HomeController {
 	public String tou() {
 		return "/details/tou";
 	}
+	
+	@RequestMapping("/main/privacy")
+	public String privacy() {
+		return "/details/privacy";
+	}
 }

@@ -7,6 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<div id="root">
+		<div class="header">
+			<h1>개인정보처리방침</h1>
+		</div>
+		<div class="container">
 
+		</div>
+	</div>
 </body>
 </html>

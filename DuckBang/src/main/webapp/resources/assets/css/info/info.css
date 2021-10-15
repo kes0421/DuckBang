@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+.info_a{
+	width: 100%;
+}
+.info_a > div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, menu, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.info_a > p{
+	display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.info_a_1{
+	display: flex;
+    width: 100%;
+    height: 36px;
+    background-color: rgb(54, 101, 206);
+}
+
+.info_a_1_1{
+	display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 18px 15px 18px 15px;
+    margin-top: 0px;
+    background-color: rgb(6, 73, 192);
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 36px;
+}
+
+.info_a_1_1 > span{
+	margin-left: 3px;
+    color: rgb(165, 194, 245);
+    font-weight: 400;
+}
+
+.info_a_1_2{
+	display: flex;
+    justify-content: left;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 6px 0px 15px 17px;
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.info_a_1_2 > span{
+	line-height: 18px;
+}
+
+.info_a_1_2_btn{
+	width: 18px;
+    height: 18px;
+    margin-left: 6px;
+    border: none;
+    background-color: transparent;
+	margin: 0px;
+	color:rgb(255, 255, 255);
+	font-size: 13px;
+    font-weight: 400;
+    padding: 0px;
+    border-radius: 0px;
+    cursor: pointer;
+    outline: none;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.info_a_2{
+	border-top: 2px solid rgb(34, 34, 34);
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.info_a_2 > li{
+	display: inline-flex;
+    width: 25%;
+    height: 50px;
+    border-bottom: 1px solid rgb(235, 235, 235);
+    line-height: 50px;
+    text-align: -webkit-match-parent;
+}
+
+.info_a_2_1{
+	width: 95px;
+    color: rgb(134, 134, 134);
+    font-size: 14px;
+}
+
+.info_a_2_2{
+	-webkit-box-flex: 1;
+    flex-grow: 1;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(34, 34, 34);
+    font-size: 14px;
+    
+}

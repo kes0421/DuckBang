@@ -22,7 +22,7 @@
 		<div>
 		<div>
 			<!-- 서초동 추천매물 -->
-			<jsp:include page="./elements/recommend.jsp"></jsp:include>
+			<jsp:include page="../info/elements/other.jsp"></jsp:include>
 		</div>
 		<div>
 			<!-- 서초동 소개 -->

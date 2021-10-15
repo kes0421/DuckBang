@@ -1,10 +1,6 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=refs/remotes/origin/jisu
 eclipse.preferences.version=1
-<<<<<<< HEAD
-<<<<<<< HEAD
-encoding//src/main/webapp/WEB-INF/views/common/footer.jsp=UTF-8
-=======
-encoding//src/main/webapp/WEB-INF/views/map/elements/list.jsp=UTF-8
->>>>>>> refs/remotes/origin/Hanna
-=======
 encoding//src/main/webapp/WEB-INF/views/main/elements/explain.jsp=UTF-8
->>>>>>> refs/remotes/origin/jisu
+encoding//src/main/webapp/WEB-INF/views/map/elements/list.jsp=UTF-8

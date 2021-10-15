@@ -1,121 +1,291 @@
 @charset "UTF-8";
 
-*{
-	box-sizing: border-box;
+p {
+	margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font: inherit;
+    vertical-align: baseline;
 }
 
 #explain_container{
-	width: 1005px;
-	margin-left: 250px;
+	margin-top: 40px;
+    padding: 30px 0px 40px 30px;
+    border-radius: 2px;
+    background-color: rgb(250, 250, 250);
 }
 
 .explain_info_text{
-	height: 60px;
-	margin-top: 30px;
-	margin-left: 20px;
+	display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    padding-right: 30px;
+}
+
+.explain_info_text > p > blueT{
+	font-weight: 700;
+    color: rgb(50, 108, 249);
 }
 
 .explain_info{
-	display: flex;
-	overflow-x: auto;
-    white-space: nowrap;
-    width: 1000px;
-    height: 250px;
+	display: block;
+    height: 220px;
+    margin: 30px 0px 50px;
+    position: relative;
+    overflow: hidden;
 }
 
-.explain_info::-webkit-scrollbar {
-    width: 10px;
-    height: 15px;
-  }
-.explain_info::-webkit-scrollbar-thumb {
+.explain_info > svg.prev{
+	left: 0px;
+    transform: rotate(180deg);
+}
+
+.explain_info > svg.next{
+	right: 0px;
+}
+
+.explain_info > svg{
+	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.35;
+    cursor: pointer;
+    
+}
+
+.explain_info_slide{
+	display: flex;
+    width: 1502px;
+    height: 220px;
+    position: relative;
+    transition: right 0.5s ease-out 0s;
+    right: 468px;
+}
+
+div[class *= 'explain_info_slide_option']{
+	display: flex;
+    flex-direction: column;
+	border: 1px solid rgb(231, 231, 231);
+	border-radius: 2px;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+}
+
+.explain_info_slide_option-1{
+    width: 218px;
+    padding: 30px 20px;
+}
+
+.explain_infoWrap{
+	display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    height: 100%;
+    margin-top: 20px;
+    border-top: 1px solid rgb(231, 231, 231);
+}
+
+.explain_priceWrap{
+	display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 20px;
+}
+
+.explain_price{
+	display: flex;
+}
+
+.explain_price + .explain_price{
+	    margin-top: 8px;
+}
+
+.name{
+	font-size: 14px;
+    line-height: 28px;
+    color: rgb(101, 101, 101);
+}
+
+.value{
+	font-size: 18px;
+    color: rgb(34, 34, 34);
+}
+
+.explain_infoWrap > p.description{
+	margin-top: auto;
+    font-size: 12px;
+    color: rgb(134, 134, 134);
+}
+
+.explain_price > p + p {
+	margin-left: 16px;
+}
+
+.explain_info_slide_option-2{
+    width: 496px;
+    padding: 30px 20px;
+}
+
+div[class *= "explain_info_slide_option-"] + div{
+	margin-left: 18px;
+}
+
+div[class *= "explain_info_slide_option-"] > p.title{
+	font-size: 15px;
+    color: rgb(34, 34, 34);
+    line-height: 22px;
+}
+
+.explain_icons{
+	display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    height: 100%;
+    padding-top: 30px;
+}
+
+.explain_icon{
+	display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0px 8px;
+}
+
+div[class *= "explain_icon-"]{
+	width: 36px;
+    height: 36px;
+}
+
+.explain_icon-1{
+	background: url("https://cdn-icons.flaticon.com/png/512/4836/premium/4836802.png?token=exp=1634137166~hmac=4be1b0a23fbb57e2568f2fe6cb3b1c81")  center center no-repeat rgb(255, 255, 255);
+}
+
+.explain_icon-2{	
+    background: url("https://cdn-icons-png.flaticon.com/512/4091/4091906.png") center center no-repeat rgb(255, 255, 255);
+}
+
+.explain_icon-3{
+	background: url("https://cdn-icons-png.flaticon.com/512/4634/4634561.png") center center no-repeat rgb(255, 255, 255);
+	
+}
+
+.explain_icon-4{
+	background: url("https://cdn-icons.flaticon.com/png/512/4226/premium/4226015.png?token=exp=1634138145~hmac=2c350e1c6081bc04df6a65b53b173e2f") center center no-repeat rgb(255, 255, 255);
+}
+
+.explain_icon-5{
+	background: url("https://cdn-icons-png.flaticon.com/512/4118/4118035.png") center center no-repeat rgb(255, 255, 255);
+}
+
+.explain_icon-6{
+	background: url("https://cdn-icons.flaticon.com/png/512/3333/premium/3333815.png?token=exp=1634138066~hmac=4b752615fd5cefdbb206b7ac0b5e3d15") center center no-repeat rgb(255, 255, 255);	
+}
+
+.explain_info_slide_option-3{
+    width: 288px;
+    padding: 16px 20px 20px;
+}
+
+.title_bold{
+	font-weight: bold;
+}
+
+.explain_barWrap{
+	display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 16px;
+}
+
+.explain_barWrap_content{
+	display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 250px;
+}
+
+.explain_barWrap_content + div{
+	margin-top: 8px;
+}
+
+.explain_barWrap_content > p{
+	width: 68px;
+	color: rgb(101, 101, 101);
+}
+
+.explain_info_slide_option-3 > p.description{
+	margin-top: auto;
+    font-size: 12px;
+    color: rgb(134, 134, 134);
+}
+
+.explain_bar-1{
+	display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 160px;
+}
+
+.explain_bar-2{
+	display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 160px;
+}
+
+.explain_bar-3{
+	display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 160px;
+}
+
+.explain_bar-1 > div{
+	display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    height: 22px;
+    padding-right: 8px;
+    background-color: red;
+    border-radius: 12px;
+}
+
+.explain_bar-2 > div{
+	display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 70%;
+    height: 22px;
+    padding-right: 8px;
+    background-color: orange;
+    border-radius: 12px;
+}
+
+.explain_bar-3 > div{
+	display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 40%;
+    height: 22px;
+    padding-right: 8px;
     background-color: blue;
-    border-radius: 10px;
-  }
-.explain_info::-webkit-scrollbar-track {
-    background-color: gray;
-    width: 100px;
-    border-radius: 10px;
-    box-shadow: inset 0px 0px 5px white;
-  }
-
-.explain_info > div{
-	border: solid 1px gray;
-	padding: 30px;
-	height: 200px;
-	margin-left: 20px;
+    border-radius: 12px;
 }
 
-.explain_info > div > h5 {
-	color: gray;
+div[class*="explain_bar-"] > div > p{
+	margin-left: auto;
+    font-size: 12px;
+    color: rgb(255, 255, 255);
 }
 
-.explain_info4{
-	width: 700px;
-	height: 200px;
-}
-
-.explain_info4_1{
-	display: flex;
-}
-
-.explain_info4_1 > div > img{
-	width: 2.5rem;
-}
-
-.explain_info4_1 > *{
-	margin: 20px;
-	text-align: center;
-}
-
-.explain_info5_1{
-	display: flex;
-}
-
-.explain_info5 > :nth-child(1){
-	margin-top: -15px;
-}
-
-.explain_info5_1 > :nth-child(1) > * {
-	margin-bottom: 7px;
-}
-
-.explain_info5_1 > :nth-child(1) {
-	margin-top: 5px;
-}
-
-.explain_info5_1 > :nth-child(2) > *{
-	margin-bottom: 7px;
-	margin-left: 10px;
-}
-
-.explain_info5_1 > :nth-child(2) > .one{
-	border-radius: 30px;
-	background-color: #1aa4e9;
-	color: white;
-	text-align: right;
-	width: 150px;
-}
-
-.explain_info5_1 > :nth-child(2) > .two{
-	border-radius: 30px;
-	background-color: #00994c;
-	color: white;
-	text-align: right;
-	width: 100px;
-}
-
-.explain_info5_1 > :nth-child(2) > .apart{
-	border-radius: 30px;
-	background-color: #b465e9;
-	color: white;
-	text-align: right;
-	width: 50px;
-}
-
-.explain_info5_text{
-	margin-top: -1px;
-	color: gray;
-}
 
 
 

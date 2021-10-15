@@ -27,6 +27,11 @@ public class HomeController {
 		return "/info/index";
 	}
 	
+	@RequestMapping("/abo")
+	public String abo() {
+		return "/abo/index";
+	}
+	
 	@RequestMapping("/main/tou")
 	public String tou() {
 		return "/details/tou";

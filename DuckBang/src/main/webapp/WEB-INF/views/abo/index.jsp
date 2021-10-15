@@ -13,12 +13,15 @@
 	</div>
 	<div>
 		<div>
+			<!-- 이미지 / **공인중개사무소 -->
 			<jsp:include page="./elements/profile.jsp"></jsp:include>
 		</div>
 		<div>
+			<!-- list -->
 			<jsp:include page="./elements/list.jsp"></jsp:include>
 		</div>
 		<div>
+			<!-- 이 부동산의 방 -->
 			<jsp:include page="./elements/room.jsp"></jsp:include>
 		</div>
 	</div>

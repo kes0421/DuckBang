@@ -5,6 +5,7 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<link rel = "stylesheet" href ="${pageContext.request.contextPath}/resources/assets/css/main/index.css">
 </head>
 <body>
 
@@ -12,24 +13,24 @@
 	<!-- 상단 메뉴바 -->
 	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
 </div>
-
 <div>
 	<div>
 		<!-- 검색창 -->
 		<jsp:include page="./elements/search.jsp"></jsp:include>
 	</div>
-	
-	<div>
-		<!-- 서초동 추천매물 -->
-		<jsp:include page="./elements/recommend.jsp"></jsp:include>
-	</div>
-	
-	<div>
-		<!-- 서초동 소개 -->
-		<jsp:include page="./elements/explain.jsp"></jsp:include>
+	<div class = "index_base">
+		<div>
+		<div>
+			<!-- 서초동 추천매물 -->
+			<jsp:include page="./elements/recommend.jsp"></jsp:include>
+		</div>
+		<div>
+			<!-- 서초동 소개 -->
+			<jsp:include page="./elements/explain.jsp"></jsp:include>
+		</div>
+		</div>
 	</div>
 </div>
-
 <div>
 	<!-- 하단 상세정보 -->
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include>

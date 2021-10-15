@@ -1,4 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<link rel="stylesheet" href="<c:url value='/resources/assets/css/info/gallary.css'/>">
+<div class="gallary_main_body">
+	<div class="gallary_forSale_number">
+		매물 번호
+		222222222
+	</div>
+	<div class="gallary_forSale_image">
+		<div id="first_image_large" class="gallary_image_first gallary_image_position"></div>
+		<div id="second_image_large" class="gallary_image_second gallary_image_position"></div>
+		<div id="third_image_large" class="gallary_image_third gallary_image_position"></div>
+		<div id="fourth_image_large" class="gallary_image_fourth gallary_image_position"></div>
+		<div id="fifth_image_large" class="gallary_image_fifth gallary_image_position"></div>
+	</div>
+</div>
 
-<h3># gallary.jsp</h3>
+<div class="gallary_black_bg"></div>
+<div class="gallary_modal_wrap">
+   	<div class="gallary_modal_close"><a href="#">close</a></div>
+</div>
+
+<script src="<c:url value='/resources/assets/js/info/gallary.js'/>"></script>

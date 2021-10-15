@@ -45,11 +45,12 @@
 		<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
 	</div>
 	<div>
-		<!-- 의성 -->
+		<!-- 의성 
 		<div>
-			<!-- 월세/전용면적/주거비 / 중개사무소/연락처보기 -->
-			<jsp:include page="./elements/header.jsp"></jsp:include>
-		</div>
+				<jsp:include page="./elements/header.jsp"></jsp:include>
+			</div>-->
+	
+		
 		<div>
 			<!-- 표(세부정보) -->
 			<jsp:include page="./elements/info.jsp"></jsp:include>

@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-@charset "UTF-8";
-=======
 @charset "UTF-8";
 
 *{
@@ -134,17 +131,6 @@ li, ol, ul {
     margin-top: -10px;	
 }
 
-button{
-	margin: 0px;
-    padding: 0px;
-    border-radius: 0px;
-    background-color: rgb(255, 255, 255);
-    cursor: pointer;
-    outline: none;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
-} 
-
 .header_phone_btn{
 	border: solid 1px rgb(231, 231, 231);
 	border-radius: 30px;
@@ -170,21 +156,24 @@ button{
     left: 0;
     width: 100%;
     height: 100%;
-/*     min-width: 440px;
-    min-height: 100%;
-    padding: 100px 20px; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0px auto;
-    background-color: transparent;
-    box-shadow: rgb(0 0 0 / 25%) 0px 15px 18px -10px;
-    
+	background-color: transparent;
+	overflow-y: auto;
+	white-space: nowrap
+}
+
+.header_phone_popup > .header_box{
+	 position:absolute;
+  top:0%;
+  left:35%;
+  width:400px;
+  height:400px;
+	margin:-50px 0 0 -50px;
+	background-color: white; 
 }
 
 .header_popup_1{
-	display: flex;
-    flex-direction: column;
+	
+    
     padding: 24px 30px 16px;
     border-bottom: 1px solid rgb(231, 231, 231);
 }
@@ -226,17 +215,17 @@ button{
 	padding: 20px 30px 0px;
 }
 
-.header_popup_2 > header_popup_2_1{
+.header_popup_2 > .header_popup_2_1{
 	padding-bottom: 15px;
     border-bottom: 1px solid rgb(231, 231, 231);
 }
-.header_popup_2 > header_popup_2_1 > h1{
+.header_popup_2 > .header_popup_2_1 > h1{
 	color: rgb(34, 34, 34);
     font-size: 18px;
     font-weight: 700;
     line-height: 27px;
 }
-.header_popup_2 > header_popup_2_1 > p{
+.header_popup_2 > .header_popup_2_1 > p{
     color: rgb(134, 134, 134);
     font-size: 14px;
     font-weight: 400;
@@ -244,22 +233,25 @@ button{
     margin-bottom: 11px;
     line-height: 20px;
 }
-.header_popup_2_2, .header_popup_2_3, .header_popup_2_4 {
+.header_popup_2_2{
 	display: flex;
     -webkit-box-align: center;
     align-items: center;
 }
 
-.header_popup_2_2 > :nth-child(1),.header_popup_2_3 > :nth-child(1),.header_popup_2_4 > :nth-child(1) {
+.header_popup_2_2 > p{
+	flex: 0 0 auto;
+    line-height: 20px;
+}
+
+.header_popup_2_2 > p:first-child{
     color: rgb(134, 134, 134);
     font-size: 14px;
     font-weight: 400;
     margin-right: 8px;
-    flex: 0 0 auto;
-    line-height: 20px;
 }
 
-.header_popup_2_4 > a{
+.header_popup_2_2 > a{
 	color: rgb(174, 174, 174);
     font-size: 14px;
     font-weight: 400;
@@ -293,19 +285,26 @@ button{
     font-weight: 500;
     border: 0px;
     background-color: rgb(50, 108, 249);
+    margin: 0px;
+    padding: 0px;
+    border-radius: 0px;
+    cursor: pointer;
+    outline: none;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 .header_popup_3_2{
 	margin-right: -7px;
     padding: 24px 0px 20px;
 }
-.header_popup_3_2 > :nth-child(1) > p, .header_popup_3_2 > :nth-child(2) > p,.header_popup_3_2 > :nth-child(3) > p{
+.header_popup_3_2 div > p{
 	position: relative;
     color: rgb(134, 134, 134);
     font-size: 12px;
     font-weight: 400;
     line-height: 18px;
 }
-.header_popup_3_2 > :nth-child(2), .header_popup_3_2 > :nth-child(3){
+.header_popup_3_2 div + div{
     margin-top: 8px;
 }
 .header_popup_3_2 > :nth-child(2) > p > span, .header_popup_3_2 > :nth-child(3) > p > span{
@@ -322,6 +321,7 @@ button{
     justify-content: center;
     padding: 30px 0px 34px;
     border-bottom: 1px solid rgb(235, 235, 235);
+    background-color: white;
 }
 .header_popup_4_1{
 	display: flex;
@@ -334,20 +334,26 @@ button{
 }
 
 .header_popup_4_1 > i{
-    color: rgb(50, 108, 249);
+    flex: 0 0 auto;
+    margin-right: 5px;
+    width: 18;
+    height: 19;
+    fill: none;
+}
+.header_popup_4_1 > p{
+	color: rgb(50, 108, 249);
     font-size: 24px;
     font-weight: 700;
     flex: 0 0 auto;
-    line-height: 36px;
+    line-height: 36px;	
 }
 
-.header_popup_4 > p {
+.header_popup_4_p{
 	color: rgb(50, 108, 249);
     font-size: 13px;
     font-weight: 400;
     line-height: 19px;
 }
-
 .header_popup_5{
 	display: flex;
     -webkit-box-align: center;
@@ -355,12 +361,16 @@ button{
     -webkit-box-pack: center;
     justify-content: center;
     padding: 25px 0px;
+    background-color: white;
 }
 .header_popup_5 > i{
-    color: rgb(134, 134, 134);
+    width: 18;
+    height: 18;
+}
+.header_popup_5 > p{
+	color: rgb(134, 134, 134);
     font-size: 13px;
     font-weight: 400;
     margin-left: 7px;
     white-space: nowrap;
 }
->>>>>>> refs/remotes/origin/jisu2

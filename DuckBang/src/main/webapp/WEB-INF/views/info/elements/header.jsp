@@ -30,6 +30,7 @@
 			</div>
 			<button class="header_phone_btn"><i class='bx bx-phone' >연락처보기</i>	</button>
 			<div class="header_phone_popup popup_hidden">
+				<div class="header_box">
 					<div class="header_popup_1">
 						<h1>연락처 보기</h1>
 					</div>
@@ -42,16 +43,17 @@
 								<p>대표명</p>
 								<p>김미경</p>
 							</div>
-							<div class="header_popup_2_3">
+							<div class="header_popup_2_2">
 								<p>중개등록번호</p>
 								<p>11500-2015-00011</p>
 							</div>
-							<div class="header_popup_2_4">
+							<div class="header_popup_2_2">
 								<p>대표번호</p>
 								<p>02-6952-1470</p>
 								<a href="">중개소 정보 더보기</a>
 							</div>
 						</div>
+					</div>
 					<div class="header_popup_3">
 						<div class="header_popup_3_1">
 							<p>다방이 해당 공인중개사무소에</p>
@@ -86,17 +88,19 @@
 					</div>
 					<div class="header_popup_4">
 						<div class="header_popup_4_1">
-							<i class='bx bxs-phone' >0504-1396-1878</i>
+							<i class='bx bxs-phone' ></i><p>0504-1396-1878</p>
 						</div>
-						<p>중개사무소에 연락하여 방문일을 예약하세요.</p>
-						<p>다방에서 보고 연락한다고 말씀하시면</p>
-						<p>더욱 빠른 예약이 가능합니다.</p>
+						<p class="header_popup_4_p">중개사무소에 연락하여 방문일을 예약하세요.</p>
+						<p class="header_popup_4_p">다방에서 보고 연락한다고 말씀하시면</p>
+						<p class="header_popup_4_p">더욱 빠른 예약이 가능합니다.</p>
 					</div>
 					<div class="header_popup_5">
-						<i class='bx bx-info-circle'>다방앱을 이용하시면 문자로 연락요청이 가능합니다.</i>
-					</div>
-					</div>
+						<i class='bx bx-info-circle'></i><p>다방앱을 이용하시면 문자로 연락요청이 가능합니다.</p>
+					</div>			
+				</div>
+							
 			</div>
+			
 		</li>
 	</ul>
 	</div>

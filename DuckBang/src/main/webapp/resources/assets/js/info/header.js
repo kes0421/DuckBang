@@ -8,4 +8,3 @@ const close=()=>{
 
 document.querySelector('.header_phone_btn').addEventListener('click', open);
 document.querySelector('.header_popup_close_btn').addEventListener('click', close);
-document.querySelector('.phone_popup1').addEventListener('click', close);

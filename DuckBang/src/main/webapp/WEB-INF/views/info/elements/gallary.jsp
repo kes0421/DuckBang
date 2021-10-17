@@ -15,9 +15,19 @@
 	</div>
 </div>
 
-<div class="gallary_black_bg"></div>
+<!-- <div class="gallary_black_bg"></div>
 <div class="gallary_modal_wrap">
    	<div class="gallary_modal_close"><a href="#">close</a></div>
+</div> -->
+
+<div class="gallary_popup gallay_hidden">
+	<div class="gallary_popup_1"></div>
+	<div class="gallary_popup_2">
+		<div class="gallay_popup_close_div">
+			<button class="gallay_popup_close_btn">✖</button>
+		</div>
+	</div>
+
 </div>
 
 <script src="<c:url value='/resources/assets/js/info/gallary.js'/>"></script>

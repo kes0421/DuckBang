@@ -97,9 +97,12 @@
 						<p class="header_popup_4_p">다방에서 보고 연락한다고 말씀하시면</p>
 						<p class="header_popup_4_p">더욱 빠른 예약이 가능합니다.</p>
 					</div>
-					<div class="header_popup_5">
-						<i class='bx bx-info-circle'></i><p>다방앱을 이용하시면 문자로 연락요청이 가능합니다.</p>
-					</div>
+					<!-- 
+						<div class="header_popup_5">
+							<i class='bx bx-info-circle'></i><p>다방앱을 이용하시면 문자로 연락요청이 가능합니다.</p>
+						</div>
+					 -->
+					
 				</div>
 			</div>
 		</li>

@@ -1,72 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-            font-family: NanumGothic, sans-serif;
-        }
-        
-        #header {
-            border-bottom: 1px solid rgb(229, 229, 229);
-            position: sticky;
-        }
-
-        #content_area {
-            border-bottom: 1px solid rgb(229, 229, 229);
-            
-        } 
-
-        p {
-            font-size: 14px;
-        }
-
-        b {
-            font-weight: 700;
-        }
-        
-        .ul_depth_one {
-            list-style: decimal;
-            margin: 5px 0px 10px;
-            padding-left: 15px;
-        }
-        
-        .li_depth_one {
-            margin: 0px 0px 5px;
-            line-height: 24px;
-            font-size: 14px;
-            
-        }
-
-        .ul_depth_two {
-            list-style: decimal;
-            padding-left: 14px;
-            margin: 5px 0px 10px;
-        }
-
-        .li_depth_two {
-            line-height: 24px;
-            padding-left: 0px;
-            margin: 0px 0px 5px;
-            font-size: 14px;
-        }
-
-        .ul_depth_three {
-            line-height: 24px;
-            padding-left: 0px;
-            margin: 0px 0px 5px;
-            font-size: 14px;
-        }
-
-        .li_depth_three {
-            list-style: none;
-            line-height: 24px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/assets/css/agree/1.css">
 </head>
 <body>
     <div id="header">

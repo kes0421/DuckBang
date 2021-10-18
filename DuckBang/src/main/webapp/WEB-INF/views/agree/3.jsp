@@ -1,71 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            font-family: NanumGothic, sans-serif;
-        }
-        
-        #header {
-            border-bottom: 1px solid rgb(229, 229, 229);
-            position: sticky;
-        }
-
-        #content_area {
-            border-bottom: 1px solid rgb(229, 229, 229);
-        }
-
-        b {
-            font-weight: 700;
-        }
-
-        .p1 {
-            letter-spacing: -0.5px;
-        }
-
-        .p2 {
-            font-size: 14px;
-        }
-
-        .p3 {
-            font-size: 14px;
-        }
-
-        .ul1 {
-            list-style: decimal;
-            margin: 5px 0px 10px;
-            padding-left: 15px;
-            line-height: 24px;
-        }
-        
-        .ul2 {
-            list-style:square;
-            line-height: 24px;
-            padding-left: 20px;
-        }
-
-        .ul3 {
-            list-style: none;
-            margin: 5px 0px 10px;
-            padding-left: 15px;
-            line-height: 24px;
-        }
-
-        .ul1,.ul2,.ul3 > li {
-            line-height: 24px;
-            font-size: 14px;
-        }
-
-
-
-    </style>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/assets/css/agree/3.css">
 </head>
-<body>
-    <div id="header">
+<body> 
+	<div id="header">
         <h1>매물관리규정</h1>
     </div>
     <div id="content_area">

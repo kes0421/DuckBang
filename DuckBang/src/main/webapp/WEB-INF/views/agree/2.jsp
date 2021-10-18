@@ -1,92 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-            font-family: NanumGothic, sans-serif;
-            font-size: 14px;
-        }
-
-        #header {
-            border-bottom: 1px solid rgb(229, 229, 229);
-            display: flex;
-            align-items: center;
-            padding: 0px 10px;
-            height: 70px;
-        }
-
-        #header > h1 {
-            font-size: 18px;
-        }
-        
-        p {
-            margin: 0px;
-            font-size: 14px;
-            line-height: 24px;
-            padding-left: 5px;
-        }
-
-        .p1 {
-            letter-spacing: -0.5px;
-        }
-
-        b {
-            font-weight: 700;
-        }
-        
-        table {
-            width: 100%;
-            border: 1px solid black;
-            border-spacing: 0px;
-            border-collapse: collapse;
-        }
-
-        th {
-            height: 40px;
-            font-size: 14px;
-            border: 1px solid black;
-        }
-
-        #t1 > th,td{
-            border: 1px solid black;
-            text-align: center;
-            padding: 5px;
-            vertical-align: baseline;
-        }
-
-        .table_p {
-            font-size: 14px;
-        }
-
-        .ul1 {
-            list-style: none;
-            margin: 5px 0px 10px;
-            padding-left: 15px;
-            line-height: 24px;
-        }
-
-        .ul1,.ul2,.ul3 > li {
-            line-height: 24px;
-        }
-
-        .ul2 {
-            list-style:square;
-            line-height: 24px;
-        }
-
-        .ul3 {
-            list-style:square;
-            padding-left: 15px;
-            line-height: 24px;
-        }
-
-        
-
-    </style>
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/assets/css/agree/2.css">
 </head>
 <body>
     <div id="header">

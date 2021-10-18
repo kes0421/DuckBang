@@ -9,9 +9,9 @@
             <nav class="footer_bar">
                 <ul class="footer_list">
                     <li class="footer_li"><a class="footer_a" href="">회사소개</a></li>
-                    <li class="footer_li"><a class="footer_a" href="./main/tou">이용약관</a></li>
-                    <li class="footer_li"><a class="footer_a" href="./main/privacy">개인정보처리방침</a></li>
-                    <li class="footer_li"><a class="footer_a" href="">매물관리규정</a></li>
+                    <li class="footer_li"><a class="footer_a" href="./agree/1">이용약관</a></li>
+                    <li class="footer_li"><a class="footer_a" href="./agree/2">개인정보처리방침</a></li>
+                    <li class="footer_li"><a class="footer_a" href="./agree/3">매물관리규정</a></li>
                 </ul>
             </nav>
             <form id="footer_form" action="" method="GET">

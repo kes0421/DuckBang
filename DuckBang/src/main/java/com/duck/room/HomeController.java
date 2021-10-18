@@ -35,11 +35,20 @@ public class HomeController {
 		return "/details/tou";
 	}
 	
-	@RequestMapping("/main/privacy")
-	public String privacy() {
-		return "/details/privacy";
+	@RequestMapping("/agree/1")
+	public String agree1() {
+		return "/agree/1";
 	}
 	
+	@RequestMapping("/agree/2")
+	public String agree2() {
+		return "/agree/2";
+	}
+	
+	@RequestMapping("/agree/3")
+	public String agree3() {
+		return "/agree/3";
+	}
 	@RequestMapping("/login")
 	public String login() {
 		return "/login/index";

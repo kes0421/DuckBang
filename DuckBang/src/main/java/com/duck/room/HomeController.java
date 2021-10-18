@@ -39,4 +39,9 @@ public class HomeController {
 	public String privacy() {
 		return "/details/privacy";
 	}
+	
+	@RequestMapping("/login")
+	public String login() {
+		return "/login/index";
+	}
 }

@@ -6,19 +6,20 @@
 		<div class = "h01_slide-1 css-search1-1 f01_search">어떤 집을 찾고 계세요?</div>
 	</div>
 	<div class = "h01_searchBar css-search1">
-		<div class = "h01_searchBar-1 css-search1">
+		<div id="searchBar" class = "h01_searchBar-1 css-search1">
 			<div class = "h01_searchBar-1_options css-search1">
-				<div class = "h01_searchBar-1_option css-search_option">
-					<span class = "option_name css-search_option">아파트</span>
+				<div  id = "point" class = "h01_searchBar-1_point css-search_option" dir="auto"></div>
+				<div  class = "h01_searchBar-1_option css-search_option">
+					<span id = "apt" class = "option_name css-search_option">아파트</span>
 				</div>
-				<div class = "h01_searchBar-1_option css-search_option">
-					<span class = "option_name css-search_option">빌라,투룸+</span>
+				<div  class = "h01_searchBar-1_option css-search_option">
+					<span id = "villa" class = "option_name css-search_option">빌라,투룸+</span>
 				</div>
-				<div class = "h01_searchBar-1_option css-search_option">
-					<span class = "option_name css-search_option">원룸</span>
+				<div  class = "h01_searchBar-1_option css-search_option">
+					<span id = "studioApt" class = "option_name css-search_option">원룸</span>
 				</div>
-				<div class = "h01_searchBar-1_option css-search_option">
-					<span class = "option_name css-search_option">오피스텔</span>
+				<div  class = "h01_searchBar-1_option css-search_option">
+					<span id = "officetel" class = "option_name css-search_option">오피스텔</span>
 				</div>
 			</div>
 			<div class = "h01_searchBar-2 css-search1">
@@ -34,3 +35,5 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript" src="./resources/assets/js/main/search.js"></script>

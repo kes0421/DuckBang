@@ -1,9 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link href="./resources/assets/css/info/other.css" rel="stylesheet" type="text/css"/>
-
+<link href="${pageContext.request.contextPath}/resources/assets/css/info/other.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/main/recommend.css">
 
 <div class="other">
+	<div>
+	<div id="recommend_title"><b>서초동</b> 추천매물</div>
+	<div id="recommend_subTitle">
+		<div class="recommend_option">서초동</div>
+		<div class="recommend_option">원룸,투 쓰리룸, 오피스텔</div>
+		<div class="recommend_option">월세,전세</div>
+		<div id="recommend_moreRoom">더 많은 방 보기 ></div>
+	</div>
+	</div>
 	<ul>
 		<li class="other_li">
 			<div>

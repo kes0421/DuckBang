@@ -1,8 +1,7 @@
 @charset "UTF-8";
 
 .gallary_main_body {
-	width: 90%;
-	margin-left: 4%;
+	width: 100%;
 	position: relative;
 }
 
@@ -46,7 +45,7 @@
 }
 
 .gallary_image_first {
-	width: 700px;
+	width: 620px;
 	height: 420px;
 	cursor: pointer;
 }
@@ -56,7 +55,7 @@
 }
 
 .gallary_image_second {
-	width: 300px;
+	width: 280px;
 	height: 210px;
 	cursor: pointer;
 }
@@ -66,7 +65,7 @@
 }
 
 .gallary_image_third {
-	width: 300px;
+	width: 280px;
 	height: 210px;
 	cursor: pointer;
 }
@@ -76,7 +75,7 @@
 }
 
 .gallary_image_fourth {
-	width: 300px;
+	width: 280px;
 	height: 210px;
 	cursor: pointer;
 }
@@ -86,7 +85,7 @@
 }
 
 .gallary_image_fifth {
-	width: 300px;
+	width: 280px;
 	height: 210px;
 	cursor: pointer;
 }

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<link rel="stylesheet" href="<c:url value='/resources/assets/css/info/gallary.css'/>">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/info/gallary.css"/>
 <div class="gallary_main_body">
 	<div class="gallary_forSale_number">
 		매물 번호

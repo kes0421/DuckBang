@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="./resources/assets/css/main/explain.css" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/main/explain.css" type="text/css" />
 
 <div id="explain_container">
 	<div class="explain_info_text"><p><blueT>강남역</blueT>은 어떤 동네일까요?</p></div>
 	<div class="explain_info">
-		<div class="explain_info_slide">
+		<div id="info_slide" class="explain_info_slide">
 			<div class="explain_info_slide_option-1">
 				<p class="title">원룸 평균 매물가</p>
 				<div class="explain_infoWrap">
@@ -115,14 +115,14 @@
 		</div>
 		</div>
 		<!-- next -->
-		<svg class="next" style="width: 50; height: 50; viewBox: 0 0 50 50;">
+		<svg id = "next_point" class="next" style="width: 50; height: 50; viewBox: 0 0 50 50;">
 			<g fill="none"; fill-rule="evenodd">
 				<path fill="#000" d="M0 0h50v50H0z"></path>
 				<path stroke="#FFF" d="M22 16l9 9-9 9"></path>
 			</g>
 		</svg>
 		<!-- prev -->
-		<svg class="prev" style="width: 50; height: 50; viewBox: 0 0 50 50;">
+		<svg id = "prev_point" class="prev" style="width: 50; height: 50; viewBox: 0 0 50 50;">
 			<g fill="none"; fill-rule="evenodd">
 				<path fill="#000" d="M0 0h50v50H0z"></path>
 				<path stroke="#FFF" d="M22 16l9 9-9 9"></path>
@@ -130,4 +130,4 @@
 		</svg>
 	</div>
 </div>	
-
+<script type="text/javascript" src="./resources/assets/js/main/explain.js"></script>

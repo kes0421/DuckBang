@@ -1,18 +1,21 @@
 @charset "UTF-8";
-*{
-    box-sizing: border-box;
-}
-
 .footer_div{
     display: block;
 }
-.footer_footer, .footer_nav{
+footer, .footer_nav{
     display: block;
 }
 
 .footer_footer{
     width: 100%;
     background-color: rgb(55, 55, 55);
+}
+
+.footer_footer > div{
+	width: 1200px;
+    height: 100%;
+    margin: 0px auto;
+    padding: 0px 10px;
 }
 
 .footer_li{
@@ -49,6 +52,7 @@
     -webkit-box-pack: start;
     justify-content: flex-start;
     height: 100%;
+    margin-top: 0;
 }
 
 .footer_list > .footer_li{
@@ -70,13 +74,12 @@
     -webkit-box-align: center;
     align-items: center;
     width: 282px;
-    height: 100%;
-    padding: 0px 20px;
+    height: 100%;	
     border-left: 1px solid rgb(69, 69, 69);
     border-right: 1px solid rgb(69, 69, 69);
 }
 
-.footer_form > .footer_label{
+.footer_form > label{
     -webkit-box-flex: 1;
     flex-grow: 1;
     display: flex;
@@ -87,7 +90,7 @@
 }
 
 .footer_search{
-    flex: 0 0 auto;
+  	 flex: 0 0 auto;
     margin-right: 10px;
     color: rgb(144, 144, 144);
     font-size: 13px;
@@ -95,15 +98,9 @@
 }
 
 .footer_input{
-    user-select: text;
-    appearance: none;
-}
-
-.footer_input{
     -webkit-box-flex: 1;
     flex-grow: 1;
     height: 20px;
-    margin-right: 10px;
     padding: 0px;
     color: rgb(238, 238, 238);
     font-size: 13px;
@@ -121,7 +118,7 @@
 }
 
 #footer_search_btn{
-    flex: 0 0 auto;
+   flex: 0 0 auto;
     width: 18px;
     height: 18px;
     padding: 0px;
@@ -129,6 +126,11 @@
     border: 0px;
     background-color: transparent;
     outline: none;
+}
+
+#footer_search_btn > svg {
+	margin-bottom: 6px;
+    position: relative;
 }
 
 #footer_search_btn > span{
@@ -198,6 +200,10 @@ span:not(:root){
     outline: none;
     text-decoration: none;
     cursor: pointer;
+}
+
+.footer_ul{
+	padding: 0;
 }
 
 .footer_btns > a{

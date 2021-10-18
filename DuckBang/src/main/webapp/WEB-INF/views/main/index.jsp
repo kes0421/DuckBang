@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
 <link rel = "stylesheet" href ="${pageContext.request.contextPath}/resources/assets/css/main/index.css">
 </head>
 <body>
@@ -22,7 +21,7 @@
 		<div>
 		<div>
 			<!-- 서초동 추천매물 -->
-			<jsp:include page="../info/elements/other.jsp"></jsp:include>
+			<jsp:include page="./elements/temp.jsp"></jsp:include>
 		</div>
 		<div>
 			<!-- 서초동 소개 -->

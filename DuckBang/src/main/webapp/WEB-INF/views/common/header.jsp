@@ -54,6 +54,12 @@
             <div id="login_area">
             	<button type="button" class="login_btn" style="vertical-align: middle;">로그인 및 회원가입</button>
         	</div>
+        	<div id="seller_join">
+        		<p id="seller_join_inner" style="vertical-align: middle;">
+        			중개사무소 가입 <br>
+        			및 광고문의
+        		</p>
+        	</div>
         </div>
         
 	

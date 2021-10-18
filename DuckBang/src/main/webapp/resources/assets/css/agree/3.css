@@ -4,7 +4,7 @@
 	    font-family: NanumGothic, sans-serif;
 	}
 	
-	#header {
+	#header { 
 	    border-bottom: 1px solid rgb(229, 229, 229);
 	    position: sticky;
 	}

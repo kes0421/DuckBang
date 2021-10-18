@@ -14,8 +14,8 @@
                     <li class="footer_li"><a class="footer_a" href="./agree/3">매물관리규정</a></li>
                 </ul>
             </nav>
-            <form id="footer_form" action="" method="GET">
-                <label class="footer_label">
+            <form class="footer_form" action="" method="GET">
+                <label>
                     <p class="footer_search">매물번호 조회</p>
                     <input class="footer_input" type="text" name="매물번호DB">
                 </label>
@@ -26,7 +26,7 @@
                 </button>
             </form>
             <button id="footer_top_btn" class="footer_button">
-                <span class="material-icons-outlined">
+                <span class="material-icons-outlined" style="font-size:20px; color:#d2d6da;">
                     arrow_drop_up
                 </span>
                 <p class="footer_p">TOP</p>

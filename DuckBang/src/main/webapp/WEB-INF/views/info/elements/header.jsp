@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<link rel="stylesheet" href="./resources/assets/css/info/header.css" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/info/header.css" type="text/css" />
 <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
 <div id="header_container">
@@ -15,7 +15,7 @@
 		<li class="header_li">
 			<p class="header_width">전용면적</p>
 			<div class="header_width_2">
-				<h1 class="header_h1">23㎥</h1>
+				<h1 id="number" class="header_h1">23㎥</h1>
 				<button class="header_btn1"><span>평</span></button>
 			</div>
 		</li>

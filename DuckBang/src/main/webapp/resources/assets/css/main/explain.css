@@ -45,12 +45,12 @@ p {
 
 .explain_info > svg.next{
 	right: 0px;
+	margin-right: 25px;
 }
 
 .explain_info > svg{
 	position: absolute;
     top: 50%;
-    transform: translateY(-50%);
     opacity: 0.35;
     cursor: pointer;
     
@@ -62,7 +62,7 @@ p {
     height: 220px;
     position: relative;
     transition: right 0.5s ease-out 0s;
-    right: 468px;
+    right: 0px;
 }
 
 div[class *= 'explain_info_slide_option']{
@@ -164,28 +164,27 @@ div[class *= "explain_icon-"]{
 }
 
 .explain_icon-1{
-	background: url("https://cdn-icons.flaticon.com/png/512/4836/premium/4836802.png?token=exp=1634137166~hmac=4be1b0a23fbb57e2568f2fe6cb3b1c81")  center center no-repeat rgb(255, 255, 255);
+	background: url("../../icon/explain/cafe.png") no-repeat;
 }
 
 .explain_icon-2{	
-    background: url("https://cdn-icons-png.flaticon.com/512/4091/4091906.png") center center no-repeat rgb(255, 255, 255);
+    background: url("../../icon/explain/store.png") no-repeat;
 }
 
 .explain_icon-3{
-	background: url("https://cdn-icons-png.flaticon.com/512/4634/4634561.png") center center no-repeat rgb(255, 255, 255);
-	
+	background: url("../../icon/explain/market.png") no-repeat;
 }
 
 .explain_icon-4{
-	background: url("https://cdn-icons.flaticon.com/png/512/4226/premium/4226015.png?token=exp=1634138145~hmac=2c350e1c6081bc04df6a65b53b173e2f") center center no-repeat rgb(255, 255, 255);
+	background: url("../../icon/explain/hair.png") no-repeat;
 }
 
 .explain_icon-5{
-	background: url("https://cdn-icons-png.flaticon.com/512/4118/4118035.png") center center no-repeat rgb(255, 255, 255);
+	background: url("../../icon/explain/laundry.png") no-repeat;
 }
 
 .explain_icon-6{
-	background: url("https://cdn-icons.flaticon.com/png/512/3333/premium/3333815.png?token=exp=1634138066~hmac=4b752615fd5cefdbb206b7ac0b5e3d15") center center no-repeat rgb(255, 255, 255);	
+	background: url("../../icon/explain/exercise.png") no-repeat;	
 }
 
 .explain_info_slide_option-3{

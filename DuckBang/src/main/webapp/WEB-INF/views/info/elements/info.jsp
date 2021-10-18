@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<link href="./resources/assets/css/info/info.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/resources/assets/css/info/info.css" rel="stylesheet" type="text/css">
 <div class="info_a">
 	<div class="info_a_1">
 		<p class="info_a_1_1">

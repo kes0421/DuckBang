@@ -1,10 +1,5 @@
 @charset "UTF-8";
 
-*{
-	box-sizing: border-box;
-}
-
-
 #recommend_wrap{
 	margin-top: 80px;
 	width: 85%;
@@ -23,43 +18,20 @@
 	display: flex;
 }
 
-#recommend_subTitle > *{
+.recommend_option {
 	border: 1px solid #868686;
 	font-size: 14px;
-	margin-right:10px;
-	margin-bottom:10px;
+	width: auto;
+	margin-left:10px;
 	color: #868686;
 	float: left;
 	padding: 7px;
 }
 
 #recommend_moreRoom{
-	border: none;
-	float: right;
-	margin-left: 60.94%;
-}
-
-#recommend_roomInfo{
-	display: flex;
-	justify-content: space-between;
-}
-
-.recommend_bSize{
-	margin-top:5px; 
-	margin-bottom:5px;
-	font-size: 20px;
-}
-
-.recommend_detailImage{
-	width: 300px;
-	height: 200px;
-}
-
-.recommend_detailText{
-	margin-top: 10px;
+	font-size: 14px;
 	color: #868686;
-	font-size: 15px;
-	line-height: 1.5;
+	margin-left: auto;
 }
 
 

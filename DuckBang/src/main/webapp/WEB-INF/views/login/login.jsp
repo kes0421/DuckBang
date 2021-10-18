@@ -5,10 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="./resources/assets/css/login/index.css" type="text/css" />
+<link rel="stylesheet" href="./resources/assets/css/login/login.css" type="text/css" />
 </head>
 <body>
-
 	<div>
 	    <!-- 상단 메뉴바 -->
 	    <jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>

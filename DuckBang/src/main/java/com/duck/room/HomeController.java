@@ -42,6 +42,17 @@ public class HomeController {
 	
 	@RequestMapping("/login")
 	public String login() {
-		return "/login/index";
+		return "/login/login";
+	}
+	
+	@RequestMapping("/membership")
+	public String membership() {
+		return "/login/membership/join";
+	}
+	
+	@RequestMapping("/memberInfo")
+	public String memberInfo() {
+		return "/login/membership/info";
 	}
 }
+

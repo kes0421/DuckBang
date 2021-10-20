@@ -51,7 +51,7 @@ public class HomeController {
 	public String agree2() {
 		return "/agree/2";
 	}
-	
+	 
 	@RequestMapping("/agree/3")
 	public String agree3() {
 		return "/agree/3";

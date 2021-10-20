@@ -1,6 +1,6 @@
 @charset "UTF-8";
 #map {
-  height: 845px;
+  height: 114%;
   width: 100%;
 }
 
@@ -10,74 +10,6 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-}
-
-.map_searchBar {
-	position: absolute;
-    left: 30px;
-    top: 110px;
-    z-index: 1;
-    width: 360px;
-    display: inline-flex;
-    flex-direction: column;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    box-sizing: border-box;
-    max-height: calc(100% - 40px);
-}
-
-.map_searchWrap{
-	position: relative;
-    padding: 10px;
-    background-color: rgb(255, 255, 255);
-    z-index: 1000;
-    font-size: 12px;
-}
-
-.map_selectWrap{
-	display: flex;
-}
-
-.map_inputLiner{
-	flex: 1 1 0%;
-    border: 1px solid rgb(250, 136, 11);
-    border-radius: 4px;
-    overflow: hidden;
-    height: 30px;
-    vertical-align: top;
-    box-sizing: border-box;
-}
-
-.map_input-wrap{
-	float: left;
-    width: 285px;
-    padding: 0px 10px;
-    position: relative;
-    overflow: hidden;
-}
-
-.map_input-wrap > input {
-	width: 100%;
-    height: 27px;
-    border: none;
-    appearance: none;
-    outline: none;
-    box-shadow: none;
-    font-size: 13px;
-}
-
-.map_search-wrap {
-	float: right;
-    background-color: rgb(250, 136, 11);
-    width: 30px;
-    height: 30px;
-    overflow: hidden;
-}
-
-.map_search-btn{
-    width: 30px;
-    height: 30px;
-    background: url(https://s.zigbang.com/www/images/ic_title_searchbar_30x30_nor_white.png) center center / 100% no-repeat transparent;
-    border: 1px solid rgb(250, 136, 11);
 }
 
 #description {
@@ -127,6 +59,48 @@ body {
   font-weight: 300;
 }
 
+#map_map {
+	width: 38%;
+	height: 8%;
+	background-color: white;
+	margin-top: 3%;
+	margin-left: 3%;
+	border: 1px solid #c8c8c8;
+}
+
+#pac-input {
+  width : 84%;
+  height: 27px;
+  appearance: none;
+  outline: none;
+  box-shadow: none;
+  font-size: 13px;
+  border: 1px solid rgb(250, 136, 11);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+.map_btn_div {
+	float: right;
+	background-color: rgb(250, 136, 11);
+	widht: 30px;
+	height: 30px;
+	overflow: hidden;
+	margin-top: 13px;
+	margin-right: 14px;
+}
+
+#map_btn {
+	width: 30px;
+	height: 30px;
+	border: 1px solid white;
+	background: url("https://s.zigbang.com/www/images/ic_title_searchbar_30x30_nor_white.png") center center / 100% no-repeat transparent;
+	cursor: pointer;
+}
 
 #title {
   color: #fff;
@@ -141,17 +115,14 @@ body {
 }
 
 .custom-map-control-button {
-  background-color: #fff;
   border: 0;
   border-radius: 2px;
-  box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
   margin: 10px;
   padding: 0 0.5em;
   font: 400 18px Roboto, Arial, sans-serif;
   overflow: hidden;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   cursor: pointer;
-}
-.custom-map-control-button:hover {
-  background: #ebebeb;
+  background: url("https://s.zigbang.com/zigbang-www/_next/static/btn_content_map_mylocation_48x48_nor-937d5e5bfe06627d420be72442630a56.png") center center / 100% no-repeat transparent;
 }

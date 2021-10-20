@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="./resources/assets/css/abo/profile.css" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/abo/profile.css" type="text/css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+outlined"
       rel="stylesheet">
 <div class="profile_div1">

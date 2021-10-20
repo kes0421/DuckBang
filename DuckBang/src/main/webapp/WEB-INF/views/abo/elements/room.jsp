@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
-<link rel="stylesheet" href="./resources/assets/css/abo/room.css" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/abo/room.css" type="text/css" />
 <div class="room">
 	<div class="room_div1">
 		<p class="room_div1_p1">

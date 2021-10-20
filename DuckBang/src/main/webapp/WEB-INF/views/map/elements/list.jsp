@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<link rel="stylesheet" href="<c:url value='/resources/assets/css/map/list.css'/>">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/assets/css/map/list.css">
 <div id="list_body">
 	<div id="list_area">
 		<div id="list_count">
 		
 		</div>
-		<div id="list_unit_btn">
-			단위 버튼(평, 제곱m)
+		<div id="list_unit_box">
+			<div class = "list_unit_btn">
+			</div>
 		</div>
 	</div>
 	
@@ -45,16 +46,10 @@
 				</div>
 			</div>
 		</c:forEach>
-
-		<ul id="list_paging">
-		
-		</ul>
-		
-		<div id="paging">
-		
-		</div>
-		
 	</div>
+		<div id="paging">
+
+		</div>
 </div>
 
-<script src="<c:url value='/resources/assets/js/map/list.js'/>"></script>
+<script src="${pageContext.request.contextPath }/resources/assets/js/map/list.js"></script>

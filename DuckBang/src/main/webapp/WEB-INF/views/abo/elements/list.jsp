@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="./resources/assets/css/abo/list.css" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/abo/list.css" type="text/css" />
 <ul class="list_ul1">
 	<!-- 
 		DB에서 가져올때 

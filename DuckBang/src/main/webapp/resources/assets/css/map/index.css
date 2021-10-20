@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+body{
+	margin: 0;
+	padding: 0;
+}
+
 #mapMainBody {
 	display: flex;
 	flex-direction: column;
@@ -11,9 +16,9 @@
 }
 
 #mapContainer {
-	width: 70%;
+	width: 80%;
 }
 
 #listContainer {
-	width: 30%;
+	width: 20%;
 }

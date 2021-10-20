@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="<c:url value='/resources/assets/css/map/index.css'/>">
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
-<body>
+<body style="overflow: hidden;">
 <div id="mapMainBody">
 	<div>
 		<!-- 상단 메뉴바 -->

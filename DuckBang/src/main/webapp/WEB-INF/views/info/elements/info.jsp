@@ -116,15 +116,4 @@
 	</ul>
 </div>
 
-<script type="text/javascript" src="./resources/assets/js/info/info.js"></script>
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
+<script type="text/javascript" src="${pageContext.request.contextPath }/resources/assets/js/info/info.js"></script>

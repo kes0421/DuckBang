@@ -9,8 +9,10 @@
 -->
 
         <div id="navi_flex">
-            <div id="header_area_logo">
-            </div>
+        	<a href="${pageContext.request.contextPath }/main" style="cursor: pointer;">
+            	<div id="header_area_logo">
+            	</div>
+            </a>
             <div>
                 <ul id="header_area_top_menu">
                     <li>

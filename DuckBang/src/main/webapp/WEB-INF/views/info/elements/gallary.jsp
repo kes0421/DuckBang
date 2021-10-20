@@ -30,4 +30,4 @@
 
 </div>
 
-<script src="<c:url value='/resources/assets/js/info/gallary.js'/>"></script>
+<script src="${pageContext.request.contextPath }/resources/assets/js/info/gallary.js"></script>

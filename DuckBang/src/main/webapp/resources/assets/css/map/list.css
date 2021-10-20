@@ -1,35 +1,70 @@
 @charset "UTF-8";
 
-#list_body {
-	padding: 2px;
+::-webkit-scrollbar {
+width: 14px;
+}
+::-webkit-scrollbar-track {
+background-color: rgba(0, 0, 0, 0.65);
+}
+::-webkit-scrollbar-thumb {
+background-color: rgb(221, 221, 221);
 }
 
 #list_room_infos {
-	height: 530px;
+	height:750px;
 	overflow: auto;
+	border: 1px solid gray;
+    padding-left: 10px;
 }
 
 #list_area {
 	display: flex;
 	flex-direction: row;
-	border-bottom: 1px solid gray;
 }
 
 #list_count {
 	padding: 5px;
 	width: 80%;
 	font-size: 20px;
-	font-weight: bold;
+	font-weight: normal;
+	margin-left: 10px;
+    line-height: 50px;
 }
 
-#list_unit_btn {
-	width: 20%;
+#list_unit_box {
+	margin-left: 13px;
+}
+
+.list_unit_btn{
+	border-radius: 30px;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin: 13px;
+    overflow-y: hidden;
+    width: 30px;
+    height: 30px;
+    background-image: url("../../icon/unit_change.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#paging {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+#paging > a{
+	font-size: 20px;
+	margin-right: 10px;
 }
 
 .list_room_info {
 	display: flex;
 	flex-direction: row;
 	padding: 10px;
+	border-bottom: 1px solid gray;
+	width: 330px;
 }
 
 .list_room_image {

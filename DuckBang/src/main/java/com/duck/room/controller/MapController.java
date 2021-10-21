@@ -35,9 +35,10 @@ public class MapController {
 		return "map/index";
 	}
 	
-	@GetMapping("/oIdInfo")
-	public String o_id_info(Integer o_id) {
+	@GetMapping("/info")
+	public String o_id_info(Integer o_id, Model model) {
 		System.out.println("매물번호 : " + o_id);
+		model.addAttribute("o_id", o_id);
 		return "info/index";
 	}
 }

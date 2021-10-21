@@ -205,7 +205,7 @@ function makeMarkers(map) {
 		
 		google.maps.event.addListener(marker, 'click', (function(marker, i) {
 			return function() { 
-				sendNumGet('./oIdInfo', locations[i][2]);
+				sendNumGet('./info', locations[i][2]);
 			} 
 		})(marker, i));
 		

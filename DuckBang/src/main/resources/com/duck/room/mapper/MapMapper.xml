@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.duck.room.mapper.MapMapper">
+	<select id="getList" resultType="com.duck.room.dto.Location">
+		select o_id, l_xcordinate, l_ycordinate from location l inner join offering o on l.l_code = o.l_code
+	</select>
+</mapper>

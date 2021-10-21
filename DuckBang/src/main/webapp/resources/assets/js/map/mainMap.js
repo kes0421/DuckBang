@@ -10,7 +10,10 @@ function initMap() {
 		zoom: 18,
 		mapTypeControl: false,
 		fullscreenControl: false,
-		mapTypeId: "roadmap"
+		mapTypeId: "roadmap",
+		options: {
+			gestureHandling: 'greedy'
+		}
 	});
   
 	// Create the search box and link it to the UI element.
@@ -134,7 +137,7 @@ function initMap() {
 					lng: position.coords.longitude,
 				};
 
-			const image = new google.maps.MarkerImage("https://thumb.ac-illust.com/t/64/64e74d485b6852392365e01e969678fe_t.jpeg", null, null, null, new google.maps.Size(20,20));
+			const image = new google.maps.MarkerImage("resources/assets/icon/map/geolocationIcon.png", null, null, null, new google.maps.Size(15,15));
 			
 			// 현재 위치에 마커 표시해주기
 			new google.maps.Marker({
@@ -164,25 +167,69 @@ function initMap() {
 
 // 여러가지 마커들 찍기
 function makeMarkers(map) {
-	var locations = [
-		['서울역', 37.5546788, 126.9706069],
-		['서울특별시청', 37.5668260, 126.9786567],
-		['을지로입구역', 37.5660373, 126.9821930],
-		['덕수궁', 37.5655638, 126.974894],
-	];
 	
+	// location테이블에서 x좌표, y좌표 가져옴
+	const xcordinate = document.getElementById("value_xcordinate").value;		// x좌표
+	const ycordinate = document.getElementById("value_ycordinate").value;		// y좌표
+	const o_id = document.getElementById("value_o_id").value;					// 매물번호
+	
+	let x_slice = xcordinate.slice(1, -1);
+	let x_array = x_slice.split(',');
+	
+	let y_slice = ycordinate.slice(1, -1);
+	let y_array = y_slice.split(',');
+	
+	let id_slice = o_id.slice(1, -1);
+	let id_array = id_slice.split(',');
+	
+	var locations = [];
+	
+	for(j = 0; j < x_array.length; j++) {
+		locations[j] = [];
+		for(k = 0; k < 2; k++) {
+			locations[j][0] = x_array[j];
+			locations[j][1] = y_array[j];
+			locations[j][2] = id_array[j];
+		}
+	}
 	
 	var i, marker;
 	
 	for(i = 0; i < locations.length; i++){
+	
 		marker = new google.maps.Marker({
-			position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+			position: new google.maps.LatLng(locations[i][0], locations[i][1]),
 			label: "1",
 			map: map,
 		});
 		
+		google.maps.event.addListener(marker, 'click', (function(marker, i) {
+			return function() { 
+				sendNumGet('./oIdInfo', locations[i][2]);
+			} 
+		})(marker, i));
+		
 	}
 	//console.log($('#map').html(marker.length));
+}
+
+// 마커 클릭시 get방식으로 매물번호 info에 넘겨주기
+function sendNumGet(url, o_id) {
+
+	var form = document.createElement('form');
+	form.setAttribute('method','get');
+	form.setAttribute('action', url);
+	document.charset = "utf-8";
+	
+	var hiddenField = document.createElement("input");
+	hiddenField.setAttribute('type','hidden');
+	hiddenField.setAttribute('name','o_id');
+	hiddenField.setAttribute('value',o_id);
+	form.appendChild(hiddenField);
+	
+	document.body.appendChild(form);
+	form.submit(); //전송하기
+	
 }
 
 // 현재위치 검색 시 에러 잡아주는 함수

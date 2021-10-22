@@ -10,12 +10,12 @@
 				<div class="explain_infoWrap">
 					<div class="explain_priceWrap">
 						<div class="explain_price">
-							<p class="name">월세</p>
-							<p class="value">300/49</p>
+							<p class="name">${explain_1.ok_code}</p>
+							<p class="value">${explain_1.ok_deposit}/${explain_1.ok_month_of_payment}</p>
 						</div>
 						<div class="explain_price">
-							<p class="name">전세</p>
-							<p class="value">1억3500</p>
+							<p class="name">${explain_2.ok_code}</p>
+							<p class="value">${explain_2.ok_deposit}</p>
 						</div>
 					</div>
 					
@@ -27,12 +27,12 @@
 				<div class="explain_infoWrap">
 					<div class="explain_priceWrap">
 						<div class="explain_price">
-							<p class="name">월세</p>
-							<p class="value">2000/63</p>
+							<p class="name">${explain_3.ok_code}</p>
+							<p class="value">${explain_3.ok_deposit}/${explain_3.ok_month_of_payment}</p>
 						</div>
 						<div class="explain_price">
-							<p class="name">전세</p>
-							<p class="value">2억4200</p>
+							<p class="name">${explain_4.ok_code}</p>
+							<p class="value">${explain_4.ok_deposit}</p>
 						</div>
 					</div>
 					<p class="description">※ 전용면적 60㎡(18평)이하</p>
@@ -42,8 +42,14 @@
 				<p class="title">오피스텔 평균 매물가</p>
 				<div class="explain_infoWrap">
 					<div class="explain_priceWrap">
-						<p class="name">월세 1000/10</p>
-						<p class="value">전세 1억4500</p>
+						<div class="explain_price">
+							<p class="name">${explain_5.ok_code}</p>
+							<p class="value">${explain_5.ok_deposit}/${explain_5.ok_month_of_payment}</p>
+						</div>
+						<div class="explain_price">
+							<p class="name">${explain_6.ok_code}</p>
+							<p class="value">${explain_6.ok_deposit}</p>
+						</div>
 					</div>
 					<p class="description">※ 전용면적 33㎡(10평)이하</p>
 				</div>

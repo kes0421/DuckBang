@@ -51,7 +51,7 @@
 				<!-- 위치 및 주변시설 -->
 				<jsp:include page="./elements/security.jsp"></jsp:include>
 			</div>
-			<div>
+			<div id="other_room">
 				<!-- 이 중개사무소의 다른방 -->
 				<jsp:include page="./elements/other.jsp"></jsp:include>
 			</div>

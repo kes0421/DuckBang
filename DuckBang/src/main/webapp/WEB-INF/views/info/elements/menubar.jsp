@@ -5,9 +5,9 @@
 	<h3># menubar.jsp</h3> -->
 		
 		<div class="menubar">
-		    <a class="menubar_content">가격정보</a>
-			<a class="menubar_content">옵션</a>
-			<a class="menubar_content">보안/안전시설</a>
-			<a class="menubar_content">이 중개사무소의 다른 방</a>
+		    <a href="#price_area" class="menubar_content">가격정보</a>
+			<a href="#option_area" class="menubar_content">옵션</a>
+			<a href="#security_area" class="menubar_content">보안/안전시설</a>
+			<a href="#other_room" class="menubar_content">이 중개사무소의 다른 방</a>
 		</div>
  

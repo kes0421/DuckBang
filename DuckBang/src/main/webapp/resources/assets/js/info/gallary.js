@@ -1,11 +1,10 @@
 
-function gallary_open() {
+function gallary_open(e) {
     document.querySelector(".gallary_popup").style.display ='flex';
     
-   // this.className.split(" ")[0]는 클릭한 클래스의 이름
-   // 클래스 이름div에 이미지 바꿔주기
    console.log(33);
-   var image_url = window.getComputedStyle(document.querySelector('.'+this.className.split(" ")[0]), ':after').backgroundImage;
+   var image_url = window.getComputedStyle(document.querySelector('.'+this.className.split(" ")[0])).backgroundImage;
+	console.log(image_url);
    document.querySelector('.gallary_popup_2').style.backgroundImage = image_url;
    
 }

@@ -14,10 +14,10 @@
                     <li class="footer_li"><a class="footer_a" href="./agree/3">매물관리규정</a></li>
                 </ul>
             </nav>
-            <form class="footer_form" action="" method="GET">
+            <form class="footer_form" action="./info" method="GET">
                 <label>
                     <p class="footer_search">매물번호 조회</p>
-                    <input class="footer_input" type="text" name="매물번호DB">
+                    <input class="footer_input" type="text" name="o_id">
                 </label>
                 <button type="submit" id="footer_search_btn" class="footer_button">
                     <span class="material-icons-outlined">

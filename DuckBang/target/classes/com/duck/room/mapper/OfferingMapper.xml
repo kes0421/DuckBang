@@ -2,12 +2,8 @@
 <!DOCTYPE mapper
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.duck.room.mapper.OfferingMapper">
-	<select id="getList" resultType="com.duck.room.dto.Offering">
-		SELECT * FROM offering
-	</select>
-	
- 	<select id="getRoomAvg" resultType="com.duck.room.dto.RoomAvg">
+<mapper namespace="com.duck.room.mapper.OfferingMapper">	
+ 	<select id="getRoomAvg" resultType="com.duck.room.dto.main.RoomAvg">
 		SELECT od_room_kind, ok_code, ROUND(AVG(ok_deposit)) AS ok_deposit, ROUND(AVG(ok_month_of_payment)) AS ok_month_of_payment
 		FROM offering_detail, offering_kind 
 		WHERE od_room_kind = #{od_room_kind} AND ok_code = #{ok_code}

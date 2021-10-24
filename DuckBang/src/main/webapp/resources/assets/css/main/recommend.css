@@ -34,17 +34,6 @@
 	margin-left: auto;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#recommend_moreRoom > a{
+	text-decoration: none;
+}

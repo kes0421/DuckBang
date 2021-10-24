@@ -18,6 +18,7 @@
 	line-height: 0.73;
 	width: 160px;
 	margin-top:10px;
+	cursor: pointer;
 }
 
 #header_area_top_menu > li:nth-child(3) {

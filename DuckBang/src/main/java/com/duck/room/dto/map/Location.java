@@ -1,4 +1,4 @@
-package com.duck.room.dto;
+package com.duck.room.dto.map;
 
 import lombok.Data;
 

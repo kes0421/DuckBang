@@ -2,31 +2,37 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/info/header.css" type="text/css" />
 <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-
 <div id="header_container">
 	<ul class="header_ul">
 		<li class="header_li">
 			<p class="header_p1"></p>
 			<div class="header_price">
-				<h1>전세 1억4000</h1>
+				<c:choose>
+					<c:when test="${InfoTop1.ok_code eq '월세'}">
+						<h1>${InfoTop1.ok_code} ${InfoTop1.ok_deposit}/${InfoTop1.ok_month_of_payment}</h1>
+					</c:when>
+					<c:otherwise>
+						<h1>${InfoTop1.ok_code} ${InfoTop1.ok_deposit}</h1>
+					</c:otherwise>
+				</c:choose>
 				<span>만원</span>
 			</div>
 		</li>
 		<li class="header_li">
 			<p class="header_width">전용면적</p>
 			<div class="header_width_2">
-				<h1 id="number" class="header_h1">23㎥</h1>
-				<button class="header_btn1"><span>평</span></button>
+				<h1 id="number" class="header_h1">${InfoTop1.od_private_area}㎡</h1>
+				<button id="areaBtn" class="header_btn1"><i class='bx bx-refresh'></i><span id="areaSpan">평</span></button>
 			</div>
 		</li>
 		<li class="header_li">
 			<p class="header_month">한달 예상 주거비</p>
-			<h1 class="header_h2"><span>3.5만원 + α</span></h1>
+			<h1 class="header_h2"><span>${InfoTop1.ok_maintenance_cost + InfoTop1.ok_parking_pee}만원 + α</span></h1>
 		</li>
 		<li class="header_li2">
 			<div>
-				<p class="header_p2">수지공인중개사사무소</p>
-				<p class="header_p3">강미경</p>
+				<p class="header_p2">${InfoTop2.r_business_name}</p>
+				<p class="header_p3">${InfoTop2.r_name}</p>
 			</div>
 			<button class="header_phone_btn"><span>연락처보기</span></button>
 			
@@ -40,19 +46,19 @@
 					<button class="header_popup_close_btn">x</button>
 					<div class="header_popup_2">
 						<div class="header_popup_2_1">
-							<h1>수지공인중개사사무소</h1>
-							<p>서울특별시 강서구 공항대로 227 201호(마곡동)</p>
+							<h1>${InfoTop2.r_business_name}</h1>
+							<p>${InfoTop2.r_address}</p>
 							<div class="header_popup_2_2">
 								<p>대표명</p>
-								<p>김미경</p>
+								<p>${InfoTop2.r_name}</p>
 							</div>
 							<div class="header_popup_2_2">
 								<p>중개등록번호</p>
-								<p>11500-2015-00011</p>
+								<p>${InfoTop2.r_business_license}</p>
 							</div>
 							<div class="header_popup_2_2">
 								<p>대표번호</p>
-								<p>02-6952-1470</p>
+								<p>${InfoTop2.r_business_phone}</p>
 								<a href="">중개소 정보 더보기</a>
 							</div>
 						</div>
@@ -108,5 +114,19 @@
 		</li>
 	</ul>	
 </div>
-
+<script>
+	var check = true;
+	
+	document.getElementById('areaBtn').addEventListener('click', () => {
+		if(check){
+			check = false;
+			document.getElementById('number').innerText = '${InfoTop1.od_private_area2}평';
+			document.getElementById('areaSpan').innerHTML = '㎡'
+		}else{
+			check = true;
+			document.getElementById('number').innerText = '${InfoTop1.od_private_area}㎡';
+			document.getElementById('areaSpan').innerHTML = '평'
+		}
+	});
+</script>
 <script type="text/javascript" src="${pageContext.request.contextPath }/resources/assets/js/info/header.js"></script>

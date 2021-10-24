@@ -7,7 +7,7 @@
 		<p class="info_a_1_1">
 			확인매물
 			<span>
-				21.10.03
+				${Info1.o_register_date}
 			</span>
 		</p>
 		<p class="info_a_1_2">
@@ -55,15 +55,15 @@
 	<ul class="info_a_2">
 		<li>
 			<p class="info_a_2_1">해당층/건물층</p>
-			<div class="info_a_2_2">11층 / 26층</div>
+			<div class="info_a_2_2">${Info1.od_apply_floor}층 / ${Info1.od_whole_floor}층</div>
 		</li>
 		<li>
 			<p class="info_a_2_1">전용/계약면적</p>
-			<div class="info_a_2_2">27.76m / 55.27</div>
+			<div class="info_a_2_2">${Info1.od_private_area}㎡ / ${Info1.od_supply_area}㎡</div>
 		</li>
 		<li>
 			<p class="info_a_2_1">방 수/욕실 수</p>
-			<div class="info_a_2_2">1개 / 1개</div>
+			<div class="info_a_2_2">${Info1.od_room_count}개 / ${Info1.od_bathroom_count}개</div>
 		</li>
 		<li>
 			<p class="info_a_2_1">방향</p>
@@ -71,7 +71,7 @@
 		</li>
 		<li>
 			<p class="info_a_2_1">난방종류</p>
-			<div class="info_a_2_2">개별난방</div>
+			<div class="info_a_2_2">${Info1.od_heating_kind}</div>
 		</li>
 		<li>
 			<p class="info_a_2_1">빌트인</p>
@@ -95,18 +95,18 @@
 		</li>
 		<li>
 			<p class="info_a_2_1">입주가능일</p>
-			<div class="info_a_2_2">즉시 입주(협의 가능)</div>
+			<div class="info_a_2_2">${Info1.od_occupy_date}</div>
 		</li>
 		<li>
 			<p class="info_a_2_1">주용도</p>
-			<div class="info_a_2_2">업무시설</div>
+			<div class="info_a_2_2">${Info1.od_construction_use}</div>
 		</li>
 		<li>
 			<p class="info_a_2_1">사용승인일</p>
-			<div class="info_a_2_2">2011.10.20</div>
+			<div class="info_a_2_2">${Info1.od_use_approval_date}</div>
 		</li>
 		<li>
-			<p class="info_a_2_1">최총 등록일</p>
+			<p class="info_a_2_1">최종 등록일</p>
 			<div class="info_a_2_2">2021.10.03</div>
 		</li>
 		<li>

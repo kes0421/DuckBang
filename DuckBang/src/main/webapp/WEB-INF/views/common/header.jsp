@@ -44,7 +44,7 @@
                             <a class=" ">방 내놓기(전월세만)</a><br>
                         </div>
                     </li>
-                    <li id="officetel">
+                    <li id="office">
                         <span>오피스텔</span><br>
                         <span id="header_area_small">도시형생활주택/전월세</span>
                         <div class="header_area_sub_menu">

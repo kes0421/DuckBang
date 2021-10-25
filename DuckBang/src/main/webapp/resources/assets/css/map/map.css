@@ -1,7 +1,12 @@
 @charset "UTF-8";
+
+#mapContainer {
+	width: 80%;
+}
+
 #map {
   height: 75%;
-  width: 100%;
+  width: 132%;
 }
 
 /* Optional: Makes the sample page fill the window. */

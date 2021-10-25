@@ -26,36 +26,36 @@ public class MapController {
 	public String mapMarkers(Model model) {
 		
 		ArrayList<Integer> o_id = new ArrayList<>();
-		ArrayList<Float> xcordinate = new ArrayList<>();
-		ArrayList<Float> ycordinate = new ArrayList<>();
-		ArrayList<String> ok_code = new ArrayList<>();
-		ArrayList<Integer> ok_deposit = new ArrayList<>();
-		ArrayList<Integer> ok_maintenance_cost = new ArrayList<>();
-		ArrayList<Integer> ok_month_of_payment = new ArrayList<>();
-		ArrayList<String> od_short_lease = new ArrayList<>();
-		ArrayList<Date> od_occupy_date = new ArrayList<>();
+		ArrayList<String> xcordinate = new ArrayList<>();
+		ArrayList<String> ycordinate = new ArrayList<>();
+//		ArrayList<String> ok_code = new ArrayList<>();
+//		ArrayList<Integer> ok_deposit = new ArrayList<>();
+//		ArrayList<Integer> ok_maintenance_cost = new ArrayList<>();
+//		ArrayList<Integer> ok_month_of_payment = new ArrayList<>();
+//		ArrayList<String> od_short_lease = new ArrayList<>();
+//		ArrayList<Date> od_occupy_date = new ArrayList<>();
 		
-		for(int i = 0; i < mapMapper.getMapList().size(); ++i) {
-			o_id.add(mapMapper.getMapList().get(i).getO_id());
-			xcordinate.add(mapMapper.getMapList().get(i).getL_xcordinate());
-			ycordinate.add(mapMapper.getMapList().get(i).getL_ycordinate());
-			ok_code.add(mapMapper.getMapList().get(i).getOk_code());
-			ok_deposit.add(mapMapper.getMapList().get(i).getOk_deposit());
-			ok_maintenance_cost.add(mapMapper.getMapList().get(i).getOk_maintenance_cost());
-			ok_month_of_payment.add(mapMapper.getMapList().get(i).getOk_month_of_payment());
-			od_short_lease.add(mapMapper.getMapList().get(i).getOd_short_lease());
-			od_occupy_date.add(mapMapper.getMapList().get(i).getOd_occupy_date());
+		for(int i = 0; i < mapMapper.getList().size(); ++i) {
+			o_id.add(mapMapper.getList().get(i).getO_id());
+			xcordinate.add(mapMapper.getList().get(i).getL_xcordinate());
+			ycordinate.add(mapMapper.getList().get(i).getL_ycordinate());
+//			ok_code.add(mapMapper.getMapList().get(i).getOk_code());
+//			ok_deposit.add(mapMapper.getMapList().get(i).getOk_deposit());
+//			ok_maintenance_cost.add(mapMapper.getMapList().get(i).getOk_maintenance_cost());
+//			ok_month_of_payment.add(mapMapper.getMapList().get(i).getOk_month_of_payment());
+//			od_short_lease.add(mapMapper.getMapList().get(i).getOd_short_lease());
+//			od_occupy_date.add(mapMapper.getMapList().get(i).getOd_occupy_date());
 		}
 		
 		model.addAttribute("o_id", o_id);
 		model.addAttribute("xcordinate", xcordinate);
 		model.addAttribute("ycordinate", ycordinate);
-		model.addAttribute("ok_code", ok_code);
-		model.addAttribute("ok_deposit", ok_deposit);
-		model.addAttribute("ok_maintenance_cost", ok_maintenance_cost);
-		model.addAttribute("ok_month_of_payment", ok_month_of_payment);
-		model.addAttribute("od_short_lease", od_short_lease);
-		model.addAttribute("od_occupy_date", od_occupy_date);
+//		model.addAttribute("ok_code", ok_code);
+//		model.addAttribute("ok_deposit", ok_deposit);
+//		model.addAttribute("ok_maintenance_cost", ok_maintenance_cost);
+//		model.addAttribute("ok_month_of_payment", ok_month_of_payment);
+//		model.addAttribute("od_short_lease", od_short_lease);
+//		model.addAttribute("od_occupy_date", od_occupy_date);
 		
 		return "map/index";
 	}

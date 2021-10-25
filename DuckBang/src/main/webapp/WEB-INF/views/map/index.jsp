@@ -15,12 +15,7 @@
 		<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
 	</div>
 	<div id="mapMainContainer">
-		<div id="mapContainer">
-			<jsp:include page="./elements/map.jsp"></jsp:include>
-		</div>
-		<div id="listContainer">
-			<jsp:include page="./elements/list.jsp"></jsp:include>
-		</div>
+		<jsp:include page="./elements/map.jsp"></jsp:include>
 	</div>
 </div>
 </body>

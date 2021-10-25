@@ -6,10 +6,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.duck.room.mapper.InfoMapper;
 import com.duck.room.mapper.OfferingMapper;
+import com.duck.room.mapper.UsersMapper;
 
 @Controller
 public class HomeController {
@@ -21,6 +23,9 @@ public class HomeController {
 	
 	@Autowired
 	InfoMapper im;
+	
+	@Autowired
+	UsersMapper um;
 	
 	@RequestMapping("/main")
 	public String main(Model model) { 
@@ -70,7 +75,9 @@ public class HomeController {
 		return "/agree/3";
 	}
 	@RequestMapping("/login")
-	public String login() {
+	public String login(Model model) {
+		model.addAttribute("user", um.getUser());
+		
 		return "/login/login";
 	}
 	

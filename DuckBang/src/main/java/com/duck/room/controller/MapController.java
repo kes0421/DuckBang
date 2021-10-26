@@ -52,7 +52,7 @@ public class MapController {
 		model.addAttribute("xcordinate", xcordinate);
 		model.addAttribute("ycordinate", ycordinate);
 		model.addAttribute("room_kind", room_kind_kor);
-		
+		model.addAttribute("check", "get");
 		model.addAttribute("summaryLists", mapMapper.getSummaryList(room_kind_kor));
 		
 		return "map/index";
@@ -93,6 +93,7 @@ public class MapController {
 		model.addAttribute("room_kind", room_kind_kor);
 		model.addAttribute("lat", lat);
 		model.addAttribute("lng", lng);
+		model.addAttribute("check", "post");
 		model.addAttribute("summaryLists", mapMapper.getSummaryList(room_kind_kor));
 		
 		return "map/index";

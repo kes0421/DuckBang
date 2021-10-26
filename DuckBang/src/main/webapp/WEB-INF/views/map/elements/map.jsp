@@ -14,9 +14,7 @@
 	    	<input id="pac-input" class="controls" type="text" placeholder="지역, 지하철역, 학교 검색"/>
 	    	<input id="value_o_id" type="hidden" value="${o_id }"/>
 	    	<input id="value_xcordinate" type="hidden" value="${xcordinate }"/>
-	    	<input id="value_ycordinate" type="hidden" value="${ycordinate }"/>
-	    	<input id="value_lng" type="hidden" value=${lng }>
-	    	<input id="value_lat" type="hidden" value=${lat }>
+	    	<input id="value_ycordinate" type="hidden" value="${ycordinate }"/>	    
 	    	<div class="map_btn_div">
 	    		<button id="map_btn"></button>
 	    	</div>
@@ -155,20 +153,39 @@
 		var infoWindow;
 
 		function initMap() {
-			
-		   const map = new google.maps.Map(document.getElementById("map"), {
-		      center: {
-		         lat: 37.566826,
-		         lng: 126.9786567
-		      },
-		      zoom: 18,
-		      mapTypeControl: false,
-		      fullscreenControl: false,
-		      mapTypeId: "roadmap",
-		      options: {
-		         gestureHandling: 'greedy'
-		      }
-		   });
+		<c:choose>
+			<c:when test="${check eq 'get' || lat eq 'undefined'}">
+			  const map = new google.maps.Map(document.getElementById("map"), {
+			      center: {
+			         lat: 37.566826,
+			         lng: 126.9786567
+			      },
+			      zoom: 18,
+			      mapTypeControl: false,
+			      fullscreenControl: false,
+			      mapTypeId: "roadmap",
+			      options: {
+			         gestureHandling: 'greedy'
+			      }
+			   });
+			</c:when>
+			<c:otherwise>
+			  const map = new google.maps.Map(document.getElementById("map"), {
+			      center: {
+			         lat: ${lat},
+			         lng: ${lng}
+			      },
+			      zoom: 18,
+			      mapTypeControl: false,
+			      fullscreenControl: false,
+			      mapTypeId: "roadmap",
+			      options: {
+			         gestureHandling: 'greedy'
+			      }
+			   });
+			</c:otherwise>
+		</c:choose>
+		   
 		   
 		   // Create the search box and link it to the UI element.
 		   const input = document.getElementById("pac-input");

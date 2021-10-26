@@ -21,7 +21,7 @@ public class MainController {
 	@Autowired
 	InfoMapper im;
 	
-	@Autowired
+	@Autowired 
 	MainMapper mm;
 	
 	@RequestMapping("/main")

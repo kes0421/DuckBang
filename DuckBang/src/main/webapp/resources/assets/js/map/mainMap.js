@@ -1,7 +1,6 @@
 
 var cityCircle;
 var infoWindow;
-//var o_ids = [];  // 현재 위치에서 보이는 마커들의 매물번호 배열
 
 function initMap() {
    const map = new google.maps.Map(document.getElementById("map"), {
@@ -301,4 +300,3 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
    );
    infoWindow.open(map);
 }
-

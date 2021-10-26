@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.duck.room.mapper.InfoMapper;
 import com.duck.room.mapper.MapMapper;
@@ -52,6 +53,46 @@ public class MapController {
 		model.addAttribute("ycordinate", ycordinate);
 		model.addAttribute("room_kind", room_kind_kor);
 		
+		model.addAttribute("summaryLists", mapMapper.getSummaryList(room_kind_kor));
+		
+		return "map/index";
+	}
+	
+	@PostMapping("/map")
+	public String mapMarker(Model model, HttpServletRequest request) {
+		String room_kind = request.getParameter("check"); 
+		String lat = request.getParameter("lat");
+		String lng = request.getParameter("lng");
+		String room_kind_kor = "";
+		
+		if(room_kind.equals("1")) {
+			room_kind_kor = "아파트";
+		} else if(room_kind.equals("2")) {
+			room_kind_kor = "투룸";
+		} else if(room_kind.equals("3")) {
+			room_kind_kor = "원룸";
+		} else if(room_kind.equals("4")) {
+			room_kind_kor = "오피스텔";
+		}
+		System.out.println("room_kind : " + room_kind_kor);
+		System.out.println("lat : " + lat);
+		System.out.println("lng : " + lng);
+		ArrayList<Integer> o_id = new ArrayList<>();
+		ArrayList<String> xcordinate = new ArrayList<>();
+		ArrayList<String> ycordinate = new ArrayList<>();
+		
+		for(int i = 0; i < mapMapper.getList(room_kind_kor).size(); ++i) {
+			o_id.add(mapMapper.getList(room_kind_kor).get(i).getO_id());
+			xcordinate.add(mapMapper.getList(room_kind_kor).get(i).getL_xcordinate());
+			ycordinate.add(mapMapper.getList(room_kind_kor).get(i).getL_ycordinate());
+		}
+		
+		model.addAttribute("o_id", o_id);
+		model.addAttribute("xcordinate", xcordinate);
+		model.addAttribute("ycordinate", ycordinate);
+		model.addAttribute("room_kind", room_kind_kor);
+		model.addAttribute("lat", lat);
+		model.addAttribute("lng", lng);
 		model.addAttribute("summaryLists", mapMapper.getSummaryList(room_kind_kor));
 		
 		return "map/index";

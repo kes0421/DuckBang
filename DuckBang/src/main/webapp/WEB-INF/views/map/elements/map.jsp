@@ -30,8 +30,7 @@
 				
 				</div>
 				<div id="list_unit_box">
-					<div class = "list_unit_btn">
-					</div>
+					<button id="bbtn" class = "list_unit_btn"></button>
 				</div>
 			</div>
 			
@@ -50,104 +49,153 @@
       async
     ></script>
 
-	
+	<script src="${pageContext.request.contextPath }/resources/assets/js/map/list.js"></script>
 	<script>
 		//console.log(typeof ${summaryLists.size()});
 		//console.log(${summaryLists.get(0).getImage_1()});
 		
 		const list_room_infos = document.getElementById('list_room_infos');
-		var list_info_a;
-		var list_class_info;
-		var list_room_image_div;
-		var list_room_image;
-		var room_info;
-		var list_room_reco_sort;
-		var list_room_recommend;
-		var list_room_sort;
-		var list_room_type;
-		var list_room_size;
-		var list_room_area;
-		var list_room_one_line;
-		var no_list_info;
-		
-		var o_ids = [];
-		
-		function getLists() {
-			
-			//console.log('o_idLst : ' + o_ids)
-			
-			list_room_infos.innerHTML = '';
-			
-			for(let i = 0; i < o_ids.length; ++i) {
-				
-				<c:forEach items="${summaryLists}" var="list">
-				
-				if(o_ids[i] == ' ${list.getO_id()}'){
-					
-					console.log('o_ids[i] : ' + o_ids[i]);
-					list_info_a = document.createElement('a');		
-					list_class_info = document.createElement('div');
-					list_room_image_div = document.createElement('div');
-					list_room_image = document.createElement('img');
-					room_info = document.createElement('div');
-					list_room_reco_sort = document.createElement('div');
-					list_room_recommend = document.createElement('div');
-					list_room_sort = document.createElement('div');
-					list_room_type = document.createElement('div');
-					list_room_size = document.createElement('div');
-					list_room_area = document.createElement('div');
-					list_room_one_line = document.createElement('div');
-					
-					list_info_a.setAttribute('class', 'list_info_a');
-					list_class_info.setAttribute('class', 'list_class_info');
-					list_room_image_div.setAttribute('class', 'list_room_image_div');
-					list_room_image.setAttribute('class', 'list_room_image');
-					room_info.setAttribute('class', 'room_info');
-					list_room_reco_sort.setAttribute('class', 'list_room_reco_sort');
-					list_room_recommend.setAttribute('class', 'list_room_recommend');
-					list_room_sort.setAttribute('class', 'list_room_sort');
-					list_room_type.setAttribute('class', 'list_room_type');
-					list_room_size.setAttribute('class', 'list_room_size');
-					list_room_area.setAttribute('class', 'list_room_area');
-					list_room_one_line.setAttribute('class', 'list_room_one_line');
-					
-					list_info_a.setAttribute('href', './info?o_id=${list.getO_id()}');
-					
-					list_room_image.setAttribute('src', '${list.getImage_1()}');
-					list_room_image_div.appendChild(list_room_image);
-					
-					list_room_recommend.innerText = '추천';
-					list_room_sort.innerText = '${list.getOd_room_kind()}';
-					list_room_reco_sort.appendChild(list_room_recommend);
-					list_room_reco_sort.appendChild(list_room_sort);
-					room_info.appendChild(list_room_reco_sort);
-					
-					list_room_type.innerText = '${list.getOk_code()}' + '  ' + '${list.getOk_deposit()}';
-					list_room_size.innerText = '${list.getOd_private_area()}' + '  ' + '${list.getOd_apply_floor()}';
-					list_room_area.innerText = '${list.getOk_month_of_payment()}';
-					list_room_one_line.innerText = '${list.getOd_short_lease()}';
-					
-					room_info.appendChild(list_room_type);
-					room_info.appendChild(list_room_size);
-					room_info.appendChild(list_room_area);
-					room_info.appendChild(list_room_one_line);
-					
-					list_class_info.appendChild(list_room_image_div);
-					list_class_info.appendChild(room_info);
-					list_info_a.appendChild(list_class_info);
-					list_room_infos.appendChild(list_info_a);
-				} else if(o_ids.legth == 0) {
-					// 검색결과가 없습니다. div 만들기
-					no_list_info = document.createElement('div');
-					no_list_info.setAttribute('class', 'no_list_info');
-					no_list_info.innerHTML = '<h3>검색 결과가 없습니다.</h3>';
-					
-					list_room_infos.appendChild(no_list_info);
-				}
-			</c:forEach>
-			
-			}
-		}
+      
+      var list_info_a;
+      var list_class_info;
+      var list_room_image_div;
+      var list_room_image;
+      var room_info;
+      var list_room_reco_sort;
+      var list_room_recommend;
+      var list_room_sort;
+      var list_room_type;
+      var list_room_size;
+      var list_room_occupy_date;
+      var list_room_area;
+      var list_room_lease;
+      var no_list_info;
+      var no_list_image_div;
+      var no_list_image;
+      var no_list_text1;
+      var no_list_text2;
+      
+      var o_ids = [];
+
+      function getLists() {
+         const list_info_a_class = document.getElementsByClassName('list_info_a');
+         
+         //console.log('o_idLst : ' + o_ids)
+         list_room_infos.innerHTML = '';
+         list_count.innerText = '지역 목록 0개';
+         
+         if(o_ids.length == 0) {
+            // 검색결과가 없습니다. div 만들기
+            no_list_info = document.createElement('div');
+            no_list_image_div = document.createElement('div');
+            no_list_image = document.createElement('div');
+            no_list_text1 = document.createElement('div');
+            no_list_text2 = document.createElement('div');
+            
+            no_list_info.setAttribute('class', 'no_list_info');
+            no_list_image_div.setAttribute('class', 'no_list_image_div');
+            no_list_image.setAttribute('class', 'no_list_image');
+            no_list_text1.setAttribute('class', 'no_list_text1');
+            no_list_text2.setAttribute('class', 'no_list_text2');
+            
+            no_list_text1.innerText = '검색조건에 맞는 매물이 없습니다.';
+            no_list_text2.innerText = '위치를 변경해보세요';
+            
+            //list_info_a_class.style.overflowY = 'hidden';
+            
+            no_list_image_div.appendChild(no_list_image);
+            
+            no_list_info.appendChild(no_list_image_div);
+            no_list_info.appendChild(no_list_text1);
+            no_list_info.appendChild(no_list_text2);
+            
+            list_room_infos.appendChild(no_list_info);
+         }
+         
+         for(let i = 0; i < o_ids.length; ++i) {
+            
+            <c:forEach items="${summaryLists}" var="list">
+
+            var dateFormat = new Date('${list.getOd_occupy_date()}');
+            var deposit = '${list.getOk_deposit()}';
+            var depositRest = parseInt(deposit / 10000);
+
+            if(o_ids[i] == ' ${list.getO_id()}'){
+               
+               //console.log('o_ids[i] : ' + o_ids[i]);
+               
+               list_info_a = document.createElement('a');      
+               list_class_info = document.createElement('div');
+               list_room_image_div = document.createElement('div');
+               list_room_image = document.createElement('img');
+               room_info = document.createElement('div');
+               list_room_reco_sort = document.createElement('div');
+               list_room_recommend = document.createElement('div');
+               list_room_sort = document.createElement('div');
+               list_room_type = document.createElement('div');
+               list_room_size = document.createElement('div');
+               list_room_occupy_date = document.createElement('div');
+               list_room_area = document.createElement('div');
+               list_room_lease = document.createElement('div');
+               
+               list_info_a.setAttribute('class', 'list_info_a');
+               list_class_info.setAttribute('class', 'list_class_info');
+               list_room_image_div.setAttribute('class', 'list_room_image_div');
+               list_room_image.setAttribute('class', 'list_room_image');
+               room_info.setAttribute('class', 'room_info');
+               list_room_reco_sort.setAttribute('class', 'list_room_reco_sort');
+               list_room_recommend.setAttribute('class', 'list_room_recommend');
+               list_room_sort.setAttribute('class', 'list_room_sort');
+               list_room_type.setAttribute('class', 'list_room_type');
+               list_room_size.setAttribute('class', 'list_room_size');
+               list_room_occupy_date.setAttribute('class', 'list_room_occupy_date');
+               list_room_area.setAttribute('class', 'list_room_area');
+               list_room_lease.setAttribute('class', 'list_room_lease');
+               
+               list_info_a.setAttribute('href', './info?o_id=${list.getO_id()}');
+               
+               list_room_image.setAttribute('src', '${list.getImage_1()}');
+               list_room_image_div.appendChild(list_room_image);
+               list_room_recommend.innerText = '추천';
+               list_room_sort.innerText = '${list.getOd_room_kind()}';
+               list_room_reco_sort.appendChild(list_room_recommend);
+               list_room_reco_sort.appendChild(list_room_sort);
+               room_info.appendChild(list_room_reco_sort);
+               
+               if(depositRest !== 0){
+                  deposit = depositRest +'억 ' + (deposit % 10000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");;
+               }else {
+                  deposit = deposit.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+               }
+               console.log(depositRest);
+               
+               if('${list.getOk_code()}' == '월세'){
+                  list_room_type.innerText = '${list.getOk_code()}' + '  ' + deposit +'/' + '${list.getOk_month_of_payment()}';
+               }else {
+                  list_room_type.innerText = '${list.getOk_code()}' + '  ' + deposit;
+               }
+               
+               list_room_size.innerText = '${list.getOd_private_area()}m²   ${list.getOd_apply_floor()}층';
+               list_room_occupy_date.innerText = '입주 날짜: ' + dateFormat.toLocaleDateString();
+               list_room_lease.innerHTML = '단기임대 여부: ' + '<b>${list.getOd_short_lease()}</b>';
+               
+               room_info.appendChild(list_room_type);
+               room_info.appendChild(list_room_size);
+               room_info.appendChild(list_room_occupy_date);
+               room_info.appendChild(list_room_area);
+               room_info.appendChild(list_room_lease);
+               
+               list_class_info.appendChild(list_room_image_div);
+               list_class_info.appendChild(room_info);
+               list_info_a.appendChild(list_class_info);
+               list_room_infos.appendChild(list_info_a);
+            }
+            
+         </c:forEach>
+         list_count.innerText = '지역 목록 ' + list_info_a_class.length + '개';
+         }
+         
+      }
 
 		var cityCircle;
 		var infoWindow;

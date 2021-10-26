@@ -15,6 +15,5 @@ public interface MapMapper {
 	
 	// 지도 옆에 띄워줄 정보 가져오기
 	public List<SummaryOffering> getSummaryList(@Param("room_kind") String room_kind);
-	
-	public List<MarkerDetails> getMapList();
+
 }

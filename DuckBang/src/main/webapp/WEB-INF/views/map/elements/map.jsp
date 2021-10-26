@@ -155,7 +155,7 @@
 		var infoWindow;
 
 		function initMap() {
-			if(${})
+			
 		   const map = new google.maps.Map(document.getElementById("map"), {
 		      center: {
 		         lat: 37.566826,

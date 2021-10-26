@@ -9,6 +9,7 @@ public class SummaryOffering {
 
 	private Integer o_id;
 	private String od_room_kind;
+	private Integer od_private_area2;
 	private Float od_private_area;
 	private Integer od_apply_floor;
 	private Date od_occupy_date;

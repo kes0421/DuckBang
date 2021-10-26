@@ -12,7 +12,7 @@
 	</select>
 	
 	<select id="getSummaryList" resultType="com.duck.room.dto.map.SummaryOffering">
-		select od.o_id, od_room_kind, od_private_area, od_apply_floor, od_occupy_date, ok_code, ok_deposit, ok_month_of_payment, od_short_lease, image_1
+		select od.o_id, od_room_kind, od_private_area2, od_private_area, od_apply_floor, od_occupy_date, ok_code, ok_deposit, ok_month_of_payment, od_short_lease, image_1
 		from offering_detail od
 		inner join offering_kind ok
 		on od.o_id = ok.o_id

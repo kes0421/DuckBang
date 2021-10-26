@@ -70,6 +70,7 @@
 		var list_room_size;
 		var list_room_area;
 		var list_room_one_line;
+		var no_list_info;
 		
 		var o_ids = [];
 		
@@ -139,16 +140,17 @@
 					list_room_infos.appendChild(list_info_a);
 				} else if(o_ids.legth == 0) {
 					// 검색결과가 없습니다. div 만들기
+					no_list_info = document.createElement('div');
+					no_list_info.setAttribute('class', 'no_list_info');
+					no_list_info.innerHTML = '<h3>검색 결과가 없습니다.</h3>';
+					
+					list_room_infos.appendChild(no_list_info);
 				}
-			
 			</c:forEach>
-				
-			}			
 			
-			
+			}
 		}
 		
 	</script>
-	
-  </body>
+	</body>
 </html>

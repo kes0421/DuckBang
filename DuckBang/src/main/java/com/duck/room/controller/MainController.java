@@ -27,7 +27,7 @@ public class MainController {
 	@RequestMapping("/main")
 	public String main(Model model) { 
 		model.addAttribute("explain_1", om.getRoomAvg("원룸", "월세"));
-		model.addAttribute("explain_2", om.getRoomAvg("원룸", "전세"));
+		model.addAttribute("explain_2", om.getRoomAvg("원룸", "전세")); 
 		model.addAttribute("explain_3", om.getRoomAvg("투룸", "월세"));
 		model.addAttribute("explain_4", om.getRoomAvg("투룸", "전세"));
 		model.addAttribute("explain_5", om.getRoomAvg("오피스텔", "월세"));

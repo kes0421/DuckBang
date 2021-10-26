@@ -2,119 +2,141 @@
 @charset "UTF-8";
 
 #header_area {
-	height:90px;
-	border-bottom: 1px solid rgb(221, 221, 221);
+   height:90px;
+   border-bottom: 1px solid rgb(221, 221, 221);
 }
 
 #header_area_small {
-	font-size: 11px;
+   font-size: 11px;
+}
+
+#oneroom > #header_area_small{
+	margin-left: 3px;
 }
 
 #header_area_top_menu > li {
-	display: block;
-	float: left;
-	font-size:20px;
-	font-weight:800 ;
-	line-height: 0.73;
-	width: 160px;
-	margin-top:10px;
-	cursor: pointer;
+   display: block;
+   float: left;
+   font-size:20px;
+   font-weight:800;
+   line-height: 0.73;
+   width: 160px;
+   margin-top:10px;
+   cursor: pointer;
+}
+
+#office{
+	margin-left: 20px;
 }
 
 #header_area_top_menu > li:nth-child(3) {
-	width:70px;
+   width:70px;
 }
 
 
 #header_area_top_menu > li:hover {
-	/*color: orange;*/
-	color:rgb(255, 166, 0);
-	/*background-color: red;*/
+   /*color: orange;*/
+   color:rgb(255, 166, 0);
+   /*background-color: red;*/
 }
 
 #header_area > span {
-	color:black;
-	font-size: 50px;
+   color:black;
+   font-size: 50px;
 }
 
 #header_area > #navi_flex {
-	display:flex;
+   display:flex;
 }
 
 
 #header_area_logo {
-	background: url("../../img/happy.png") no-repeat; 
-	background-size:100%;
-	width:130px;
-	height:90px;
-	color: yellow;
-	z-index:1; 
-	margin-left:15px;
-	margin-right:30px;
+   background: url("../../img/happy.png") no-repeat; 
+   background-size:100%;
+   width:130px;
+   height:90px;
+   color: yellow;
+   z-index:1; 
+   margin-left:15px;
+   margin-right:30px;
 }
 
 /* #logo:hover {
-	color: red;
+   color: red;
 } */
 
 .header_area_sub_menu {
-	visibility: hidden;
-	/*border: 1px solid red;*/
-	font-size: 10px;
+   visibility: hidden;
+   /*border: 1px solid red;*/
+   font-size: 10px;
 }
 
 #header_area_my_div {
-	background: green;
-	width: 100px;
+   background: green;
+   width: 100px;
 }
 
 #navi_flex > #login_area {
-	align: right;
-	
+   align: right;
+   
 }
 
 #navi_flex > #login_area > #login {
-	color:red;
-	border:solid 1px black;
+   color:red;
+   border:solid 1px black;
 }
 
 #login_area { 
-	/*
-	border: 1px solid black;
-	*/
-	margin-left: auto;
+   /*
+   border: 1px solid black;
+   */
+   margin-left: auto;
 }
 
 #login_area > .login_btn {
-	vertical-align: middle;	
-	border-radius:7px;
-	margin-top:24px;
-	margin-right:20px;
-	height:35px;
-	
+   /*vertical-align: middle;   
+   border-radius:7px;
+   margin-top:24px;
+   margin-right:20px;
+   height:35px;*/
+   margin-top: 30px;
+   min-width: 106px;
+   height: 30px;
+   border-radius: 4px;
+   background-color: rgb(238, 238, 238);
+   padding: 5px 8px 6px;
+   display: inline-block;
+   font-size: 12px;
+   color: rgb(34, 34, 34);
+   position: relative;
+   text-align: center;
+   box-sizing: border-box;
+   border: 1px solid rgb(225, 225, 225);
+   background: transparent;
+   outline: none;
+   cursor: pointer !important;
+   font-family: "SpoqaHanSans";
 }
-	
+   
 
 #seller_join {
-	
-	padding-left:10px;
-	padding-right:10px;
+   
+   padding-left:10px;
+   padding-right:10px;
 }
 
 #seller_join:hover {
-	background-color: #e2e2e2;
-	color:green;
+   background-color: #e2e2e2;
+   color:green;
 }
 
 #seller_join_inner {
-	margin-top: 23px;
-    margin-right: 8px;
-    font-weight: 800;
-    color: #1467e5;
-    font-size: 16px;
-    text-align: right;
-    line-height: 20px;
+   margin-top: 23px;
+   margin-right: 8px;
+   font-weight: 800;
+   color: #1467e5;
+   font-size: 16px;
+   text-align: right;
+   line-height: 20px;
+   cursor: pointer;
 }
-	
-	
-	

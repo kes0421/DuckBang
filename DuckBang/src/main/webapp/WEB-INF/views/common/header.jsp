@@ -78,11 +78,11 @@
 			if(e.getAttribute('id') == 'apart'){
 				headerInput.value = 'apart';	
 			}else if(e.getAttribute('id') == 'tworoom'){
-				headerInput.value = 'towroom';
+				headerInput.value = 'tworoom';
 			}else if(e.getAttribute('id') == 'oneroom'){
 				headerInput.value = 'oneroom';
-			}else if(e.getAttribute('id') == 'officetel'){
-				headerInput.value = 'officetel';
+			}else if(e.getAttribute('id') == 'office'){
+				headerInput.value = 'office';
 			}
 			headerForm.action = './map';
 			headerForm.method = 'GET';

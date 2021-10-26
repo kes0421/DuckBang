@@ -1,9 +1,9 @@
-const room_info = document.getElementsByClassName('list_room_info');
+const room_info_class = document.getElementsByClassName('list_room_info');
 const list_count = document.getElementById('list_count');
 
-list_count.innerText = '지역 목록 ' + room_info.length + '개';
+list_count.innerText = '지역 목록 ' + room_info_class.length + '개';
 
-var totalData = room_info.length;	// 총 데이터 수
+var totalData = room_info_class.length;	// 총 데이터 수
 var dataPerPage = 20;				// 한 페이지에 나타낼 데이터 수
 var pageCount = 5;					// 한 화면에 나타낼 페이지 수
 

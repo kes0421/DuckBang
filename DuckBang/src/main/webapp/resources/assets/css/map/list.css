@@ -12,10 +12,11 @@ background-color: rgb(221, 221, 221);
 
 #listContainer {
 	visibility: hidden;
+	width: 23%;
 }
 
 #list_room_infos {
-	height:750px;
+	height:567px;
 	overflow: auto;
 	border: 1px solid gray;
     padding-left: 10px;
@@ -37,6 +38,16 @@ background-color: rgb(221, 221, 221);
 
 #list_unit_box {
 	margin-left: 13px;
+}
+
+.list_info_a {
+	text-decoration: none;
+	color: black;
+}
+
+.list_class_info {
+	display: flex;
+	margin-top: 10px;
 }
 
 .list_unit_btn{

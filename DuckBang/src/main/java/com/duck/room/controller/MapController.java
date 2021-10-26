@@ -23,39 +23,36 @@ public class MapController {
 	InfoMapper im;
 	
 	@GetMapping("/map")
-	public String mapMarkers(Model model) {
+	public String mapMarkers(Model model, String room_kind) {
+		
+		String room_kind_kor = "";
+		
+		if(room_kind.equals("apart")) {
+			room_kind_kor = "아파트";
+		} else if(room_kind.equals("tworoom")) {
+			room_kind_kor = "투룸";
+		} else if(room_kind.equals("oneroom")) {
+			room_kind_kor = "원룸";
+		} else if(room_kind.equals("office")) {
+			room_kind_kor = "오피스텔";
+		}
 		
 		ArrayList<Integer> o_id = new ArrayList<>();
 		ArrayList<String> xcordinate = new ArrayList<>();
 		ArrayList<String> ycordinate = new ArrayList<>();
-//		ArrayList<String> ok_code = new ArrayList<>();
-//		ArrayList<Integer> ok_deposit = new ArrayList<>();
-//		ArrayList<Integer> ok_maintenance_cost = new ArrayList<>();
-//		ArrayList<Integer> ok_month_of_payment = new ArrayList<>();
-//		ArrayList<String> od_short_lease = new ArrayList<>();
-//		ArrayList<Date> od_occupy_date = new ArrayList<>();
 		
-		for(int i = 0; i < mapMapper.getList().size(); ++i) {
-			o_id.add(mapMapper.getList().get(i).getO_id());
-			xcordinate.add(mapMapper.getList().get(i).getL_xcordinate());
-			ycordinate.add(mapMapper.getList().get(i).getL_ycordinate());
-//			ok_code.add(mapMapper.getMapList().get(i).getOk_code());
-//			ok_deposit.add(mapMapper.getMapList().get(i).getOk_deposit());
-//			ok_maintenance_cost.add(mapMapper.getMapList().get(i).getOk_maintenance_cost());
-//			ok_month_of_payment.add(mapMapper.getMapList().get(i).getOk_month_of_payment());
-//			od_short_lease.add(mapMapper.getMapList().get(i).getOd_short_lease());
-//			od_occupy_date.add(mapMapper.getMapList().get(i).getOd_occupy_date());
+		for(int i = 0; i < mapMapper.getList(room_kind_kor).size(); ++i) {
+			o_id.add(mapMapper.getList(room_kind_kor).get(i).getO_id());
+			xcordinate.add(mapMapper.getList(room_kind_kor).get(i).getL_xcordinate());
+			ycordinate.add(mapMapper.getList(room_kind_kor).get(i).getL_ycordinate());
 		}
 		
 		model.addAttribute("o_id", o_id);
 		model.addAttribute("xcordinate", xcordinate);
 		model.addAttribute("ycordinate", ycordinate);
-//		model.addAttribute("ok_code", ok_code);
-//		model.addAttribute("ok_deposit", ok_deposit);
-//		model.addAttribute("ok_maintenance_cost", ok_maintenance_cost);
-//		model.addAttribute("ok_month_of_payment", ok_month_of_payment);
-//		model.addAttribute("od_short_lease", od_short_lease);
-//		model.addAttribute("od_occupy_date", od_occupy_date);
+		model.addAttribute("room_kind", room_kind_kor);
+		
+		model.addAttribute("summaryLists", mapMapper.getSummaryList(room_kind_kor));
 		
 		return "map/index";
 	}

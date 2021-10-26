@@ -1,7 +1,7 @@
 
 var cityCircle;
 var infoWindow;
-var o_ids = [];  // 현재 위치에서 보이는 마커들의 매물번호 배열
+//var o_ids = [];  // 현재 위치에서 보이는 마커들의 매물번호 배열
 
 function initMap() {
    const map = new google.maps.Map(document.getElementById("map"), {
@@ -221,6 +221,7 @@ function makeMarkers(map) {
          }
       }
       console.log("o_ids: " + o_ids);
+      getLists();
 
    });
    
@@ -242,8 +243,8 @@ function makeMarkers(map) {
             o_ids.push(locations[i][2]);
          }
       }
-      console.log("o_ids: " + o_ids);
 
+	getLists();
    });
    
    // 마커 추가해줌

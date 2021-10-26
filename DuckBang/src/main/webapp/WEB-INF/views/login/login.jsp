@@ -15,7 +15,7 @@
 	</div>
 	
 	<div class="login_container">
-		<form class="login_form" >
+		<form class="login_form">
 			<h1>로그인</h1>
 			<h2>다방 서비스 이용을 위해 로그인해주세요.</h2>
 			<div class="login_form_id">
@@ -53,10 +53,12 @@
 	</div>
 	
 	<script>
+		const login_form = document.getElementsByClassName('login_form')[0];
 		const login_btn = document.getElementsByClassName('login_form_btn')[0];
 		const login_email = document.getElementsByClassName('login_form_input')[0];
 		const login_password = document.getElementsByClassName('login_form_input')[1];
 	
+		var user_id;
 		var email_list = [];
 		var pass_list = [];
 	
@@ -71,6 +73,7 @@
 			for(var i=0; i< email_list.length; i++){
 				if(login_email.value == email_list[i] && login_password.value == pass_list[i]){
 					login = true;
+					user_id = login_email.value;
 					break;
 				}else{
 					login = false;
@@ -79,7 +82,11 @@
 			
 			if(login == true){
 				alert("성공");
+				login_form.setAttribute("method","POST");
+				login_form.setAttribute("action","./main");
+				sessionStorage.setItem("user_id", user_id);
 			}else{
+				login_form.setAttribute("method","POST");
 				alert("아이디와 비밀번호를 확인해주세요!");
 			}
 		}

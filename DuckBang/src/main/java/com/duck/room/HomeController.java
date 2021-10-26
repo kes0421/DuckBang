@@ -74,6 +74,7 @@ public class HomeController {
 	public String agree3() {
 		return "/agree/3";
 	}
+	
 	@RequestMapping("/login")
 	public String login(Model model) {
 		model.addAttribute("user", um.getUser());

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/abo/list.css" type="text/css" />
 <ul class="list_ul1">
 	<!-- 
@@ -9,17 +10,18 @@
 			<div class="list_div1">값</div>
 		</li>
 	-->
+
 	<li>
 		<p class="list_p1">중개사무소명</p>
-		<div class="list_div1">수지공인중개사사무소</div>
+		<div class="list_div1">${AboInfo.r_business_name}</div>
 	</li>
 	<li>
 		<p class="list_p1">대표자명</p>
-		<div class="list_div1">강민경</div>
+		<div class="list_div1">${AboInfo.r_name}</div>
 	</li>
 	<li>
 		<p class="list_p1">전화번호</p>
-		<div class="list_div1">02-6952-1470</div>
+		<div class="list_div1">${AboInfo.r_business_phone}</div>
 	</li>
 	<li>
 		<p class="list_p1">사업자등록번호</p>
@@ -27,7 +29,7 @@
 	</li>
 	<li>
 		<p class="list_p1">중개등록번호</p>
-		<div class="list_div1">11500-2015-00011</div>
+		<div class="list_div1">${AboInfo.r_business_license}</div>
 	</li>
 	<li>
 		<p class="list_p1">다방가입일</p>
@@ -39,7 +41,7 @@
 	</li>
 	<li style="width:66.6%;">
 		<p class="list_p1">주소</p>
-		<div class="list_div1" style="flex-grow: 1;">서울특별시 강서구 공항대로 227 201호(마곡동)</div>
+		<div class="list_div1" style="flex-grow: 1;">${AboInfo.r_address}</div>
 	</li>
 
 </ul>

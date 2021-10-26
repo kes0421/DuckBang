@@ -15,6 +15,6 @@
 	</div>
 	
 	<p class="profile_p1">
-		제이공인중개사무소
+		${AboInfo.r_business_name}
 	</p>
 </div>

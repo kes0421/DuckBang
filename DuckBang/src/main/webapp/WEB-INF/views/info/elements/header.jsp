@@ -59,7 +59,7 @@
 							<div class="header_popup_2_2">
 								<p>대표번호</p>
 								<p>${InfoTop2.r_business_phone}</p>
-								<a href="">중개소 정보 더보기</a>
+								<a href="./abo?r_id=${InfoTop2.r_id }">중개소 정보 더보기</a>
 							</div>
 						</div>
 					</div>

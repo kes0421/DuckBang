@@ -19,7 +19,7 @@ public class MapController {
 	@Autowired
 	MapMapper mapMapper;
 	
-	@Autowired
+	@Autowired 
 	InfoMapper im;
 	
 	@GetMapping("/map")

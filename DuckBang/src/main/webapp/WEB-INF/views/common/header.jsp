@@ -5,15 +5,15 @@
 
 <div id="header_area">
 <!-- 
-	<h3># header.jsp</h3>
+   <h3># header.jsp</h3>
 -->
-		<form id="headerForm">
-			<input id="headerInput" type="hidden" name="room_kind" />
-		</form>
+      <form id="headerForm">
+         <input id="headerInput" type="hidden" name="room_kind" />
+      </form>
         <div id="navi_flex">
-        	<a href="${pageContext.request.contextPath }/main" style="cursor: pointer;">
-            	<div id="header_area_logo">
-            	</div>
+           <a href="${pageContext.request.contextPath }/main" style="cursor: pointer;">
+               <div id="header_area_logo">
+               </div>
             </a>
             <div>
                 <ul id="header_area_top_menu">
@@ -56,18 +56,18 @@
                 </ul>
             </div>
             <div id="login_area">
-            	<button type="button" class="login_btn" style="vertical-align: middle;">로그인 및 회원가입</button>
-        	</div>
-        	<div id="seller_join">
-        		<p id="seller_join_inner" style="vertical-align: middle;">
-        			중개사무소 가입 <br>
-        			및 광고문의
-        		</p>
-        	</div>
+               <button type="button" class="login_btn" style="vertical-align: middle;">로그인 및 회원가입</button>
+           </div>
+           <div id="seller_join">
+              <p id="seller_join_inner" style="vertical-align: middle;">
+                 중개사무소 가입 <br>
+                 및 광고문의
+              </p>
+           </div>
         </div>
         
-	
-	
+   
+   
 </div>
 <script src="${pageContext.request.contextPath }/resources/assets/js/header/header.js"></script>
 <script>
@@ -89,4 +89,5 @@
 			headerForm.submit();
 		});
 	});
+
 </script>

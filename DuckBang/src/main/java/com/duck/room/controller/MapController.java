@@ -1,8 +1,6 @@
 package com.duck.room.controller;
 
 import java.util.ArrayList;
-import java.util.Date;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,34 +24,58 @@ public class MapController {
 	@GetMapping("/map")
 	public String mapMarkers(Model model, String room_kind) {
 		
-		String room_kind_kor = "";
-		
-		if(room_kind.equals("apart")) {
-			room_kind_kor = "아파트";
-		} else if(room_kind.equals("tworoom")) {
-			room_kind_kor = "투룸";
-		} else if(room_kind.equals("oneroom")) {
-			room_kind_kor = "원룸";
-		} else if(room_kind.equals("office")) {
-			room_kind_kor = "오피스텔";
-		}
-		
 		ArrayList<Integer> o_id = new ArrayList<>();
 		ArrayList<String> xcordinate = new ArrayList<>();
 		ArrayList<String> ycordinate = new ArrayList<>();
+		ArrayList<String> room_kinds = new ArrayList<>();
+		String room_kind_kor = "";
 		
-		for(int i = 0; i < mapMapper.getList(room_kind_kor).size(); ++i) {
-			o_id.add(mapMapper.getList(room_kind_kor).get(i).getO_id());
-			xcordinate.add(mapMapper.getList(room_kind_kor).get(i).getL_xcordinate());
-			ycordinate.add(mapMapper.getList(room_kind_kor).get(i).getL_ycordinate());
+		if(room_kind.equals("all")) {
+			for(int i = 0; i < mapMapper.getAllList().size(); ++i) {
+				o_id.add(mapMapper.getAllList().get(i).getO_id());
+				xcordinate.add(mapMapper.getAllList().get(i).getL_xcordinate());
+				ycordinate.add(mapMapper.getAllList().get(i).getL_ycordinate());
+			}
+			
+			for(int i = 0; i < mapMapper.getAllSummaryList().size(); ++i) {
+				room_kinds.add(mapMapper.getAllSummaryList().get(i).getOd_room_kind());
+			}
+			
+			model.addAttribute("o_id", o_id);
+			model.addAttribute("xcordinate", xcordinate);
+			model.addAttribute("ycordinate", ycordinate);
+			model.addAttribute("check", "get");
+			model.addAttribute("room_kinds", room_kinds);
+			model.addAttribute("summaryLists", mapMapper.getAllSummaryList());
+			
+		} else {
+			if(room_kind.equals("apart")) {
+				room_kind_kor = "아파트";
+			} else if(room_kind.equals("tworoom")) {
+				room_kind_kor = "투룸";
+			} else if(room_kind.equals("oneroom")) {
+				room_kind_kor = "원룸";
+			} else if(room_kind.equals("office")) {
+				room_kind_kor = "오피스텔";
+			}
+			
+			for(int i = 0; i < mapMapper.getList(room_kind_kor).size(); ++i) {
+				o_id.add(mapMapper.getList(room_kind_kor).get(i).getO_id());
+				xcordinate.add(mapMapper.getList(room_kind_kor).get(i).getL_xcordinate());
+				ycordinate.add(mapMapper.getList(room_kind_kor).get(i).getL_ycordinate());
+			}
+			
+			model.addAttribute("o_id", o_id);
+			model.addAttribute("xcordinate", xcordinate);
+			model.addAttribute("ycordinate", ycordinate);
+			model.addAttribute("room_kind", room_kind_kor);
+			model.addAttribute("room_kinds", room_kind);
+			model.addAttribute("check", "get");
+			model.addAttribute("summaryLists", mapMapper.getSummaryList(room_kind_kor));
 		}
 		
-		model.addAttribute("o_id", o_id);
-		model.addAttribute("xcordinate", xcordinate);
-		model.addAttribute("ycordinate", ycordinate);
-		model.addAttribute("room_kind", room_kind_kor);
-		model.addAttribute("check", "get");
-		model.addAttribute("summaryLists", mapMapper.getSummaryList(room_kind_kor));
+		
+		
 		
 		return "map/index";
 	}
@@ -74,9 +96,6 @@ public class MapController {
 		} else if(room_kind.equals("4")) {
 			room_kind_kor = "오피스텔";
 		}
-		System.out.println("room_kind : " + room_kind_kor);
-		System.out.println("lat : " + lat);
-		System.out.println("lng : " + lng);
 		ArrayList<Integer> o_id = new ArrayList<>();
 		ArrayList<String> xcordinate = new ArrayList<>();
 		ArrayList<String> ycordinate = new ArrayList<>();

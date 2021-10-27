@@ -156,10 +156,6 @@ background-color: rgb(221, 221, 221);
    flex-direction: row;
 }
 
-.list_room_recommend {
-   font-size: 10px;
-}
-
 .list_room_sort {
    font-size: 12px;
 }

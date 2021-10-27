@@ -12,7 +12,7 @@
 		<div class="recommend_option">원룸,투 쓰리룸, 오피스텔</div>
 		<div class="recommend_option">월세,전세</div>
 		<div id="recommend_moreRoom">
-			<a href="./map">더 많은 방 보기 ></a>		
+			<a href="./map?room_kind=all">더 많은 방 보기 ></a>		
 		</div>
 	</div>
 	</div>

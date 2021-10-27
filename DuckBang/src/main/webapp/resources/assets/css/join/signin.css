@@ -167,6 +167,7 @@
     outline: none;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
+    margin-top: 30px;
 }
 
 .login_form_btn > span{
@@ -177,3 +178,20 @@
     display: block;
     position: relative;
 }
+
+#txt_area {
+	padding
+}
+
+#txt_area > p{
+	text-align: center;
+    font-weight: 800;
+    line-height: 10px;
+}
+
+#welcome_btn {
+	background-color:#E6a055;
+}
+
+
+

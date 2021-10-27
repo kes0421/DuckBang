@@ -24,8 +24,7 @@ public class HomeController {
 	@Autowired
 	InfoMapper im;
 	
-	@Autowired
-	UsersMapper um;
+
 	
 	@RequestMapping("/main")
 	public String main(Model model) { 
@@ -75,12 +74,6 @@ public class HomeController {
 		return "/agree/3";
 	}
 	
-	@RequestMapping("/login")
-	public String login(Model model) {
-		model.addAttribute("user", um.getUser());
-		
-		return "/login/login";
-	}
 	
 	@RequestMapping("/membership")
 	public String membership() {

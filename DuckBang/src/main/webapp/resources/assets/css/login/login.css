@@ -161,3 +161,23 @@
     display: block;
     position: relative;
 }
+
+.api_login{
+	display: flex;
+}
+
+.api_login > *{
+	border: none;
+	background-color: white;
+}
+
+#naver{
+	margin-left: 10px;
+}
+
+
+
+
+
+
+

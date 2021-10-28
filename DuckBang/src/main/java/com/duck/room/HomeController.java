@@ -45,10 +45,7 @@ public class HomeController {
 	public String agree3() {
 		return "/agree/3";
 	}
-	@RequestMapping("/login")
-	public String login() {
-		return "/login/login";
-	}
+
 	
 	@RequestMapping("/membership")
 	public String membership() {

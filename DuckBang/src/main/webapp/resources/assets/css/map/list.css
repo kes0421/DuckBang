@@ -16,12 +16,11 @@ background-color: rgb(221, 221, 221);
 }
 
 #list_room_infos {
-   height:567px;
-   overflow: auto;
-   border: 1px solid gray;
-    padding-left: 10px;
-    background-color: rgb(238, 238, 238);
-    flex: 1 1 0%;
+	height:567px;
+	overflow: auto;
+	border: 1px solid #ddd7d7;
+	background-color: rgb(238, 238, 238);
+	flex: 1 1 0%;
 }
 
 #list_area {
@@ -47,9 +46,16 @@ background-color: rgb(221, 221, 221);
    color: black;
 }
 
+.list_class_info:hover {
+	background-color: #c8c8c8;
+	cursor: pointer;
+}
+
 .list_class_info {
    display: flex;
-   margin-top: 10px;
+   padding: 15px 10px;
+   background-color: white;
+   border-bottom: 1px solid #ddd7d7;
 }
 
 .list_unit_btn{

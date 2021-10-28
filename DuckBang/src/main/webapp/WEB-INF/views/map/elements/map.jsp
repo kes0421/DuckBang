@@ -4,7 +4,7 @@
   <head>
     <title>Places Search Box</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/assets/css/map/list.css">
+    <link rel="stylesheet" href="<c:url value='/resources/assets/css/map/list.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/resources/assets/css/map/map.css'/>" />
   </head>
 	<body>
@@ -17,10 +17,10 @@
 	    	<input id="value_ycordinate" type="hidden" value="${ycordinate }"/>	    
 	    	<div class="map_btn_div">
 	    		<button id="map_btn"></button>
-	    	</div>
-	    </div>
-	    
-	    <div id="map"></div>
+			</div>
+		</div>
+
+		<div id="map"></div>
 	</div>
 	
 	<div id="listContainer">
@@ -78,7 +78,7 @@
 		
 		var o_ids = [];
 		
-		function getLists() {
+		function getLists(locations, map) {
 			
 			//console.log('o_idLst : ' + o_ids)
 			list_room_infos.innerHTML = '';
@@ -111,11 +111,11 @@
 			}
 			
 			// 리스트에 데이터 넣기
-			list_div_plus();
+			list_div_plus(locations, map);
 			
 		}
 		
-		function list_div_plus(){
+		function list_div_plus(locations, map){
 			for(let i = 0; i < o_ids.length; ++i) {
 	            
  				<c:forEach items="${summaryLists}" var="list">
@@ -124,7 +124,7 @@
 					var deposit = '${list.getOk_deposit()}';
 					var depositRest = parseInt(deposit / 10000);
 					
-					if(o_ids[i] == ' ${list.getO_id()}'){
+					if(o_ids[i] == '${list.getO_id()}'){
 
 						//console.log('o_ids[i] : ' + o_ids[i]);
                
@@ -195,10 +195,33 @@
 						list_class_info.appendChild(room_info);
 						list_info_a.appendChild(list_class_info);
 						list_room_infos.appendChild(list_info_a);
+						
+						var eachMarker;
+						var eachMarkerIcon = new google.maps.MarkerImage("resources/assets/icon/map/eachMarkerIcon3.png", null, null, null, new google.maps.Size(40,40));
+						
+						list_class_info.addEventListener('mouseenter', () => {
+							for(var i = 0; i < locations.length; i++) {
+								if("${list.getO_id()}" == locations[i][2]) {
+									eachMarker = new google.maps.Marker({
+								         position: new google.maps.LatLng(locations[i][0], locations[i][1]),
+								         map: map,
+								         animation: google.maps.Animation.BOUNCE,
+								         icon: eachMarkerIcon,
+								      });
+								}
+							}
+						});
+						
+						list_class_info.addEventListener('mouseleave', () => {
+							for(var i = 0; i < locations.length; i++) {
+								if("${list.getO_id()}" == locations[i][2]) {
+									eachMarker.setMap(null);
+								}
+							}
+						});
 					}
 					
 				</c:forEach>
-				
 				list_count.innerText = '지역 목록 ' + list_info_a_class.length + '개';
 			}
 		}
@@ -234,7 +257,6 @@
 		// 지도 시작
 		var cityCircle;
 		var infoWindow;
-
 		function initMap() {
 		<c:choose>
 			<c:when test="${check eq 'get' || lat eq 'undefined'}">
@@ -268,7 +290,6 @@
 			   });
 			</c:otherwise>
 		</c:choose>
-		   
 		   
 		   // Create the search box and link it to the UI element.
 		   const input = document.getElementById("pac-input");
@@ -418,8 +439,8 @@
 
 		   //여러개 마커 찍기
 		   makeMarkers(map);
+		   
 		}
-
 
 		// 여러가지 마커들 찍기
 		function makeMarkers(map) {
@@ -431,13 +452,13 @@
 
 		   // 데이터 정리해주기
 		   let x_slice = xcordinate.slice(1, -1);
-		   let x_array = x_slice.split(',');
+		   let x_array = x_slice.split(', ');
 
 		   let y_slice = ycordinate.slice(1, -1);
-		   let y_array = y_slice.split(',');
+		   let y_array = y_slice.split(', ');
 		   
 		   let id_slice = o_id.slice(1, -1);
-		   let id_array = id_slice.split(',');
+		   let id_array = id_slice.split(', ');
 		   
 		   var locations = [];
 		   
@@ -474,7 +495,7 @@
 		         }
 		      }
 		      //console.log("o_ids: " + o_ids);
-		      getLists();
+		      getLists(locations, map);
 
 		   });
 		   
@@ -498,7 +519,7 @@
 			         }
 			      }
 
-			getLists();
+			getLists(locations, map);
 		   });
 		   
 		   // 마커 추가해줌
@@ -516,17 +537,17 @@
 		   }
 		   if("${!empty room_kind}"){
 			   if("${room_kind}" == '아파트'){
-				   room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/apartIcon.png", null, null, null, new google.maps.Size(50,50));
+				   room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/apartIcon2.png", null, null, null, new google.maps.Size(50,50));
 				   addRoomIconMarker(marker, locations, room_kind_icon, map, marker_label);
 			   }else if("${room_kind}" == '오피스텔'){
-				   room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/officeIcon.png", null, null, null, new google.maps.Size(50,50));
+				   room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/officeIcon2.png", null, null, null, new google.maps.Size(50,50));
 				   addRoomIconMarker(marker, locations, room_kind_icon, map, marker_label);
 			   }else if("${room_kind}" == '원룸'){
-				   room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/oneTwoIcon.png", null, null, null, new google.maps.Size(40,40));
+				   room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/oneTwoIcon2.png", null, null, null, new google.maps.Size(40,40));
 				   marker_label = "1";
 				   addRoomIconMarker(marker, locations, room_kind_icon, map, marker_label);
 			   }else if("${room_kind}" == '투룸'){
-				   room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/oneTwoIcon.png", null, null, null, new google.maps.Size(40,40));
+				   room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/oneTwoIcon2.png", null, null, null, new google.maps.Size(40,40));
 				   marker_label = "1";
 				   addRoomIconMarker(marker, locations, room_kind_icon, map, marker_label);
 			   }
@@ -534,6 +555,7 @@
 		   
 		}
 		
+		// 마커 찍어주기
 		function addRoomIconMarker(marker, locations, room_kind_icon, map, marker_label){
 			for(i = 0; i < locations.length; i++){
 				  

@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.duck.room.mapper.InfoMapper;
 import com.duck.room.mapper.OfferingMapper;
+import com.duck.room.mapper.UsersMapper;
 
 @Controller
 public class HomeController { 
@@ -20,6 +22,9 @@ public class HomeController {
 	
 	@Autowired	
 	InfoMapper im;
+	
+	@Autowired
+	UsersMapper um;
 	
 	@RequestMapping("/abo")
 	public String abo() {
@@ -46,7 +51,6 @@ public class HomeController {
 		return "/agree/3";
 	}
 
-	
 	@RequestMapping("/membership")
 	public String membership() {
 		return "/login/membership/join";
@@ -55,5 +59,22 @@ public class HomeController {
 	@RequestMapping("/memberInfo")
 	public String memberInfo() {
 		return "/login/membership/info";
+	}
+	
+	@RequestMapping("/signin")
+	public String Sginin() {
+		return "/join/signin";
+	}
+	
+	@RequestMapping("/check_uid")
+	public String check_uid(@RequestParam("user_id") String u_id,@RequestParam("user_pw_input") String u_pass, Model model) {
+		int check = um.checkUser(u_id);
+		if(check > 0) {
+			model.addAttribute("check", true);
+			return "redirect:/signin";
+		}else {
+			um.newUser(u_id, u_pass);
+			return "/join/signin2";
+		}
 	}
 }

@@ -44,7 +44,12 @@
 			<button class="login_form_btn">
 				<span>로그인</span>
 			</button>
+			
 		</form>
+		<div class="api_login">
+			<div id="kakao"><img src="${pageContext.request.contextPath}/resources/assets/icon/login/kakao.PNG"></div>
+			<div id="naver"><img src="${pageContext.request.contextPath}/resources/assets/icon/login/naver.PNG"></div>		
+		</div>
 	</div>
 		
 	<div>
@@ -57,6 +62,16 @@
 		const login_btn = document.getElementsByClassName('login_form_btn')[0];
 		const login_email = document.getElementsByClassName('login_form_input')[0];
 		const login_password = document.getElementsByClassName('login_form_input')[1];
+		
+		const kakao_btn = document.getElementById("kakao");
+		const naver_btn = document.getElementById("naver");
+		
+		const setCookie = function (name, value, expiredDay) { 
+			const expired = new Date(); 
+			expired.setTime(expired.getTime() + expiredDay * 24 * 60 * 60 * 1000); 
+			document.cookie = name + '=' + encodeURIComponent(value) + ';expires=' + expired.toUTCString() + ';path=/'; 
+		
+		};	
 	
 		var user_id;
 		var email_list = [];
@@ -84,14 +99,28 @@
 				alert("성공");
 				login_form.setAttribute("method","POST");
 				login_form.setAttribute("action","./main");
-				sessionStorage.setItem("user_id", user_id);
+
+				setCookie("user_id", user_id, 1);
 			}else{
 				login_form.setAttribute("method","POST");
 				alert("아이디와 비밀번호를 확인해주세요!");
 			}
 		}
 
-	login_btn.addEventListener("click", check)
+		login_btn.addEventListener("click", check);
+		
+		function kakao(){
+			location.href = "https://kauth.kakao.com/oauth/authorize?client_id=ac0200598e60ecc8c5327db6df20969c&redirect_uri=http://localhost:8080/room/kakaoLogin&response_type=code";
+		}
+		
+		kakao_btn.addEventListener("click", kakao);
+		
+		function naver(){
+			location.href = "${url}"
+		}
+		
+		naver_btn.addEventListener("click", naver);
+		
 	</script>
 	
 </body>

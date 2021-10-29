@@ -30,11 +30,20 @@ background-color: rgb(221, 221, 221);
 
 #list_count {
    padding: 5px;
-   width: 80%;
+   width: 60%;
    font-size: 20px;
    font-weight: normal;
    margin-left: 10px;
     line-height: 50px;
+}
+
+#list_option_code{
+	margin-top: 5%;
+	width: 32%;
+}
+
+#list_code_select{
+	width: 	55%;
 }
 
 #list_unit_box {
@@ -164,6 +173,8 @@ background-color: rgb(221, 221, 221);
 
 .list_room_sort {
    font-size: 12px;
+   padding: 1%;
+   border: 2px solid goldenrod;
 }
 
 .list_room_type {

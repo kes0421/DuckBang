@@ -36,4 +36,8 @@ public class MainController {
 		return "/main/index";
 	}
 	
+	@RequestMapping("/realtor")
+	public String realtor() { 
+		return "realtor/index";
+	}
 }

@@ -5,10 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <link rel = "stylesheet" href ="${pageContext.request.contextPath}/resources/assets/css/info/index.css">
-<style>
-	
-    }
-</style>
 </head>
 <body>
 <div>

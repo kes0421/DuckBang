@@ -10,12 +10,16 @@ function addMonthDiv() {
     const input1 = document.createElement('input');
     input1.setAttribute('class','realtor_month_input');
     input1.setAttribute('placeholder','보증금');
+    input1.setAttribute('form','regist_form');
+    input1.setAttribute('name','ok_deposit');
     const p2 = document.createElement('p');
     p2.setAttribute('class','realtor_month_p2');
     p2.innerText = '/';
     const input2 = document.createElement('input');
     input2.setAttribute('class','realtor_month_input');
     input2.setAttribute('placeholder','월세');
+    input2.setAttribute('form','regist_form');
+    input2.setAttribute('name','ok_month_of_payment');
     const p3 = document.createElement('p');
     p3.setAttribute('class','realtor_month_p3');
     p3.innerText = '만원';
@@ -57,6 +61,9 @@ document.getElementById('month_btn').addEventListener('click', () => {
 		room_tr.removeChild(room_tr.lastChild);
 		room_tr.appendChild(addMonthDiv());
 	}
+    console.log(document.getElementById('month_btn').innerText);
+        document.getElementById('ok_code_input').value = document.getElementById('month_btn').innerText;
+
 });
 
 
@@ -72,6 +79,13 @@ function addDeposit(){
     const input = document.createElement('input');
     input.setAttribute('placeholder','전세');
     input.setAttribute('class','room_deposit_input');
+    const input2 = document.createElement('input');
+    input2.setAttribute('type', 'hidden');
+    input2.setAttribute('value', '0');
+    input.setAttribute('form','regist_form');
+    input.setAttribute('name','ok_deposit');
+    input2.setAttribute('form','regist_form');
+    input2.setAttribute('name','ok_month_of_payment');
     const p2 = document.createElement('p');
     p2.setAttribute('class','room_deposit_p2');
     p2.innerText = '만원';
@@ -90,6 +104,7 @@ function addDeposit(){
     p2.appendChild(span);
     deposit_div2.appendChild(p1);
     deposit_div2.appendChild(input);
+    deposit_div2.appendChild(input2);
     deposit_div2.appendChild(p2);
     deposit_div2.appendChild(btn);
     deposit_div1.appendChild(deposit_div2);
@@ -110,6 +125,8 @@ document.getElementById('deposit_btn').addEventListener('click', () => {
         room_tr.removeChild(room_tr.lastChild);
         room_tr.appendChild(addDeposit());
     }
+    console.log(document.getElementById('deposit_btn').innerText);
+    document.getElementById('ok_code_input').value = document.getElementById('deposit_btn').innerText;
 });
 
 function addTrading(){
@@ -124,6 +141,13 @@ function addTrading(){
     const input = document.createElement('input');
     input.setAttribute('placeholder','매매');
     input.setAttribute('class','room_deposit_input');
+    const input2 = document.createElement('input');
+    input2.setAttribute('type', 'hidden');
+    input2.setAttribute('value', '0');
+    input.setAttribute('form','regist_form');
+    input.setAttribute('name','ok_deposit');
+    input2.setAttribute('form','regist_form');
+    input2.setAttribute('name','ok_month_of_payment');
     const p2 = document.createElement('p');
     p2.setAttribute('class','room_deposit_p2');
     p2.innerText = '만원';
@@ -142,6 +166,7 @@ function addTrading(){
     p2.appendChild(span);
     deposit_div2.appendChild(p1);
     deposit_div2.appendChild(input);
+    deposit_div2.appendChild(input2);
     deposit_div2.appendChild(p2);
     deposit_div2.appendChild(btn);
     deposit_div1.appendChild(deposit_div2);
@@ -162,6 +187,8 @@ document.getElementById('trading_btn').addEventListener('click', () => {
         room_tr.removeChild(room_tr.lastChild);
         room_tr.appendChild(addTrading());
     }
+    console.log( document.getElementById('trading_btn').innerText);
+    document.getElementById('ok_code_input').value = document.getElementById('trading_btn').innerText;
 });
 
 function areaChange(e){

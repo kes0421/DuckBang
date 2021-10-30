@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.duck.room.dto.realtor.Image;
@@ -21,6 +22,8 @@ import com.duck.room.dto.realtor.OfferingDetail;
 import com.duck.room.dto.realtor.OfferingKind;
 import com.duck.room.dto.realtor.OfferingOption;
 import com.duck.room.dto.realtor.OfferingSecurity;
+import com.duck.room.mapper.MainMapper;
+import com.duck.room.mapper.OfferingMapper;
 import com.duck.room.mapper.RealtorMapper;
 
 @Controller
@@ -28,9 +31,13 @@ public class RealtorController {
 	
 	@Autowired 
 	RealtorMapper rm;
+	@Autowired
+	OfferingMapper om;
+	@Autowired  
+	MainMapper mm;
 	
 	@RequestMapping("/regist")
-	public String regist(HttpServletRequest request, HttpServletResponse response) throws NumberFormatException, ParseException, IOException {
+	public String regist(HttpServletRequest request, HttpServletResponse response, Model model) throws NumberFormatException, ParseException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
 		if(request.getParameter("realtor_agreeChk") == null) {
@@ -124,7 +131,14 @@ public class RealtorController {
 					securityChk[2], 
 					securityChk[3], 
 					securityChk[4])));
-			
+		
+			model.addAttribute("explain_1", om.getRoomAvg("원룸", "월세"));
+			model.addAttribute("explain_2", om.getRoomAvg("원룸", "전세")); 
+			model.addAttribute("explain_3", om.getRoomAvg("투룸", "월세"));
+			model.addAttribute("explain_4", om.getRoomAvg("투룸", "전세"));
+			model.addAttribute("explain_5", om.getRoomAvg("오피스텔", "월세"));
+			model.addAttribute("explain_6", om.getRoomAvg("오피스텔", "전세"));
+			model.addAttribute("recommend", mm.getRecommendList());
 			return "/main/index";
 		}
 		

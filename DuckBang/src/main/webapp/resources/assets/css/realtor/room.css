@@ -341,7 +341,7 @@
     border: 1px solid rgb(223, 223, 223);
     border-radius: 2px;
     background-color: rgb(255, 255, 255);
-    width: 110px;
+    width: 180px;
     height: 46px;
     margin-left: 20px;
 }
@@ -713,34 +713,9 @@
 }
 
 .realtor_address_1 > p{
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	margin-top: 40px;
+}
+
+.realtor_box > table > th{
+	border: solid 1px black;
 }

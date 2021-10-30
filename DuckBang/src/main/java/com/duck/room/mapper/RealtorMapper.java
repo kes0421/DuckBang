@@ -17,4 +17,7 @@ public interface RealtorMapper {
 	public boolean addDetail(OfferingDetail detail);
 	public boolean addOption(OfferingOption option);
 	public boolean addSecurity(OfferingSecurity security);
+	
+	public int getLcode();
+	public int getOid();
 }

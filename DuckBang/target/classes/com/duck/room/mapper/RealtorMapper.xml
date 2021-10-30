@@ -39,4 +39,12 @@
 	#{o_id},#{s_videophone},#{s_joint_entrance},#{s_cctv},#{s_cardkey},#{s_windowguard})
 </insert>
 
+<select id="getLcode" resultType="int">
+	select max(to_number(l_code)) from location order by to_number(l_code) asc
+</select> 
+
+<select id="getOid" resultType="int">
+	select max(o_id) from offering order by o_id asc
+</select> 	
+
 </mapper>

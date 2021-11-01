@@ -191,9 +191,9 @@
 								}
 								
 								if('${list.getOk_code()}' == '월세'){
-									list_room_type.innerText = '${list.getOk_code()}' + '  ' + deposit +'/' + '${list.getOk_month_of_payment()}';
+									list_room_type.innerHTML = '<b style="color: black";>${list.getOk_code()}</b>' + '  ' + deposit +'/' + '${list.getOk_month_of_payment()}';
 								}else {
-									list_room_type.innerText = '${list.getOk_code()}' + '  ' + deposit;
+									list_room_type.innerHTML = '<b style="color: black";>${list.getOk_code()}</b>' + '  ' + deposit;
 								}
 								
 								list_room_size.innerText = '${list.getOd_private_area()}m² · ${list.getOd_apply_floor()}층';
@@ -212,7 +212,7 @@
 								list_room_infos.appendChild(list_info_a);
 								
 								var eachMarker;
-								var eachMarkerIcon = new google.maps.MarkerImage("resources/assets/icon/map/eachMarkerIcon3.png", null, null, null, new google.maps.Size(40,40));
+								var eachMarkerIcon = new google.maps.MarkerImage("resources/assets/icon/map/selectArea.png", null, null, null, new google.maps.Size(40,40));
 								
 								list_class_info.addEventListener('mouseenter', () => {
 									for(var i = 0; i < locations.length; i++) {
@@ -284,9 +284,9 @@
 								}
 								
 								if('${list.getOk_code()}' == '월세'){
-									list_room_type.innerText = '${list.getOk_code()}' + '  ' + deposit +'/' + '${list.getOk_month_of_payment()}';
+									list_room_type.innerHTML = '<b style="color: #d98508";>${list.getOk_code()}</b>' + '  ' + deposit +'/' + '${list.getOk_month_of_payment()}';
 								}else {
-									list_room_type.innerText = '${list.getOk_code()}' + '  ' + deposit;
+									list_room_type.innerHTML = '<b style="color: #d98508";>${list.getOk_code()}</b>' + '  ' + deposit;
 								}
 								
 								list_room_size.innerText = '${list.getOd_private_area()}m² · ${list.getOd_apply_floor()}층';
@@ -305,7 +305,7 @@
 								list_room_infos.appendChild(list_info_a);
 								
 								var eachMarker;
-								var eachMarkerIcon = new google.maps.MarkerImage("resources/assets/icon/map/eachMarkerIcon3.png", null, null, null, new google.maps.Size(40,40));
+								var eachMarkerIcon = new google.maps.MarkerImage("resources/assets/icon/map/selectArea.png", null, null, null, new google.maps.Size(40,40));
 								
 								// 마우스 올렸을 때 지도에 마커로 표시해주기
 								list_class_info.addEventListener('mouseenter', () => {
@@ -671,38 +671,34 @@
 		function addMarker(locations, map) {
 		   var i, marker;
 		   var room_kind_icon = "";
-		   var marker_label = "";
 
 		   if("${empty room_kind}"){
 			   addAllRoomIconMarker(marker, locations, map);
 		   }
 		   if("${!empty room_kind}"){
 			   if("${room_kind}" == '아파트'){
-				   room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/apartIcon2.png", null, null, null, new google.maps.Size(50,50));
-				   addRoomIconMarker(marker, locations, room_kind_icon, map, marker_label);
+				   room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/apartIcon.png", null, null, null, new google.maps.Size(40,40));
+				   addRoomIconMarker(marker, locations, room_kind_icon, map);
 			   }else if("${room_kind}" == '오피스텔'){
-				   room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/officeIcon2.png", null, null, null, new google.maps.Size(50,50));
-				   addRoomIconMarker(marker, locations, room_kind_icon, map, marker_label);
+				   room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/officeIcon.png", null, null, null, new google.maps.Size(40,40));
+				   addRoomIconMarker(marker, locations, room_kind_icon, map);
 			   }else if("${room_kind}" == '원룸'){
-				   room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/oneTwoIcon2.png", null, null, null, new google.maps.Size(40,40));
-				   marker_label = "1";
-				   addRoomIconMarker(marker, locations, room_kind_icon, map, marker_label);
+				   room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/oneroomIcon.png", null, null, null, new google.maps.Size(40,40));
+				   addRoomIconMarker(marker, locations, room_kind_icon, map);
 			   }else if("${room_kind}" == '투룸'){
-				   room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/oneTwoIcon2.png", null, null, null, new google.maps.Size(40,40));
-				   marker_label = "1";
-				   addRoomIconMarker(marker, locations, room_kind_icon, map, marker_label);
+				   room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/tworoomIcon.png", null, null, null, new google.maps.Size(40,40));
+				   addRoomIconMarker(marker, locations, room_kind_icon, map);
 			   }
 		   }
 		   
 		}
 		
 		// 마커 찍어주기
-		function addRoomIconMarker(marker, locations, room_kind_icon, map, marker_label){
+		function addRoomIconMarker(marker, locations, room_kind_icon, map){
 			for(i = 0; i < locations.length; i++){
 				  
 			      marker = new google.maps.Marker({
 			         position: new google.maps.LatLng(locations[i][0], locations[i][1]),
-			         label: marker_label,
 			         map: map,
 			         icon: room_kind_icon,
 			      });
@@ -722,12 +718,10 @@
 			
 				<c:choose>
 					<c:when test="${kind eq '아파트'}">
-						room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/apartIcon.png", null, null, null, new google.maps.Size(50,50));
-						marker_label = "1";
+						room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/apartIcon.png", null, null, null, new google.maps.Size(40,40));
 						
 						marker = new google.maps.Marker({
 					         position: new google.maps.LatLng(${xcordinate[status.index]}, ${ycordinate[status.index]}),
-					         label: marker_label,
 					         map: map,
 					         icon: room_kind_icon,
 					      });
@@ -739,11 +733,10 @@
 					      })(marker));
 					</c:when>
 					<c:when test="${kind eq '원룸'}">
-						room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/oneTwoIcon.png", null, null, null, new google.maps.Size(40,40));
-					   marker_label = "3";
-					   marker = new google.maps.Marker({
+						room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/oneroomIcon.png", null, null, null, new google.maps.Size(40,40));
+
+						marker = new google.maps.Marker({
 					         position: new google.maps.LatLng(${xcordinate[status.index]}, ${ycordinate[status.index]}),
-					         label: marker_label,
 					         map: map,
 					         icon: room_kind_icon,
 					      });
@@ -755,11 +748,10 @@
 					      })(marker));
 					</c:when>
 					<c:when test="${kind eq '오피스텔'}">
-					room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/officeIcon.png", null, null, null, new google.maps.Size(50,50));
-				   marker_label = "4";
-				   marker = new google.maps.Marker({
+					room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/officeIcon.png", null, null, null, new google.maps.Size(40,40));
+
+					marker = new google.maps.Marker({
 				         position: new google.maps.LatLng(${xcordinate[status.index]}, ${ycordinate[status.index]}),
-				         label: marker_label,
 				         map: map,
 				         icon: room_kind_icon,
 				      });
@@ -771,11 +763,10 @@
 				      })(marker));
 				</c:when>
 				<c:when test="${kind eq '투룸'}">
-					room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/oneTwoIcon.png", null, null, null, new google.maps.Size(40,40));
-				   marker_label = "2";
-				   marker = new google.maps.Marker({
+					room_kind_icon = new google.maps.MarkerImage("resources/assets/icon/map/tworoomIcon.png", null, null, null, new google.maps.Size(40,40));
+
+					marker = new google.maps.Marker({
 				         position: new google.maps.LatLng(${xcordinate[status.index]}, ${ycordinate[status.index]}),
-				         label: marker_label,
 				         map: map,
 				         icon: room_kind_icon,
 				      });

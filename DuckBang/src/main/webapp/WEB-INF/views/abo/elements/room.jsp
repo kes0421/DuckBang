@@ -53,12 +53,18 @@
 						<h1 class="room_ul1_h1">
 							${AboRoom.ok_code}
 								<c:choose>
-									<c:when test="${AboRoom.ok_code eq '월세'}">
+									<c:when test="${AboRoom.ok_code eq '월세'}"> 
 										${AboRoom.ok_deposit} / ${AboRoom.ok_month_of_payment}
+									</c:when>
+									<c:when test="${AboRoom.ok_deposit % 10000 == 0}">
+										${Math.round(AboRoom.ok_deposit/10000)}억
+									</c:when>	
+									<c:when test="${AboRoom.ok_deposit >= 10000}">
+										${Math.round(AboRoom.ok_deposit/10000)}억 ${AboRoom.ok_deposit % 10000}
 									</c:when>
 									<c:otherwise>
 										${AboRoom.ok_deposit}
-									</c:otherwise>							
+									</c:otherwise>						
 								</c:choose>
 						</h1>
 						<p class="room_ul1_p2">${AboRoom.od_apply_floor}층, ${AboRoom.od_private_area}m², 관리비 ${AboRoom.ok_maintenance_cost}만</p>

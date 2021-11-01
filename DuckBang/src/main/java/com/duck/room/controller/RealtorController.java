@@ -5,7 +5,7 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -54,7 +54,7 @@ public class RealtorController {
 				parking_fee = Integer.parseInt(request.getParameter("ok_parking_fee"));
 			}
 			
-			SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd");
+	
 			String od_short_lease = "불가능";
 			
 			if(request.getParameter("od_short_lease")==null) {
@@ -66,7 +66,7 @@ public class RealtorController {
 			int l_code = rm.getLcode() + 1;
 			int o_id = rm.getOid() + 1;
 			System.out.println(rm.addLocation(new Location(l_code, request.getParameter("l_xcordinate"), request.getParameter("l_ycordinate"))));
-			System.out.println(rm.addOffering(new Offering(o_id, "pass", new Date(), "5", l_code)));
+			System.out.println(rm.addOffering(new Offering(o_id, "pass", new Date(new java.util.Date().getTime()), "5", l_code)));
 			System.out.println(rm.addKind(new OfferingKind(o_id, request.getParameter("ok_code"),
 					Integer.parseInt(request.getParameter("ok_deposit")), 
 					Integer.parseInt(request.getParameter("ok_maintenance_cost")), 
@@ -93,9 +93,9 @@ public class RealtorController {
 					Integer.parseInt(request.getParameter("od_room_count")),
 					Integer.parseInt(request.getParameter("od_bathroom_count")),
 					request.getParameter("od_heating_kind"),
-					sd.parse((request.getParameter("od_occupy_date"))),
+					Date.valueOf(request.getParameter("od_occupy_date")),
 					request.getParameter("od_construction_use"),
-					new Date(),
+					new Date(new java.util.Date().getTime()),
 					"불가능" )));
 			
 			

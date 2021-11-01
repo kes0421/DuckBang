@@ -1,5 +1,6 @@
 package com.duck.room.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.duck.room.dto.info.Info;
 import com.duck.room.mapper.InfoMapper;
 import com.duck.room.mapper.MapMapper;
 
@@ -123,6 +125,7 @@ public class MapController {
 		if(o_id == null) {
 			return "main/index";
 		}
+
 		model.addAttribute("price", im.getPrice(o_id));
 		model.addAttribute("InfoTop1", im.getTop1(o_id));
 		model.addAttribute("InfoTop2", im.getTop2(o_id));

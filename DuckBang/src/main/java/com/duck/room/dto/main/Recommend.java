@@ -1,6 +1,8 @@
 package com.duck.room.dto.main;
 
-import java.util.Date;
+import java.sql.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 
@@ -15,5 +17,6 @@ public class Recommend {
 	private Integer od_apply_floor;
 	private Float od_private_area;
 	private Integer ok_maintenance_cost;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date od_occupy_date;
 }

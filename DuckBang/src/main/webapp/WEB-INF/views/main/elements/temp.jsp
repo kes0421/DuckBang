@@ -50,10 +50,6 @@
 			</li>
 		</c:forEach>
 	</ul>
-	<form id="to_interest">
-		<input type="hidden" id = "send_email">
-		<input type="hidden" id = "send_o_id">
-	</form>
 	
 </div>
 
@@ -64,10 +60,6 @@
 	
 	var empty_heart_url = "url('https://key0.cc/images/preview/8885_36bca2e025fa01f4218f1951efc4372c.png')";
 	var pull_heart_url = "url('https://png.pngtree.com/png-vector/20190228/ourlarge/pngtree-love-heart-icon-design-template-vector-isolated-png-image_707576.jpg')";
-	
-	const interest_form = document.getElementById("to_interest");
-	const email_input = document.getElementById("send_email");
-	const o_id_input = document.getElementById("send_o_id");
 	
 	const getCookie = function (name) { 
 		var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); 
@@ -84,7 +76,7 @@
 			const xhttp = new XMLHttpRequest();
 			
 			const interest = {
-					o_id : this.value
+					o_id : this.value,
 					u_id : user_cookie,
 					i_date : userDate
 			};
@@ -145,20 +137,3 @@
 	}
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

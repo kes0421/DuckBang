@@ -13,7 +13,7 @@
 		</colgroup>
 		<thead>  
 			<tr>
-				<th>월세</th>
+				<th>${price.ok_code }</th>
 				<th>관리비</th>
 				<th>주차비</th>
 				<th>단기임대</th>

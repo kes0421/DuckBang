@@ -14,4 +14,13 @@
     <insert id="insertSocialId" >
         INSERT INTO users(u_id, u_password) VALUES(#{user_id}, #{password})
     </insert>
+    
+    <select id="checkUser" resultType="int">
+		SELECT count(*) FROM users WHERE u_id = #{u_id}
+	</select>
+	
+	<insert id="newUser">
+		INSERT INTO users (U_ID, U_PASSWORD, U_RIGHT, U_PHONE, U_ADDRESS) 
+        VALUES (#{u_id}, #{u_pass}, null, null, null)
+	</insert>
 </mapper>

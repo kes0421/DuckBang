@@ -14,28 +14,32 @@
     src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
 <body>
+<form id="toMain">
 
+</form>
 <script type="text/javascript">
 	
 
 	
-    $(document).ready(function() {
-    	const setCookie = function (name, value, expiredDay) { 
-    		const expired = new Date(); 
-    		expired.setTime(expired.getTime() + expiredDay * 24 * 60 * 60 * 1000); 
-    		document.cookie = name + '=' + encodeURIComponent(value) + ';expires=' + expired.toUTCString() + ';path=/'; 
+$(document).ready(function() {
+    const setCookie = function (name, value, expiredDay) { 
+        const expired = new Date(); 
+        expired.setTime(expired.getTime() + expiredDay * 24 * 60 * 60 * 1000); 
+        document.cookie = name + '=' + encodeURIComponent(value) + ';expires=' + expired.toUTCString() + ';path=/'; 
 
-    	};
-    	
-        var name = ${result}.response.name;
-        var email = ${result}.response.email;
-        $("#name").html("환영합니다. "+name+"님");
-        $("#email").html(email);
-        
-        setCookie("user_id", email, 1);
-        location.href = "./main";
-      });
-    
+    };
+
+    const main_form = document.getElementById("toMain");
+
+    var name = ${result}.response.name;
+    var email = ${result}.response.email;
+
+    setCookie("user_id", email, 1);
+    //location.href = "./main";
+    main_form.setAttribute("method","POST");
+    main_form.setAttribute("action","./main");
+    main_form.submit();
+  });
 
     
 

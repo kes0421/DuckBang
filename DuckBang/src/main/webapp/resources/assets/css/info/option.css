@@ -25,6 +25,12 @@
     margin:0px;
 }
 
+#builtin{
+	width:40px;
+    height:40px;
+    background: url("../../icon/bidet.svg") no-repeat;
+}
+
 #aircondition{
     width:40px;
     height:40px;
@@ -53,6 +59,18 @@
     width:40px;
     height:40px;
     background: url("../../icon/tv.svg") no-repeat;
+}
+
+#internet{
+	width:40px;
+    height:40px;
+    background: url("../../icon/gas.svg") no-repeat;
+}
+
+#interphone{
+    width:40px;
+    height:40px;
+    background: url("../../icon/security/videophone.svg") no-repeat;	
 }
 
 #shoes{

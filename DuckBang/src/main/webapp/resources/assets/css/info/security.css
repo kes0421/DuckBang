@@ -25,6 +25,12 @@
     margin:0px auto;
 }
  
+#joint_entrance{
+	width:40px;
+    height:40px;
+    background: url("../../icon/security/entrance.svg") no-repeat;
+}
+ 
 #cardkey{
     width:40px;
     height:40px;

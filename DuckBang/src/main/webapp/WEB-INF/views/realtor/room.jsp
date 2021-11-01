@@ -315,7 +315,7 @@
 							<div class="realtor_option">
 								<label class="maintenance_label">
 									<input form="regist_form" name="option" type="checkbox" value="6" />
-									<p>인터넷</p>
+									<p>가스레인지</p>
 								</label>								
 							</div>		
 						</td>
@@ -365,7 +365,7 @@
 							<div class="realtor_option">
 								<label class="maintenance_label">
 									<input form="regist_form" name="option" type="checkbox" value="12"  />
-									<p>빌트인</p>
+									<p>비데</p>
 								</label>								
 							</div>					
 						</td>																											

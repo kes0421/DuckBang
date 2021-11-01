@@ -9,7 +9,7 @@
 			<c:if test="${InfoOption.oo_builtin eq 'Y'}">
 				<div class="option_icon_list">
 					<div id="builtin"></div> 
-					<p>빌트인</p>
+					<p>비데</p>
 				</div>
 			</c:if>
 			<c:if test="${InfoOption.oo_induction eq 'Y'}">
@@ -51,7 +51,7 @@
 			<c:if test="${InfoOption.oo_internet eq 'Y'}">
 				<div class="option_icon_list">
 					<div id="internet"></div> 
-					<p>인터넷</p>
+					<p>가스레인지</p>
 				</div>
 			</c:if>
 			<c:if test="${InfoOption.oo_interphone eq 'Y'}">

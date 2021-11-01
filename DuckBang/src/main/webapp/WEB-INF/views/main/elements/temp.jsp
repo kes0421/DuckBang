@@ -21,7 +21,7 @@
 			<li class="other_li">
 				<div>
 					<div>
-						<button class="other_like_btn">하트</button>
+						<button class="other_like_btn"></button>
 					</div>
 					<a href="./info?o_id=${recommend[i].o_id }" class="other_a">
 						<div class="other_img">
@@ -50,4 +50,115 @@
 			</li>
 		</c:forEach>
 	</ul>
+	<form id="to_interest">
+		<input type="hidden" id = "send_email">
+		<input type="hidden" id = "send_o_id">
+	</form>
+	
 </div>
+
+<script>
+	var interest_btn = new Array();
+	var interest_btn_values = new Array();
+	var user_cookie;
+	
+	var empty_heart_url = "url('https://key0.cc/images/preview/8885_36bca2e025fa01f4218f1951efc4372c.png')";
+	var pull_heart_url = "url('https://png.pngtree.com/png-vector/20190228/ourlarge/pngtree-love-heart-icon-design-template-vector-isolated-png-image_707576.jpg')";
+	
+	const interest_form = document.getElementById("to_interest");
+	const email_input = document.getElementById("send_email");
+	const o_id_input = document.getElementById("send_o_id");
+	
+	const getCookie = function (name) { 
+		var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); 
+		return value ? decodeURIComponent(value[2]) : null; 
+	};
+	
+	user_cookie = getCookie('user_id')
+	var userDate = new Date();
+	
+	function add_interest(){
+		if(user_cookie == null){
+			location.href = "./login"
+		}else{
+			const xhttp = new XMLHttpRequest();
+			
+			const interest = {
+					o_id : this.value
+					u_id : user_cookie,
+					i_date : userDate
+			};
+			
+			if(this.style.color == "white"){
+				xhttp.open('POST','/room/interest', true);
+				xhttp.setRequestHeader('content-type','application/json;charset=EUC-KR');
+				xhttp.send(JSON.stringify(interest));
+				
+				xhttp.addEventListener('readystatechange', (e)=>{
+					this.style.backgroundImage = "url('https://png.pngtree.com/png-vector/20190228/ourlarge/pngtree-love-heart-icon-design-template-vector-isolated-png-image_707576.jpg')";
+					this.style.backgroundSize = "cover";
+					this.style.color = "red";
+
+				});
+				
+			}else{
+				xhttp.open('POST','/room/deleteInterest', true);
+				xhttp.setRequestHeader('content-type','application/json;charset=EUC-KR');
+				xhttp.send(JSON.stringify(interest));
+				
+				xhttp.addEventListener('readystatechange', (e)=>{
+					this.style.backgroundImage = "url('https://key0.cc/images/preview/8885_36bca2e025fa01f4218f1951efc4372c.png')";
+					this.style.backgroundSize = "cover";
+					this.style.color = "white";
+				});
+			}
+		}
+	}
+					
+	for(var i=0; i<=3; i++){
+		interest_btn[i] = document.getElementsByClassName('other_like_btn')[i];
+		interest_btn[i].addEventListener("click", add_interest);
+	}
+
+	var index = 0;
+	<c:forEach items="${recommend}" var="recommend"> 
+		if(index < 4){
+			interest_btn[index].setAttribute("value", "${recommend.o_id}");
+			interest_btn_values[index] = "${recommend.o_id}";
+			interest_btn[index].style.backgroundImage = "url('https://key0.cc/images/preview/8885_36bca2e025fa01f4218f1951efc4372c.png')";
+			interest_btn[index].style.backgroundSize = "cover";
+			interest_btn[index].style.color = "white";
+		}		
+		index++;
+	</c:forEach>
+	
+	if(user_cookie != null){
+		<c:forEach items="${interest_list}" var="interest_list"> 
+			for(var i=0; i< interest_btn.length; i++){
+				if(interest_btn[i].value == "${interest_list.o_id}"){
+					interest_btn[i].style.backgroundImage = "url('https://png.pngtree.com/png-vector/20190228/ourlarge/pngtree-love-heart-icon-design-template-vector-isolated-png-image_707576.jpg')";
+					interest_btn[i].style.backgroundSize = "cover";
+					interest_btn[i].style.color = "red";
+				}
+			}
+		</c:forEach>
+	}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

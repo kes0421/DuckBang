@@ -1,6 +1,8 @@
 package com.duck.room.dto.map;
 
-import java.util.Date;
+import java.sql.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 
@@ -14,5 +16,6 @@ public class MarkerDetails {
 	private Integer ok_maintenance_cost;
 	private Integer ok_month_of_payment;
 	private String od_short_lease;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date od_occupy_date;
 }

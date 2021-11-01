@@ -1,6 +1,8 @@
 package com.duck.room.dto.realtor;
 
-import java.util.Date;
+import java.sql.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,8 +20,10 @@ public class OfferingDetail {
 	private Integer od_room_count;
 	private Integer od_bathroom_count;
 	private String od_heating_kind;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date od_occupy_date;
 	private String od_construction_use;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date od_use_approval_date;
 	private String od_pet_possibility;
 }

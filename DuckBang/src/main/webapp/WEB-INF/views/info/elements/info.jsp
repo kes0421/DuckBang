@@ -87,7 +87,7 @@
 		</li>
 		<li>
 			<p class="info_a_2_1">세대당 주차수</p>
-			<div class="info_a_2_2">1.05대</div>
+			<div class="info_a_2_2">1대</div>
 		</li>
 		<li>
 			<p class="info_a_2_1">베란다/발코니</p>
@@ -107,11 +107,11 @@
 		</li>
 		<li>
 			<p class="info_a_2_1">최종 등록일</p>
-			<div class="info_a_2_2">2021.10.03</div>
+			<div class="info_a_2_2">2021-10-03</div>
 		</li>
 		<li>
 			<p class="info_a_2_1">최근 수정일</p>
-			<div class="info_a_2_2">2021.10.03</div>
+			<div class="info_a_2_2">2021-10-03</div>
 		</li>
 	</ul>
 </div>

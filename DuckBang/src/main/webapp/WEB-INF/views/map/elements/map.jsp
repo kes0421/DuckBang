@@ -4,6 +4,7 @@
   <head>
     <title>Places Search Box</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
     <link rel="stylesheet" href="<c:url value='/resources/assets/css/map/list.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/resources/assets/css/map/map.css'/>" />
   </head>
@@ -426,7 +427,7 @@
 			   });
 			</c:otherwise>
 		</c:choose>
-		   
+		
 		   // Create the search box and link it to the UI element.
 		   const input = document.getElementById("pac-input");
 		   const map_map = document.getElementById("map_map");
@@ -797,6 +798,7 @@
 		   var form = document.createElement('form');
 		   form.setAttribute('method','get');
 		   form.setAttribute('action', url);
+		   form.setAttribute('target', '_blank');
 		   document.charset = "utf-8";
 		   
 		   var hiddenField = document.createElement("input");
@@ -821,6 +823,7 @@
 		   infoWindow.open(map);
 		}
 
+		
 	</script>
 	</body>
 </html>

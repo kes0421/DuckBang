@@ -53,6 +53,15 @@
                             <a class=" ">오피스텔 내놓기(전/월세만)</a><br>
                         </div>
                     </li>
+                     <li id="all">
+                        <span>지도</span><br>
+                        <span id="header_area_small">모든 항목</span>
+                        <div class="header_area_sub_menu">
+                            <a class=" ">오피스텔 찾기</a><br>
+                            <a class=" ">찜한 매물</a><br>
+                            <a class=" ">오피스텔 내놓기(전/월세만)</a><br>
+                        </div>
+                    </li>
                 </ul>
             </div>
             <div id="login_area">
@@ -96,6 +105,8 @@
 				headerInput.value = 'oneroom';
 			}else if(e.getAttribute('id') == 'office'){
 				headerInput.value = 'office';
+			}else if(e.getAttribute('id') == 'all'){
+				headerInput.value = 'all';
 			}
 			headerForm.action = './map';
 			headerForm.method = 'GET';

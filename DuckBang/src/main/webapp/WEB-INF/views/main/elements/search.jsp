@@ -170,7 +170,7 @@ var check = 1;
    	studioApt.style.color = "#FFFFFF";
    	officetel.style.fontWeight = "normal";
    	officetel.style.color = "#FFFFFF";
-   	point.style.left = 150 + "px";
+   	point.style.left = 138 + "px";
    	check = 2;
    });
    
@@ -183,7 +183,7 @@ var check = 1;
    	villa.style.color = "#FFFFFF";
    	officetel.style.fontWeight = "normal";
    	officetel.style.color = "#FFFFFF";
-   	point.style.left = 300 + "px";
+   	point.style.left = 287 + "px";
    	check = 3;
    });
    
@@ -196,7 +196,7 @@ var check = 1;
    	villa.style.color = "#FFFFFF";
    	studioApt.style.fontWeight = "normal";
    	studioApt.style.color = "#FFFFFF";
-   	point.style.left = 450 + "px";
+   	point.style.left = 431 + "px";
    	check = 4;
    });
    

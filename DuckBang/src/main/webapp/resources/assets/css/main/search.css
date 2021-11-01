@@ -142,9 +142,9 @@
 }
 
 .h01_searchBar-1_point{
-	width: 110px;
-    height: 48px;
-    background-image: url(https://s.zigbang.com/v1/web/main/select_bubble.png);
+	width: 143px;
+    height: 50px;
+    background-image: url("../../img/cloud.png");
     background-size: cover;
     font-size: 17px;
     font-weight: bold;

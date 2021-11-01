@@ -11,11 +11,17 @@
 					<div class="explain_priceWrap">
 						<div class="explain_price">
 							<p class="name" id="explain1_okCode">${explain_1.ok_code}</p>
-							<p class="value" id="explain1_deposit"></p>
+							<p class="value" id="explain1_deposit">
+								${explain_1.ok_deposit}/${explain_1.ok_month_of_payment}
+							</p>
 						</div>
 						<div class="explain_price">
 							<p class="name" id="explain2_okCode">${explain_2.ok_code}</p>
-							<p class="value" id="explain2_deposit"></p>
+							<p class="value" id="explain2_deposit">
+								<c:if test="${explain_2.ok_deposit >= 10000}">
+									${Math.round(explain_2.ok_deposit/10000)}억${explain_2.ok_deposit % 10000}
+								</c:if>
+							</p>
 						</div>
 					</div>
 					
@@ -28,11 +34,17 @@
 					<div class="explain_priceWrap">
 						<div class="explain_price">
 							<p class="name" id="explain3_okCode">${explain_3.ok_code}</p>
-							<p class="value" id="explain3_deposit"></p>
+							<p class="value" id="explain3_deposit">
+								${explain_3.ok_deposit}/${explain_3.ok_month_of_payment}
+							</p>
 						</div>
 						<div class="explain_price">
 							<p class="name" id="explain4_okCode">${explain_4.ok_code}</p>
-							<p class="value" id="explain4_deposit"></p>
+							<p class="value" id="explain4_deposit">
+								<c:if test="${explain_4.ok_deposit >= 10000}">
+									${Math.round(explain_4.ok_deposit/10000)}억${explain_4.ok_deposit % 10000}
+								</c:if>
+							</p>
 						</div>
 					</div>
 					<p class="description">※ 전용면적 60㎡(18평)이하</p>
@@ -44,11 +56,17 @@
 					<div class="explain_priceWrap">
 						<div class="explain_price">
 							<p class="name" id="explain5_okCode">${explain_5.ok_code}</p>
-							<p class="value" id="explain5_deposit"></p>
+							<p class="value" id="explain5_deposit">
+								${explain_5.ok_deposit}/${explain_5.ok_month_of_payment}
+							</p>
 						</div>
 						<div class="explain_price">
 							<p class="name" id="explain6_okCode">${explain_6.ok_code}</p>
-							<p class="value" id="explain6_deposit"></p>
+							<p class="value" id="explain6_deposit">
+								<c:if test="${explain_6.ok_deposit >= 10000}">
+									${Math.round(explain_6.ok_deposit/10000)}억${explain_6.ok_deposit % 10000}
+								</c:if>
+							</p>
 						</div>
 					</div>
 					<p class="description">※ 전용면적 33㎡(10평)이하</p>
@@ -137,7 +155,7 @@
 	</div>
 </div>
 
-<script>
+<!--  <script>
 	const explain1_deposit = document.getElementById("explain1_deposit");
 	const explain2_deposit = document.getElementById("explain2_deposit");
 	const explain3_deposit = document.getElementById("explain3_deposit");
@@ -197,7 +215,6 @@
 	changeDeposit(deposit4, depositRest4, explain4_deposit, ok_code4, ok_month4);
 	changeDeposit(deposit5, depositRest5, explain5_deposit, ok_code5, ok_month5);
 	changeDeposit(deposit6, depositRest6, explain6_deposit, ok_code6, ok_month6);
-
 </script>
-
+-->
 <script type="text/javascript" src="./resources/assets/js/main/explain.js"></script>

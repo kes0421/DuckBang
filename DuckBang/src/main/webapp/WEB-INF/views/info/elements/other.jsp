@@ -23,11 +23,17 @@
 								${InfoOther[i].ok_code}
 								<c:choose>
 									<c:when test="${InfoOther[i].ok_code eq '월세'}">
-										${InfoOther[i].ok_deposit} / ${InfoOther[i].ok_month_of_payment}
+										${InfoOther[i].ok_deposit}/${InfoOther[i].ok_month_of_payment}
+									</c:when>
+									<c:when test="${InfoOther[i].ok_deposit % 10000 == 0}">
+										${Math.round(InfoOther[i].InfoOther[i]/10000)}억
+									</c:when>	
+									<c:when test="${InfoOther[i].ok_deposit >= 10000}">
+										${Math.round(InfoOther[i].ok_deposit/10000)}억${InfoOther[i].ok_deposit % 10000}
 									</c:when>
 									<c:otherwise>
 										${InfoOther[i].ok_deposit}
-									</c:otherwise>							
+									</c:otherwise>										
 								</c:choose>
 							</h1>
 							<p class="other_details_p2">${InfoOther[i].od_apply_floor}층, ${InfoOther[i].od_private_area}m², 관리비 ${InfoOther[i].ok_maintenance_cost }만</p>

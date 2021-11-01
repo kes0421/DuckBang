@@ -21,7 +21,22 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td><p>${price.ok_deposit}/${price.ok_month_of_payment}</p></td>
+				<td><p>
+					<c:choose>
+						<c:when test="${price.ok_code eq '월세'}"> 
+							${price.ok_deposit}/${price.ok_month_of_payment}
+						</c:when>
+						<c:when test="${price.ok_deposit % 10000 == 0}">
+							${Math.round(price.ok_deposit/10000)}억
+						</c:when>					
+						<c:when test="${price.ok_deposit >= 10000}">
+							${Math.round(price.ok_deposit/10000)}억${price.ok_deposit % 10000}
+						</c:when>
+						<c:otherwise>
+							${price.ok_deposit}
+						</c:otherwise>	
+					</c:choose>
+				</p></td>
 				<td id="special">
 					<div>
 						<p>매월 ${price.ok_maintenance_cost}만 원</p>

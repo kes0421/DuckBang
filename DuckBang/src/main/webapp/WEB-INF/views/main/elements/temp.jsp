@@ -34,7 +34,13 @@
 								${recommend[i].ok_code}
 								<c:choose>
 									<c:when test="${recommend[i].ok_code eq '월세'}">
-										${recommend[i].ok_deposit} / ${recommend[i].ok_month_of_payment}
+										${recommend[i].ok_deposit}/${recommend[i].ok_month_of_payment}
+									</c:when>
+									<c:when test="${recommend[i].ok_deposit % 10000 == 0}">
+										${Math.round(recommend[i].ok_deposit/10000)}억
+									</c:when>	
+									<c:when test="${recommend[i].ok_deposit >= 10000}">
+										${Math.round(recommend[i].ok_deposit/10000)}억${recommend[i].ok_deposit % 10000}
 									</c:when>
 									<c:otherwise>
 										${recommend[i].ok_deposit}

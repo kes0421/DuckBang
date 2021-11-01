@@ -7,14 +7,22 @@
 		<li class="header_li">
 			<p class="header_p1"></p>
 			<div class="header_price">
+			<h1>${InfoTop1.ok_code} 
 				<c:choose>
 					<c:when test="${InfoTop1.ok_code eq '월세'}">
-						<h1>${InfoTop1.ok_code} ${InfoTop1.ok_deposit}/${InfoTop1.ok_month_of_payment}</h1>
+						${InfoTop1.ok_deposit}/${InfoTop1.ok_month_of_payment}
+					</c:when>
+					<c:when test="${InfoTop1.ok_deposit % 10000 == 0}">
+						${Math.round(InfoTop1.ok_deposit/10000)}억
+					</c:when>	
+					<c:when test="${InfoTop1.ok_deposit >= 10000}">
+						${Math.round(InfoTop1.ok_deposit/10000)}억${InfoTop1.ok_deposit % 10000}
 					</c:when>
 					<c:otherwise>
-						<h1>${InfoTop1.ok_code} ${InfoTop1.ok_deposit}</h1>
+						${InfoTop1.ok_deposit}
 					</c:otherwise>
 				</c:choose>
+				</h1>	
 				<span>만원</span>
 			</div>
 		</li>

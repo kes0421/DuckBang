@@ -4,13 +4,14 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.duck.room.mapper.UsersMapper">
 	<select id="getUser" resultType="com.duck.room.dto.Users">
-		SELECT * FROM users
-	</select>
-	<select id="checkUser" resultType="int">
-		SELECT count(*) FROM users WHERE u_id = #{u_id}
-	</select>
-	<insert id="newUser">
-		INSERT INTO users (U_ID, U_PASSWORD, U_RIGHT, U_PHONE, U_ADDRESS) 
-        VALUES (#{u_id}, #{u_pass}, null, null, null)
-	</insert>
+        SELECT * FROM users
+    </select>
+
+    <select id="getSelectUser" resultType="com.duck.room.dto.Users">
+        SELECT u_id FROM users WHERE u_id = #{user_id}
+    </select>
+
+    <insert id="insertSocialId" >
+        INSERT INTO users(u_id, u_password) VALUES(#{user_id}, #{password})
+    </insert>
 </mapper>

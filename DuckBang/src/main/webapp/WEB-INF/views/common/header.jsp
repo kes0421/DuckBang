@@ -56,7 +56,23 @@
                 </ul>
             </div>
             <div id="login_area">
-               <button type="button" class="login_btn" style="vertical-align: middle;">로그인 및 회원가입</button>
+            	<c:choose>
+            		<c:when test="${empty cookie.user_id.value }">
+               			<button type="button" class="login_btn" style="vertical-align: middle;">로그인 및 회원가입</button>
+               		</c:when>
+               		<c:when test="${not empty cookie.user_id.value }">
+               			<div class="user_menu">
+               				<ul>
+               				<li><a href="#" id="current">${name }님 환영합니다</a>
+  								<ul>
+               						<li><a href="#">menu1</a></li>
+               						<li><a href="#">menu2</a></li>
+               						<li><a href="#">menu3</a></li>
+               					</ul>
+               				</ul>
+               			</div>
+               		</c:when>
+               	</c:choose>
            </div>
            <div id="seller_join">
               <p id="seller_join_inner" style="vertical-align: middle;">
@@ -64,12 +80,9 @@
                  및 광고문의
               </p>
            </div>
-        </div>
-        
-   
-   
+        </div>  
 </div>
-<script src="${pageContext.request.contextPath }/resources/assets/js/header/header.js"></script>
+
 <script>
 	const headerForm = document.getElementById('headerForm');
 	const headerInput = document.getElementById('headerInput');

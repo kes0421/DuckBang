@@ -174,7 +174,7 @@ background-color: rgb(221, 221, 221);
 .list_room_sort {
    font-size: 12px;
    padding: 1%;
-   border: 2px solid goldenrod;
+   border: 1px solid black;
 }
 
 .list_room_type {

@@ -74,6 +74,7 @@ public class HomeController {
 			return "redirect:/signin";
 		}else {
 			um.newUser(u_id, u_pass);
+			model.addAttribute("id", u_id);
 			return "/join/signin2";
 		}
 	}

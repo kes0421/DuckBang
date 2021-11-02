@@ -36,9 +36,7 @@
 					<p class="login_form_idSaved_text">아이디 저장</p>
 				</label>
 				<div class="login_form_membership">
-					<p class="login_form_membership_text">회원가입</p>
-					<span></span>
-					<p class="login_form_membership_text">비밀번호 재설정</p>
+					<p onclick="membership();" class="login_form_membership_text">회원가입</p>
 				</div>
 			</div>
 			<button class="login_form_btn">
@@ -58,6 +56,9 @@
 	</div>
 	
 	<script>
+		function membership(){
+			location.href="./signin";
+		}
 		const login_form = document.getElementsByClassName('login_form')[0];
 		const login_btn = document.getElementsByClassName('login_form_btn')[0];
 		const login_email = document.getElementsByClassName('login_form_input')[0];

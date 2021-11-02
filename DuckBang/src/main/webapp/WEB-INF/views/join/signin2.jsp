@@ -22,14 +22,14 @@
 				<img src="https://www.dabangapp.com/static/media/join.a3289f37.gif">
 			</div>
 			<div id="txt_area">
-				<p>oooo님 </p>
+				<p>${id }님 </p>
 				<p>환영합니다!</p>
 			</div>
 		</div>
 		
 		
 		
-		<button class="login_form_btn" id="welcome_btn">
+		<button onclick="location.href='./login'" class="login_form_btn" id="welcome_btn">
 			<span>확인</span>
 		</button>
 	</div>
@@ -41,6 +41,4 @@
 	</div>
 	
 </body>
-
-
 </html>

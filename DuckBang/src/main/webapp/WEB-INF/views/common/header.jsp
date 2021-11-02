@@ -67,16 +67,16 @@
             <div id="login_area">
             	<c:choose>
             		<c:when test="${empty cookie.user_id.value }">
-               			<button type="button" class="login_btn" style="vertical-align: middle;">로그인 및 회원가입</button>
+               			<button type="button" class="login_btn" style="vertical-align: middle;" onclick="location.href='${pageContext.request.contextPath }/login'">로그인 및 회원가입</button>
                		</c:when>
                		<c:when test="${not empty cookie.user_id.value }">
                			<div class="user_menu">
                				<ul>
-               				<li><a href="#" id="current">${name }님 환영합니다</a>
+               				<li><p id="current">${name }님 환영합니다</p>
   								<ul>
-               						<li><a href="#">menu1</a></li>
-               						<li><a href="#">menu2</a></li>
-               						<li><a href="#">menu3</a></li>
+               						<li><a href="${pageContext.request.contextPath }/like">찜목록 보러가기</a></li>
+          						 	<li><a href="${pageContext.request.contextPath }/realtor">방내놓기</a></li>
+            						<li><a onclick="deleteCookie('user_id', '', 0)">로그아웃</a></li>
                					</ul>
                				</ul>
                			</div>
@@ -126,5 +126,80 @@
 	var user = user_cookie.substr(0,index);
 	
 	current.innerText = user + "님";
+	
+	const apart = document.getElementById('apart');
+    const tworoom = document.getElementById('tworoom');
+    const oneroom = document.getElementById('oneroom');
+    const office = document.getElementById('office');
+    const all = document.getElementById('all');
 
+     const url = new URL(window.location.href);
+
+     const urlParams = url.searchParams;
+
+     const nowParam = urlParams.get('room_kind');
+
+
+     if (nowParam == 'apart') {
+        apart.style.color = 'orange';
+        tworoom.style.color = 'black';
+        oneroom.style.color = 'black';
+        office.style.color = 'black';
+        all.style.color = 'black';
+     }
+
+     if (nowParam == 'tworoom') {
+            apart.style.color = 'black';
+            tworoom.style.color = 'orange';
+            oneroom.style.color = 'black';
+            office.style.color = 'black';
+            all.style.color = 'black';
+     }
+
+     if (nowParam == 'oneroom') {
+            apart.style.color = 'black';
+            tworoom.style.color = 'black';
+            oneroom.style.color = 'orange';
+            office.style.color = 'black';
+            all.style.color = 'black';
+     }
+
+     if (nowParam == 'office') {
+            apart.style.color = 'black';
+            tworoom.style.color = 'black';
+            oneroom.style.color = 'black';
+            office.style.color = 'orange';
+            all.style.color = 'black';
+     }
+
+     if (nowParam == 'all') {
+            apart.style.color = 'black';
+            tworoom.style.color = 'black';
+            oneroom.style.color = 'black';
+            office.style.color = 'black';
+            all.style.color = 'orange';
+     }
+	
+     function getCookie(cName) {
+         cName = cName + '=';
+         var cookieData = document.cookie;
+         var start = cookieData.indexOf(cName);
+         var cValue = '';
+         if(start != -1){
+         start += cName.length;
+         var end = cookieData.indexOf(';', start);
+         if(end == -1)end = cookieData.length;
+         cValue = cookieData.substring(start, end);
+         }
+         return unescape(cValue);
+     }
+     
+     const deleteCookie = function (name, value, expiredDay) {
+    	 const expired = new Date();
+    	 var checkEvent = getCookie("user_id");
+    	 expired.setTime(expired.getTime() + expiredDay * 24 * 60 * 60 * 1000);              
+    	 document.cookie = name + '=' + encodeURIComponent(checkEvent) + ';expires=' + expired.toUTCString() + ';path=/';
+    	 window.location.reload();
+   	 };
+     
 </script>

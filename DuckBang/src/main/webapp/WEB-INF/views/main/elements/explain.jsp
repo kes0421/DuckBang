@@ -117,7 +117,7 @@
 		</div>
 		</div>
 		<div class="explain_info_slide_option-3">
-				<p class="title">신대방동에서는</p>
+				<p class="title">강남역에서는</p>
 				<p class="title_bold">원룸 상담이 가장 많아요</p>
 			<div class="explain_infoWrap">
 				<div class="explain_barWrap">

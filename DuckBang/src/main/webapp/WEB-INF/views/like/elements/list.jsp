@@ -17,7 +17,7 @@
 						<button class="room_like_btn"></button>
 					</div>			
 				</div>
-				<a href="./info?o_id=" class="room_ul1_a1">
+				<a href="./info?o_id=${likeRoom.o_id}" class="room_ul1_a1">
 					<div class="room_ul1_div2">
 						<div class="room_ul1_div3">
 							<img src="${likeRoom.image_1}">

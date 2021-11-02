@@ -6,13 +6,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="margin:0;">
 	<div>
 		<!-- 상단 메뉴바 -->
 		<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
 	</div>
 	<div>
-		<jsp:include page="/WEB-INF/views/like/elements/profile.jsp"></jsp:include>
 		<jsp:include page="/WEB-INF/views/like/elements/list.jsp"></jsp:include>
 	</div>
 	<div>

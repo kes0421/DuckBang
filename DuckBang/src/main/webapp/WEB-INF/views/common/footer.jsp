@@ -25,7 +25,7 @@
                     </span>
                 </button>
             </form>
-            <button id="footer_top_btn" class="footer_button">
+            <button onclick="window.scrollTo(0,0);" id="footer_top_btn" class="footer_button">
                 <span class="material-icons-outlined" style="font-size:20px; color:#d2d6da;">
                     arrow_drop_up
                 </span>

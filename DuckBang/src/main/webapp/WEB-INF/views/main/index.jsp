@@ -5,6 +5,8 @@
 <head>
 <meta charset="EUC-KR">
 <link rel = "stylesheet" href ="${pageContext.request.contextPath}/resources/assets/css/main/index.css">
+<link rel = "stylesheet" href ="${pageContext.request.contextPath}/resources/assets/css/common/headerFix.css">
+
 </head>
 <body>
 

@@ -115,7 +115,7 @@
    
 	if(user_cookie != null){
 		<c:forEach items="${interest_list}" var="interest_list"> 
-			if(user_id == "${interest_list.u_id}"){
+			if(user_cookie == "${interest_list.u_id}"){
 				for(var i=0; i< interest_btn.length; i++){
 					if(interest_btn[i].value == "${interest_list.o_id}"){
 						interest_btn[i].style.backgroundImage = "url('https://cdn.discordapp.com/attachments/895995335292370949/904688134137217024/2_1.png')";

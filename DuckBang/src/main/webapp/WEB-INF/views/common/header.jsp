@@ -72,11 +72,11 @@
                		<c:when test="${not empty cookie.user_id.value }">
                			<div class="user_menu">
                				<ul>
-               				<li><p id="current">${name }님 환영합니다</p>
-  								<ul>
-               						<li><a href="${pageContext.request.contextPath }/like">찜목록 보러가기</a></li>
-          						 	<li><a href="${pageContext.request.contextPath }/realtor">방내놓기</a></li>
-            						<li><a onclick="deleteCookie('user_id', '', 0)">로그아웃</a></li>
+               				<li><p id="current"></p>
+  								<ul style="width: 100px">
+               						<li style="margin-left:20px; width: 100px"><a href="${pageContext.request.contextPath }/like">찜목록</a></li>
+          						 	<li style="margin-left:20px; width: 100px"><a href="${pageContext.request.contextPath }/realtor">방내놓기</a></li>
+            						<li style="margin-left:20px; width: 100px"><a onclick="deleteCookie('user_id', '', 0)">로그아웃</a></li>
                					</ul>
                				</ul>
                			</div>
@@ -143,7 +143,7 @@
 	if(user_cookie != null){
 		var index = (user_cookie.indexOf('@'));
 		var user = user_cookie.substr(0,index);
-		current.innerText = user + "님";
+		current.innerText = user;
 	}
 	
 	const apart = document.getElementById('apart');

@@ -17,7 +17,7 @@
 	<div class="login_container">
 		<form class="login_form">
 			<h1>로그인</h1>
-			<h2>다방 서비스 이용을 위해 로그인해주세요.</h2>
+			<h2>덕방 서비스 이용을 위해 로그인해주세요.</h2>
 			<div class="login_form_id">
 				<label class="login_form_label">
 					<p class="login_form_text">아이디</p>

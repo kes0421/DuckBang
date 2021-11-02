@@ -1,6 +1,19 @@
 
 @charset "UTF-8";
 
+.user_menu{
+	max-width: 216px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: rgb(238, 238, 238);
+    padding: 5px 24px 6px 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#header_area_top_menu{
+	margin-top:20px;
+}
 #header_area {
    height:90px;
    border-bottom: 1px solid rgb(221, 221, 221);
@@ -222,6 +235,7 @@ background: rgb(171,171,171);
 border:0px;
 color:#000000;
 text-decoration:none;
+margin-right: 20px;
 }
 
 .user_menu p{
@@ -230,4 +244,5 @@ clear:left;
 
 #current{
 	color: black;
+	margin: 1px;
 }

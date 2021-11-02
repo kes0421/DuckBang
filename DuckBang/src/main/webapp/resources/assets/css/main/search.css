@@ -77,12 +77,12 @@
 .h01_bg{	
 	position: relative;
 	width: 100%;
-	height: 460px;
+	height: 524px;
 	margin: 0 auto;
 	display: flex;
 	-webkit-box-align: center;
 	align-items: center;
-	background-size: 1979px 460px;
+	background-size: 1979px 524px;
 	background-image: url("../../img/back1.png");
 	background-repeat: no-repeat;
 }

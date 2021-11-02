@@ -52,16 +52,12 @@
 	var interest_btn_values = new Array();
 	var user_cookie;
    
-	const getCookie = function (name) { 
-		var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); 
-		return value ? decodeURIComponent(value[2]) : null; 
-	};
-   
+
 	user_cookie = getCookie('user_id')
 	var userDate = new Date();
    
 	function add_interest(){
-		if(user_cookie == null){
+		if(user_cookie == ''){
 			location.href = "./login"
 		}else{
 			const xhttp = new XMLHttpRequest();
@@ -117,6 +113,7 @@
    
 	if(user_cookie != null){
 		<c:forEach items="${interest_list}" var="interest_list"> 
+		if(user_cookie == "${interest_list.u_id}"){
 			for(var i=0; i< interest_btn.length; i++){
 				if(interest_btn[i].value == "${interest_list.o_id}"){
 					interest_btn[i].style.backgroundImage = "url('https://cdn.discordapp.com/attachments/895995335292370949/904688134137217024/2_1.png')";
@@ -124,6 +121,7 @@
 					interest_btn[i].style.color = "red";
 				}
 			}
+		}
 		</c:forEach>
 	}
 

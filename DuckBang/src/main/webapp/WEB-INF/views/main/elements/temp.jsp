@@ -64,16 +64,12 @@
 	var interest_btn_values = new Array();
 	var user_cookie;
    
-	const getCookie = function (name) { 
-		var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); 
-		return value ? decodeURIComponent(value[2]) : null; 
-	};
-   
 	user_cookie = getCookie('user_id')
 	var userDate = new Date();
    
 	function add_interest(){
-		if(user_cookie == null){
+		console.log(user_cookie == '');
+		if(user_cookie == ''){
 			location.href = "./login"
 		}else{
 			const xhttp = new XMLHttpRequest();
@@ -126,7 +122,7 @@
 		}      
 		index++;
 	</c:forEach>
-   
+	   
 	if(user_cookie != null){
 		<c:forEach items="${interest_list}" var="interest_list"> 
 			for(var i=0; i< interest_btn.length; i++){

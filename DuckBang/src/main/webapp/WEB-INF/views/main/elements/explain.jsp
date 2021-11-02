@@ -12,14 +12,14 @@
 						<div class="explain_price">
 							<p class="name" id="explain1_okCode">${explain_1.ok_code}</p>
 							<p class="value" id="explain1_deposit">
-								${explain_1.ok_deposit}/${explain_1.ok_month_of_payment}
+								${Math.round(explain_1.ok_deposit/100)*100}/${Math.round(explain_1.ok_month_of_payment/10)*10}
 							</p>
 						</div>
 						<div class="explain_price">
 							<p class="name" id="explain2_okCode">${explain_2.ok_code}</p>
 							<p class="value" id="explain2_deposit">
 								<c:if test="${explain_2.ok_deposit >= 10000}">
-									${Math.round(explain_2.ok_deposit/10000)}억${explain_2.ok_deposit % 10000}
+									${Math.round(explain_2.ok_deposit/10000)}억${Math.round((explain_2.ok_deposit % 10000)/10)*10}
 								</c:if>
 							</p>
 						</div>
@@ -35,14 +35,14 @@
 						<div class="explain_price">
 							<p class="name" id="explain3_okCode">${explain_3.ok_code}</p>
 							<p class="value" id="explain3_deposit">
-								${explain_3.ok_deposit}/${explain_3.ok_month_of_payment}
+								${Math.round(explain_3.ok_deposit/100)*100}/${Math.round(explain_3.ok_month_of_payment/10)*10}
 							</p>
 						</div>
 						<div class="explain_price">
 							<p class="name" id="explain4_okCode">${explain_4.ok_code}</p>
 							<p class="value" id="explain4_deposit">
 								<c:if test="${explain_4.ok_deposit >= 10000}">
-									${Math.round(explain_4.ok_deposit/10000)}억${explain_4.ok_deposit % 10000}
+									${Math.round(explain_4.ok_deposit/10000)}억${Math.round((explain_4.ok_deposit % 10000)/10)*10}
 								</c:if>
 							</p>
 						</div>
@@ -57,14 +57,14 @@
 						<div class="explain_price">
 							<p class="name" id="explain5_okCode">${explain_5.ok_code}</p>
 							<p class="value" id="explain5_deposit">
-								${explain_5.ok_deposit}/${explain_5.ok_month_of_payment}
+								${Math.round(explain_5.ok_deposit/10)*10}/${Math.round(explain_5.ok_month_of_payment/10)*10}
 							</p>
 						</div>
 						<div class="explain_price">
 							<p class="name" id="explain6_okCode">${explain_6.ok_code}</p>
 							<p class="value" id="explain6_deposit">
 								<c:if test="${explain_6.ok_deposit >= 10000}">
-									${Math.round(explain_6.ok_deposit/10000)}억${explain_6.ok_deposit % 10000}
+									${Math.round(explain_6.ok_deposit/10000)}억${Math.round((explain_6.ok_deposit % 10000)/10)*10}
 								</c:if>
 							</p>
 						</div>
@@ -155,66 +155,4 @@
 	</div>
 </div>
 
-<!--  <script>
-	const explain1_deposit = document.getElementById("explain1_deposit");
-	const explain2_deposit = document.getElementById("explain2_deposit");
-	const explain3_deposit = document.getElementById("explain3_deposit");
-	const explain4_deposit = document.getElementById("explain4_deposit");
-	const explain5_deposit = document.getElementById("explain5_deposit");
-	const explain6_deposit = document.getElementById("explain6_deposit");
-	
-	var ok_code1 = '${explain_1.ok_code}';
-	var ok_code2 = '${explain_2.ok_code}';
-	var ok_code3 = '${explain_3.ok_code}';
-	var ok_code4 = '${explain_4.ok_code}';
-	var ok_code5 = '${explain_5.ok_code}';
-	var ok_code6 = '${explain_6.ok_code}';
-	
-	var deposit1 = '${explain_1.ok_deposit}';
-	var deposit2 = '${explain_2.ok_deposit}';
-	var deposit3 = '${explain_3.ok_deposit}';
-	var deposit4 = '${explain_4.ok_deposit}';
-	var deposit5 = '${explain_5.ok_deposit}';
-	var deposit6 = '${explain_6.ok_deposit}';
-	
-	var ok_month1 = '${explain_1.ok_month_of_payment}';
-	var ok_month2 = '${explain_2.ok_month_of_payment}';
-	var ok_month3 = '${explain_3.ok_month_of_payment}';
-	var ok_month4 = '${explain_4.ok_month_of_payment}';
-	var ok_month5 = '${explain_5.ok_month_of_payment}';
-	var ok_month6 = '${explain_6.ok_month_of_payment}';
-	
-	var depositRest1 = parseInt(deposit1 / 10000);
-	var depositRest2 = parseInt(deposit2 / 10000);
-	var depositRest3 = parseInt(deposit3 / 10000);
-	var depositRest4 = parseInt(deposit4 / 10000);
-	var depositRest5 = parseInt(deposit5 / 10000);
-	var depositRest6 = parseInt(deposit6 / 10000);
-	
-	function changeDeposit(deposit, depositRest, explain_deposit, ok_code, ok_month){
-		if(depositRest !== 0){
-			if((deposit % 10000) == 0) {
-				deposit = depositRest +'억';
-			}else {
-				deposit = depositRest +'억' + (deposit % 10000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-			}
-		}else {
-			deposit = deposit.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-		}
-		
-		if(ok_code == '월세'){
-			explain_deposit.innerText = deposit +'/' + ok_month;
-		}else {
-			explain_deposit.innerText = deposit;
-		}
-	}
-	
-	changeDeposit(deposit1, depositRest1, explain1_deposit, ok_code1, ok_month1);
-	changeDeposit(deposit2, depositRest2, explain2_deposit, ok_code2, ok_month2);
-	changeDeposit(deposit3, depositRest3, explain3_deposit, ok_code3, ok_month3);
-	changeDeposit(deposit4, depositRest4, explain4_deposit, ok_code4, ok_month4);
-	changeDeposit(deposit5, depositRest5, explain5_deposit, ok_code5, ok_month5);
-	changeDeposit(deposit6, depositRest6, explain6_deposit, ok_code6, ok_month6);
-</script>
--->
 <script type="text/javascript" src="./resources/assets/js/main/explain.js"></script>

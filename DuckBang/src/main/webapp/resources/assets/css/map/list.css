@@ -17,7 +17,7 @@ background-color: rgb(221, 221, 221);
 
 #list_room_infos {
 	height:567px;
-	overflow: auto;
+	overflow-y: scroll;
 	border: 1px solid #ddd7d7;
 	background-color: rgb(238, 238, 238);
 	flex: 1 1 0%;
@@ -151,9 +151,33 @@ background-color: rgb(221, 221, 221);
    width: 330px;
 }
 
+.list_room_image_div {
+	position: relative;
+}
+
 .list_room_image {
    width: 140px;
    height: 120px;
+   z-index: 1;
+}
+
+.list_room_image_btn_div {
+	position: absolute;
+	z-index: 2;
+	top: 21px;
+	right: 183px;
+}
+
+.list_only_btn_div {
+	position: relative;	
+}
+
+.list_room_image_btn {
+	background-color: transparent;
+	width: 27px;
+	height: 24px;
+	border: 0px;
+	cursor: pointer;
 }
 
 .list_room_info:hover {
@@ -169,6 +193,8 @@ background-color: rgb(221, 221, 221);
 .list_room_reco_sort {
    display: flex;
    flex-direction: row;
+   width: 74%;
+   height: 18%;
 }
 
 .list_room_sort {

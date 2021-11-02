@@ -113,5 +113,18 @@
 			headerForm.submit();
 		});
 	});
+	
+	const current = document.getElementById('current');
+	const getCookies = function (name) { 
+	   var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); 
+	   return value ? decodeURIComponent(value[2]) : null; 
+	};
+	
+	console.log(getCookies("user_id"));
+	var user_cookie = getCookies("user_id");
+	var index = (user_cookie.indexOf('@'))
+	var user = user_cookie.substr(0,index);
+	
+	current.innerText = user + "님";
 
 </script>

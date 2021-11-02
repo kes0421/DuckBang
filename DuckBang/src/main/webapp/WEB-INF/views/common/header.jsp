@@ -102,30 +102,35 @@
 	const headerAll = document.getElementById('all');
 	headerApart.addEventListener('click', () => {
 		headerInput.value = 'apart';
+		headerApart.style.color = 'rgb(6, 73, 192)';
 		headerForm.action = './map';
 		headerForm.method = 'GET';
 		headerForm.submit();
 	});
 	headerTwo.addEventListener('click', () => {
 		headerInput.value = 'tworoom';
+		headerTwo.style.color = 'rgb(6, 73, 192)';
 		headerForm.action = './map';
 		headerForm.method = 'GET';
 		headerForm.submit();
 	});
 	headerOne.addEventListener('click', () => {
 		headerInput.value = 'oneroom';
+		headerOne.style.color = 'rgb(6, 73, 192)';
 		headerForm.action = './map';
 		headerForm.method = 'GET';
 		headerForm.submit();
 	});
 	headerOffice.addEventListener('click', () => {
 		headerInput.value = 'office';
+		headerOffice.style.color = 'rgb(6, 73, 192)';
 		headerForm.action = './map';
 		headerForm.method = 'GET';
 		headerForm.submit();
 	});
 	headerAll.addEventListener('click', () => {
 		headerInput.value = 'all';
+		headerAll.style.color = 'rgb(6, 73, 192)';
 		headerForm.action = './map';
 		headerForm.method = 'GET';
 		headerForm.submit();
@@ -160,7 +165,7 @@
 
 
      if (nowParam == 'apart') {
-        apart.style.color = 'orange';
+        apart.style.color = 'rgb(6, 73, 192)';
         tworoom.style.color = 'black';
         oneroom.style.color = 'black';
         office.style.color = 'black';
@@ -169,7 +174,7 @@
 
      if (nowParam == 'tworoom') {
             apart.style.color = 'black';
-            tworoom.style.color = 'orange';
+            tworoom.style.color = 'rgb(6, 73, 192)';
             oneroom.style.color = 'black';
             office.style.color = 'black';
             all.style.color = 'black';
@@ -178,7 +183,7 @@
      if (nowParam == 'oneroom') {
             apart.style.color = 'black';
             tworoom.style.color = 'black';
-            oneroom.style.color = 'orange';
+            oneroom.style.color = 'rgb(6, 73, 192)';
             office.style.color = 'black';
             all.style.color = 'black';
      }
@@ -187,7 +192,7 @@
             apart.style.color = 'black';
             tworoom.style.color = 'black';
             oneroom.style.color = 'black';
-            office.style.color = 'orange';
+            office.style.color = 'rgb(6, 73, 192)';
             all.style.color = 'black';
      }
 
@@ -196,7 +201,7 @@
             tworoom.style.color = 'black';
             oneroom.style.color = 'black';
             office.style.color = 'black';
-            all.style.color = 'orange';
+            all.style.color = 'rgb(6, 73, 192)';
      }
 	
      function getCookie(cName) {

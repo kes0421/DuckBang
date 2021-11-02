@@ -80,7 +80,7 @@ body {
   outline: none;
   box-shadow: none;
   font-size: 13px;
-  border: 1px solid rgb(250, 136, 11);
+  border: 1px solid rgb(54, 101, 206);
   border-radius: 4px;
   overflow: hidden;
 }
@@ -91,7 +91,7 @@ body {
 
 .map_btn_div {
 	float: right;
-	background-color: rgb(250, 136, 11);
+	background-color: rgb(54, 101, 206);
 	widht: 30px;
 	height: 30px;
 	overflow: hidden;

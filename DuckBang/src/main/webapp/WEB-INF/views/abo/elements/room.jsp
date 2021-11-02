@@ -9,36 +9,13 @@
 			<span>(${AboRoom.size()})</span>
 		</p>
 	</div>
-	<!-- 
-		<li>
-			<div class="room_ul1_div1">
-				<div>
-					<button class="room_like_btn">하트</button>
-				</div>			
-			</div>
-			<a href="" class="room_ul1_a1">
-				<div class="room_ul1_div2">
-					<div class="room_ul1_div3">
-						<img src="이미지 주소">
-					</div>
-					<div class="room_ul1_div4"></div>
-				</div>
-				<div class="room_ul1_div5">
-					<p class="room_ul1_p1">타입</p>
-					<h1 class="room_ul1_h1">가격</h1>
-					<p class="room_ul1_p2">3층, 52.75m², 관리비 3만</p>
-					<p class="room_ul1_p2">강서구 화곡동  신축급깔끔한 2룸</p>
-				</div>
-			</a>
-		</li>	
 	
-	 -->
 	<ul class="room_ul1">
 		<c:forEach items="${AboRoom}" var="AboRoom">
 			<li>
 				<div class="room_ul1_div1">
 					<div>
-						<button class="room_like_btn">하트</button>
+						<button class="room_like_btn"></button>
 					</div>			
 				</div>
 				<a href="./info?o_id=${AboRoom.o_id}" class="room_ul1_a1">
@@ -70,3 +47,81 @@
 	</ul>
 	<!-- 버튼 리스트는 추후 DB만들면서 -->
 </div>
+
+<script>
+	var interest_btn = new Array();
+	var interest_btn_values = new Array();
+	var user_cookie;
+   
+	const getCookie = function (name) { 
+		var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); 
+		return value ? decodeURIComponent(value[2]) : null; 
+	};
+   
+	user_cookie = getCookie('user_id')
+	var userDate = new Date();
+   
+	function add_interest(){
+		if(user_cookie == null){
+			location.href = "./login"
+		}else{
+			const xhttp = new XMLHttpRequest();
+         
+			const interest = {
+				o_id : this.value,
+				u_id : user_cookie,
+				i_date : userDate
+			};
+         
+			if(this.style.color == "white"){
+				xhttp.open('POST','/room/interest', true);
+				xhttp.setRequestHeader('content-type','application/json;charset=EUC-KR');
+				xhttp.send(JSON.stringify(interest));
+	            
+				xhttp.addEventListener('readystatechange', (e)=>{
+					this.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/895995335292370949/904688134137217024/2_1.png')";
+					this.style.backgroundSize = "cover";
+					this.style.color = "red";
+	
+				});
+	            
+			}else{
+				xhttp.open('POST','/room/deleteInterest', true);
+				xhttp.setRequestHeader('content-type','application/json;charset=EUC-KR');
+				xhttp.send(JSON.stringify(interest));
+	            
+				xhttp.addEventListener('readystatechange', (e)=>{
+					this.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/895995335292370949/904688143884767252/1.png')";
+					this.style.backgroundSize = "cover";
+					this.style.color = "white";
+				});
+			}
+		}
+	}
+
+	var index = 0;
+	<c:forEach items="${AboRoom}" var="aboRoom"> 
+		interest_btn[index] = document.getElementsByClassName('room_like_btn')[index];
+		interest_btn[index].addEventListener("click", add_interest);
+		
+		interest_btn[index].setAttribute("value", "${aboRoom.o_id}");
+		interest_btn_values[index] = "${aboRoom.o_id}";
+		interest_btn[index].style.backgroundImage = "url('https://cdn.discordapp.com/attachments/895995335292370949/904688143884767252/1.png')";
+		interest_btn[index].style.backgroundSize = "cover";
+		interest_btn[index].style.color = "white";
+		index++;
+	</c:forEach>
+   
+	if(user_cookie != null){
+		<c:forEach items="${interest_list}" var="interest_list"> 
+			for(var i=0; i< interest_btn.length; i++){
+				if(interest_btn[i].value == "${interest_list.o_id}"){
+					interest_btn[i].style.backgroundImage = "url('https://cdn.discordapp.com/attachments/895995335292370949/904688134137217024/2_1.png')";
+					interest_btn[i].style.backgroundSize = "cover";
+					interest_btn[i].style.color = "red";
+				}
+			}
+		</c:forEach>
+	}
+
+</script>

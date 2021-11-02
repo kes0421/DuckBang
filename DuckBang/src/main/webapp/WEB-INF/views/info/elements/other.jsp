@@ -10,7 +10,7 @@
 			<li class="other_li">
 				<div>
 					<div>
-						<button class="other_like_btn">하트</button>
+						<button class="other_like_btn"></button>
 					</div>
 					<a href="./info?o_id=${InfoOther[i].o_id }" class="other_a">
 						<div class="other_img">
@@ -40,3 +40,85 @@
 		</c:forEach>
 	</ul>
 </div>
+
+<script>
+	var interest_btn = new Array();
+	var interest_btn_values = new Array();
+	var user_cookie;
+   
+	const getCookie = function (name) { 
+		var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); 
+		return value ? decodeURIComponent(value[2]) : null; 
+	};
+   
+	user_cookie = getCookie('user_id')
+	var userDate = new Date();
+   
+	function add_interest(){
+		if(user_cookie == null){
+			location.href = "./login"
+		}else{
+			const xhttp = new XMLHttpRequest();
+         
+			const interest = {
+				o_id : this.value,
+				u_id : user_cookie,
+				i_date : userDate
+			};
+         
+			if(this.style.color == "white"){
+				xhttp.open('POST','/room/interest', true);
+				xhttp.setRequestHeader('content-type','application/json;charset=EUC-KR');
+				xhttp.send(JSON.stringify(interest));
+	            
+				xhttp.addEventListener('readystatechange', (e)=>{
+					this.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/895995335292370949/904688134137217024/2_1.png')";
+					this.style.backgroundSize = "cover";
+					this.style.color = "red";
+	
+				});
+	            
+			}else{
+				xhttp.open('POST','/room/deleteInterest', true);
+				xhttp.setRequestHeader('content-type','application/json;charset=EUC-KR');
+				xhttp.send(JSON.stringify(interest));
+	            
+				xhttp.addEventListener('readystatechange', (e)=>{
+					this.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/895995335292370949/904688143884767252/1.png')";
+					this.style.backgroundSize = "cover";
+					this.style.color = "white";
+				});
+			}
+		}
+	}
+               
+	for(var i=0; i<=3; i++){
+		interest_btn[i] = document.getElementsByClassName('other_like_btn')[i];
+		interest_btn[i].addEventListener("click", add_interest);
+	}
+
+	var index = 0;
+	<c:forEach items="${InfoOther}" var="infoOther"> 
+		if(index < 4){
+			interest_btn[index].setAttribute("value", "${infoOther.o_id}");
+			interest_btn_values[index] = "${infoOther.o_id}";
+			interest_btn[index].style.backgroundImage = "url('https://cdn.discordapp.com/attachments/895995335292370949/904688143884767252/1.png')";
+			interest_btn[index].style.backgroundSize = "cover";
+			interest_btn[index].style.color = "white";
+		}      
+		index++;
+	</c:forEach>
+   
+	if(user_cookie != null){
+		<c:forEach items="${interest_list}" var="interest_list"> 
+			for(var i=0; i< interest_btn.length; i++){
+				if(interest_btn[i].value == "${interest_list.o_id}"){
+					interest_btn[i].style.backgroundImage = "url('https://cdn.discordapp.com/attachments/895995335292370949/904688134137217024/2_1.png')";
+					interest_btn[i].style.backgroundSize = "cover";
+					interest_btn[i].style.color = "red";
+				}
+			}
+		</c:forEach>
+	}
+
+</script>

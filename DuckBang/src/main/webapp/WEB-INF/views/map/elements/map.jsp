@@ -64,9 +64,13 @@
 		const list_count = document.getElementById('list_count');
 		const list_info_a_class = document.getElementsByClassName('list_info_a');
 		
+		var list_only_btn_div;
 		var list_info_a;
 		var list_class_info;
-		var list_room_image_div;
+		var list_room_image_div; // 이미지랑 버튼 전체 div
+		var list_room_imageDiv;  // 이미지만 있는 div
+		var list_room_image_btn_div; // 버튼만 있는 div
+		var list_room_image_btn;
 		var list_room_image;
 		var room_info;
 		var list_room_reco_sort;
@@ -87,10 +91,92 @@
 		
 		var option_code_value;
 		
+		// 찜하기
+		function interest() {
+			var interest_btn = new Array();
+			var interest_btn_values = new Array();
+			var user_cookie;
+		   
+			const getCookie = function (name) { 
+				var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); 
+				return value ? decodeURIComponent(value[2]) : null; 
+			};
+		   
+			user_cookie = getCookie('user_id')
+			var userDate = new Date();
+		   
+			function add_interest(){
+				if(user_cookie == null){
+					location.href = "./login"
+				}else{
+					const xhttp = new XMLHttpRequest();
+		         
+					const interest = {
+						o_id : this.value,
+						u_id : user_cookie,
+						i_date : userDate
+					};
+		         
+					if(this.style.color == "white"){
+						xhttp.open('POST','/room/interest', true);
+						xhttp.setRequestHeader('content-type','application/json;charset=EUC-KR');
+						xhttp.send(JSON.stringify(interest));
+			            
+						xhttp.addEventListener('readystatechange', (e)=>{
+							this.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/895995335292370949/904688134137217024/2_1.png')";
+							this.style.backgroundSize = "cover";
+							this.style.color = "red";
+			
+						});
+			            
+					}else{
+						xhttp.open('POST','/room/deleteInterest', true);
+						xhttp.setRequestHeader('content-type','application/json;charset=EUC-KR');
+						xhttp.send(JSON.stringify(interest));
+			            
+						xhttp.addEventListener('readystatechange', (e)=>{
+							this.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/895995335292370949/904688143884767252/1.png')";
+							this.style.backgroundSize = "cover";
+							this.style.color = "white";
+						});
+					}
+				}
+			}
+		    for(let i = 0; i < o_ids.length; ++i) {
+				<c:forEach items='${summaryLists}' var="list">
+					if(o_ids[i] == '${list.getO_id()}'){
+						interest_btn[i] = document.getElementsByClassName('list_room_image_btn')[i];
+						interest_btn[i].addEventListener("click", add_interest);
+					}
+				</c:forEach>
+		    }
+		    
+			for(let i = 0; i < o_ids.length; ++i) {
+				<c:forEach items="${summaryLists}" var="list"> 
+					if(o_ids[i] == '${list.getO_id()}'){
+						interest_btn[i].setAttribute("value", "${list.o_id}");
+						interest_btn_values[i] = "${list.o_id}";
+						interest_btn[i].style.backgroundImage = "url('https://cdn.discordapp.com/attachments/895995335292370949/904688143884767252/1.png')";
+						interest_btn[i].style.backgroundSize = "cover";
+						interest_btn[i].style.color = "white";
+					}      
+				</c:forEach>
+			}
+			if(user_cookie != null){
+				<c:forEach items="${interest_list}" var="interest_list"> 
+					for(var i=0; i< interest_btn.length; i++){
+						if(interest_btn[i].value == "${interest_list.o_id}"){
+							interest_btn[i].style.backgroundImage = "url('https://cdn.discordapp.com/attachments/895995335292370949/904688134137217024/2_1.png')";
+							interest_btn[i].style.backgroundSize = "cover";
+							interest_btn[i].style.color = "red";
+						}
+					}
+				</c:forEach>
+			}
+		}
+		
 		function getLists(locations, map) {
 			
-			//console.log('o_idLst : ' + o_ids.length)
-			//list_room_infos.innerHTML = '';
 			list_count.innerText = '지역 목록 0개';
 			
 			option_code_value = "전체";
@@ -146,9 +232,13 @@
 							
 							if(o_ids[i] == '${list.getO_id()}'){
 		               
+								list_only_btn_div = document.createElement('div');
 								list_info_a = document.createElement('a');      
 								list_class_info = document.createElement('div');
 								list_room_image_div = document.createElement('div');
+								list_room_imageDiv = document.createElement('div');
+								list_room_image_btn_div = document.createElement('div');
+								list_room_image_btn = document.createElement('button');
 								list_room_image = document.createElement('img');
 								room_info = document.createElement('div');
 								list_room_reco_sort = document.createElement('div');
@@ -159,9 +249,13 @@
 								list_room_area = document.createElement('div');
 								list_room_lease = document.createElement('div');
 								
+								list_only_btn_div.setAttribute('class', 'list_only_btn_div');
 								list_info_a.setAttribute('class', 'list_info_a');
 								list_class_info.setAttribute('class', 'list_class_info');
 								list_room_image_div.setAttribute('class', 'list_room_image_div');
+								list_room_imageDiv.setAttribute('class', 'list_room_imageDiv');
+								list_room_image_btn_div.setAttribute('class', 'list_room_image_btn_div');
+								list_room_image_btn.setAttribute('class', 'list_room_image_btn');
 								list_room_image.setAttribute('class', 'list_room_image');
 								room_info.setAttribute('class', 'room_info');
 								list_room_reco_sort.setAttribute('class', 'list_room_reco_sort');
@@ -175,7 +269,9 @@
 								
 								list_info_a.setAttribute('href', './info?o_id=${list.getO_id()}');
 								list_room_image.setAttribute('src', '${list.getImage_1()}');
-								list_room_image_div.appendChild(list_room_image);
+								list_room_image_btn_div.appendChild(list_room_image_btn);
+								list_room_imageDiv.appendChild(list_room_image);
+								list_room_image_div.appendChild(list_room_imageDiv);
 								list_room_sort.innerText = '${list.getOd_room_kind()}';
 								list_room_reco_sort.appendChild(list_room_sort);
 								room_info.appendChild(list_room_reco_sort);
@@ -206,9 +302,11 @@
 								room_info.appendChild(list_room_area);
 								room_info.appendChild(list_room_lease);
 								
+								list_only_btn_div.appendChild(list_room_image_btn_div);
 								list_class_info.appendChild(list_room_image_div);
 								list_class_info.appendChild(room_info);
 								list_info_a.appendChild(list_class_info);
+								list_room_infos.appendChild(list_only_btn_div);
 								list_room_infos.appendChild(list_info_a);
 								
 								var eachMarker;
@@ -239,9 +337,13 @@
 							
 							if(o_ids[i] == '${list.getO_id()}' && "${list.getOk_code()}" == option_code_value){
 								
+								list_only_btn_div = document.createElement('div');
 								list_info_a = document.createElement('a');      
 								list_class_info = document.createElement('div');
 								list_room_image_div = document.createElement('div');
+								list_room_imageDiv = document.createElement('div');
+								list_room_image_btn_div = document.createElement('div');
+								list_room_image_btn = document.createElement('button');
 								list_room_image = document.createElement('img');
 								room_info = document.createElement('div');
 								list_room_reco_sort = document.createElement('div');
@@ -252,9 +354,13 @@
 								list_room_area = document.createElement('div');
 								list_room_lease = document.createElement('div');
 								
+								list_only_btn_div.setAttribute('class', 'list_only_btn_div');
 								list_info_a.setAttribute('class', 'list_info_a');
 								list_class_info.setAttribute('class', 'list_class_info');
 								list_room_image_div.setAttribute('class', 'list_room_image_div');
+								list_room_imageDiv.setAttribute('class', 'list_room_imageDiv');
+								list_room_image_btn_div.setAttribute('class', 'list_room_image_btn_div');
+								list_room_image_btn.setAttribute('class', 'list_room_image_btn');
 								list_room_image.setAttribute('class', 'list_room_image');
 								room_info.setAttribute('class', 'room_info');
 								list_room_reco_sort.setAttribute('class', 'list_room_reco_sort');
@@ -268,7 +374,9 @@
 								
 								list_info_a.setAttribute('href', './info?o_id=${list.getO_id()}');
 								list_room_image.setAttribute('src', '${list.getImage_1()}');
-								list_room_image_div.appendChild(list_room_image);
+								list_room_image_btn_div.appendChild(list_room_image_btn);
+								list_room_imageDiv.appendChild(list_room_image);
+								list_room_image_div.appendChild(list_room_imageDiv);
 								list_room_sort.innerText = '${list.getOd_room_kind()}';
 								list_room_reco_sort.appendChild(list_room_sort);
 								room_info.appendChild(list_room_reco_sort);
@@ -299,9 +407,11 @@
 								room_info.appendChild(list_room_area);
 								room_info.appendChild(list_room_lease);
 								
+								list_only_btn_div.appendChild(list_room_image_btn_div);
 								list_class_info.appendChild(list_room_image_div);
 								list_class_info.appendChild(room_info);
 								list_info_a.appendChild(list_class_info);
+								list_room_infos.appendChild(list_only_btn_div);
 								list_room_infos.appendChild(list_info_a);
 								
 								var eachMarker;
@@ -379,7 +489,6 @@
 			Array.from(aa).forEach((e) => {
 				
 				<c:forEach items="${summaryLists}" var="list">
-					console.log("list : " + "${list.getO_id()}");
 					if(e.getAttribute('id') == "${list.getO_id()}" && press_btn == true){
 		            	e.innerText = "${list.getOd_private_area2()}평 · ${list.getOd_apply_floor()}층";
 		            }else if(e.getAttribute('id') == "${list.getO_id()}" && press_btn == false) {
@@ -635,6 +744,7 @@
 		      }
 		      //console.log("o_ids: " + o_ids);
 		      getLists(locations, map);
+		      interest();
 
 		   });
 		   
@@ -661,6 +771,7 @@
 			      }
 
 			getLists(locations, map);
+			interest();
 		   });
 		   
 		   // 마커 추가해줌

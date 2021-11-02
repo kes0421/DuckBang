@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.duck.room.mapper.InfoMapper;
+import com.duck.room.mapper.InterestMapper;
 import com.duck.room.mapper.MapMapper;
 
 @Controller
@@ -20,6 +21,9 @@ public class MapController {
 	
 	@Autowired 
 	InfoMapper im;
+	
+	@Autowired
+	InterestMapper interestMapper;
 	
 	@GetMapping("/map")
 	public String mapMarkers(Model model, String room_kind) {
@@ -74,8 +78,7 @@ public class MapController {
 			model.addAttribute("summaryLists", mapMapper.getSummaryList(room_kind_kor));
 		}
 		
-		
-		
+		model.addAttribute("interest_list", interestMapper.list());
 		
 		return "map/index";
 	}
@@ -114,6 +117,7 @@ public class MapController {
 		model.addAttribute("lng", lng);
 		model.addAttribute("check", "post");
 		model.addAttribute("summaryLists", mapMapper.getSummaryList(room_kind_kor));
+		model.addAttribute("interest_list", interestMapper.list());
 		
 		return "map/index";
 	}
@@ -131,6 +135,8 @@ public class MapController {
 		model.addAttribute("InfoOption", im.getOption(o_id));
 		model.addAttribute("InfoSecurity", im.getSecurity(o_id));
 		model.addAttribute("InfoOther", im.getOther(im.getTop2(o_id).getR_id()));
+		model.addAttribute("interest_list", interestMapper.list());
+		
 		return "info/index";
 	}
 }

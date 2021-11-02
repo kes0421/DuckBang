@@ -6,11 +6,11 @@
 
 <div class="other">
 	<div>
-	<div id="recommend_title"><b>서초동</b> 추천매물</div>
+	<div id="recommend_title"><b>덕방</b> 인기매물</div>
 	<div id="recommend_subTitle">
-		<div class="recommend_option">서초동</div>
-		<div class="recommend_option">원룸,투 쓰리룸, 오피스텔</div>
-		<div class="recommend_option">월세,전세</div>
+		<div class="recommend_option">찜하기</div>
+		<div class="recommend_option">원룸,투 쓰리룸,아파트,오피스텔</div>
+		<div class="recommend_option">월세,전세,매매</div>
 		<div id="recommend_moreRoom">
 			<a href="./map?room_kind=all">더 많은 방 보기 ></a>		
 		</div>

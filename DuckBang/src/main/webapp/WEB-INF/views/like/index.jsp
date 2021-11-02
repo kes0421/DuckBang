@@ -12,14 +12,8 @@
 		<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
 	</div>
 	<div>
-		<div>
-			<!-- 이미지 / **공인중개사무소 -->
-			<jsp:include page="./elements/profile.jsp"></jsp:include>
-		</div>
-		<div>
-			<!-- 이 부동산의 방 -->
-			<jsp:include page="./elements/list.jsp"></jsp:include>
-		</div>
+		<jsp:include page="/WEB-INF/views/like/elements/profile.jsp"></jsp:include>
+		<jsp:include page="/WEB-INF/views/like/elements/list.jsp"></jsp:include>
 	</div>
 	<div>
 		<!-- 하단 메뉴바 -->

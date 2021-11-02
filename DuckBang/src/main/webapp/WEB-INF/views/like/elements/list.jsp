@@ -1,2 +1,52 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<div class="room">
+	<div class="room_div1">
+		<p class="room_div1_p1">
+			내가 찜한 방 목록
+			<span>(n개)</span>
+		</p>
+	</div>
+	<ul class="room_ul1">
+		<c:forEach begin="0" end="10">
+			<li>
+				<div class="room_ul1_div1">
+					<div>
+						<button class="room_like_btn">하트</button>
+					</div>			
+				</div>
+				<a href="./info?o_id=" class="room_ul1_a1">
+					<div class="room_ul1_div2">
+						<div class="room_ul1_div3">
+							<img src="">
+						</div>
+						<div class="room_ul1_div4"></div>
+					</div>
+					<div class="room_ul1_div5">
+						<p class="room_ul1_p1">원룸</p>
+						<h1 class="room_ul1_h1">
+							전세
+								<c:choose>
+									<c:when test="${AboRoom.ok_code eq '월세'}"> 
+										${AboRoom.ok_deposit}/${AboRoom.ok_month_of_payment}
+									</c:when>
+									<c:when test="${AboRoom.ok_deposit % 10000 == 0}">
+										${Math.round(AboRoom.ok_deposit/10000)}억
+									</c:when>	
+									<c:when test="${AboRoom.ok_deposit >= 10000}">
+										${Math.round(AboRoom.ok_deposit/10000)}억${AboRoom.ok_deposit % 10000}
+									</c:when>
+									<c:otherwise>
+										${AboRoom.ok_deposit}
+									</c:otherwise>						
+								</c:choose>
+						</h1>
+						<p class="room_ul1_p2">${AboRoom.od_apply_floor}층, ${AboRoom.od_private_area}m², 관리비 ${AboRoom.ok_maintenance_cost}만</p>
+						<p class="room_ul1_p2">입주가능일 ${AboRoom.od_occupy_date}</p>
+					</div>
+				</a>
+			</li>
+		</c:forEach>
+	</ul>
+	<!-- 버튼 리스트는 추후 DB만들면서 -->
+</div>

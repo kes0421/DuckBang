@@ -88,6 +88,7 @@
 		var no_list_text2;
 		
 		var o_ids = [];
+		var o_code_ids = [];
 		
 		var option_code_value;
 		
@@ -144,31 +145,42 @@
 			}
 		    for(let i = 0; i < o_ids.length; ++i) {
 				<c:forEach items='${summaryLists}' var="list">
-					if(o_ids[i] == '${list.getO_id()}'){
-						interest_btn[i] = document.getElementsByClassName('list_room_image_btn')[i];
-						interest_btn[i].addEventListener("click", add_interest);
+					if(option_code_value == '전체'){
+						if(o_ids[i] == '${list.getO_id()}'){
+							interest_btn[i] = document.getElementsByClassName('list_room_image_btn')[i];
+							interest_btn[i].addEventListener("click", add_interest);
+							
+							interest_btn[i].setAttribute("value", "${list.o_id}");
+							interest_btn_values[i] = "${list.o_id}";
+							interest_btn[i].style.backgroundImage = "url('https://cdn.discordapp.com/attachments/895995335292370949/904688143884767252/1.png')";
+							interest_btn[i].style.backgroundSize = "cover";
+							interest_btn[i].style.color = "white";
+						}
+					} else {
+						if((o_code_ids[i] == '${list.getO_id()}') && (option_code_value =="${list.getOk_code()}")){
+							interest_btn[i] = document.getElementsByClassName('list_room_image_btn')[i];
+							interest_btn[i].addEventListener("click", add_interest);
+							
+							interest_btn[i].setAttribute("value", "${list.o_id}");
+							interest_btn_values[i] = "${list.o_id}";
+							interest_btn[i].style.backgroundImage = "url('https://cdn.discordapp.com/attachments/895995335292370949/904688143884767252/1.png')";
+							interest_btn[i].style.backgroundSize = "cover";
+							interest_btn[i].style.color = "white";
+						}	
 					}
+					
 				</c:forEach>
 		    }
 		    
-			for(let i = 0; i < o_ids.length; ++i) {
-				<c:forEach items="${summaryLists}" var="list"> 
-					if(o_ids[i] == '${list.getO_id()}'){
-						interest_btn[i].setAttribute("value", "${list.o_id}");
-						interest_btn_values[i] = "${list.o_id}";
-						interest_btn[i].style.backgroundImage = "url('https://cdn.discordapp.com/attachments/895995335292370949/904688143884767252/1.png')";
-						interest_btn[i].style.backgroundSize = "cover";
-						interest_btn[i].style.color = "white";
-					}      
-				</c:forEach>
-			}
 			if(user_cookie != null){
 				<c:forEach items="${interest_list}" var="interest_list"> 
-					for(var i=0; i< interest_btn.length; i++){
-						if(interest_btn[i].value == "${interest_list.o_id}"){
-							interest_btn[i].style.backgroundImage = "url('https://cdn.discordapp.com/attachments/895995335292370949/904688134137217024/2_1.png')";
-							interest_btn[i].style.backgroundSize = "cover";
-							interest_btn[i].style.color = "red";
+					if("${interest_list.u_id}" == user_cookie){
+						for(var i=0; i< interest_btn.length; i++){
+							if(interest_btn[i].value == "${interest_list.o_id}"){
+								interest_btn[i].style.backgroundImage = "url('https://cdn.discordapp.com/attachments/895995335292370949/904688134137217024/2_1.png')";
+								interest_btn[i].style.backgroundSize = "cover";
+								interest_btn[i].style.color = "red";
+							}
 						}
 					}
 				</c:forEach>
@@ -181,8 +193,15 @@
 			
 			option_code_value = "전체";
 			list_code_select.addEventListener('change', () => {
+				o_code_ids = [];
 				option_code_value = list_code_select.options[list_code_select.selectedIndex].value;
 				list_div_plus(locations, map);
+				
+				o_code_ids  = o_code_ids.filter(function(item) {
+				  return item !== null && item !== undefined && item !== '';
+				});
+				
+				interest();
 			});
 			
 			// 리스트에 데이터 넣기
@@ -190,8 +209,6 @@
 		}
 		
 		function list_div_plus(locations, map){
-			
-			//console.log(list_info_a_class.length);
 			
 			if(o_ids.length == 0){
 				list_room_infos.innerHTML = '';
@@ -336,6 +353,8 @@
 						}else {
 							
 							if(o_ids[i] == '${list.getO_id()}' && "${list.getOk_code()}" == option_code_value){
+								
+								o_code_ids[i] = o_ids[i];
 								
 								list_only_btn_div = document.createElement('div');
 								list_info_a = document.createElement('a');      

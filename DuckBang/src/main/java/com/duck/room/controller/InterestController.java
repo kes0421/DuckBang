@@ -41,7 +41,6 @@ public class InterestController {
 	@PostMapping(value = "/interest", produces = MediaType.APPLICATION_JSON_VALUE )
 	public List<Interest> getInterest(Model model, HttpServletRequest request, @RequestBody Interest interest){
 		
-		System.out.println(interest.getO_id());
 		im.addInterest(interest.getU_id(), interest.getO_id());
 		List<Interest> interest_list = im.list();
 		
@@ -52,7 +51,6 @@ public class InterestController {
 	@PostMapping(value = "/deleteInterest", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Interest> deleteInterest(Model model, HttpServletRequest request, @RequestBody Interest interest){
 		
-		System.out.println(interest.getO_id());
 		im.deleteInterest(interest.getU_id(), interest.getO_id());
 		List<Interest> interest_list = im.list();
 		

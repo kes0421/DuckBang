@@ -15,6 +15,32 @@
 	</div>
 	
 	<p class="profile_p1">
-		kes0421
 	</p>
 </div>
+
+<script>
+	profile_p1 = document.getElementsByClassName('profile_p1')[0];
+	   
+	const getCookie = function (name) { 
+		var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)'); 
+		return value ? decodeURIComponent(value[2]) : null; 
+	};
+   
+
+	var user_cookie = getCookies("user_id");
+	var index = (user_cookie.indexOf('@'))
+	var user = user_cookie.substr(0,index);
+	
+	profile_p1.innerText = user;
+	
+
+</script>
+
+
+
+
+
+
+
+
+

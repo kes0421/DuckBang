@@ -411,9 +411,9 @@
 								}
 								
 								if('${list.getOk_code()}' == '월세'){
-									list_room_type.innerHTML = '<b style="color: #d98508";>${list.getOk_code()}</b>' + '  ' + deposit +'/' + '${list.getOk_month_of_payment()}';
+									list_room_type.innerHTML = '<b style="color: #0649c0";>${list.getOk_code()}</b>' + '  ' + deposit +'/' + '${list.getOk_month_of_payment()}';
 								}else {
-									list_room_type.innerHTML = '<b style="color: #d98508";>${list.getOk_code()}</b>' + '  ' + deposit;
+									list_room_type.innerHTML = '<b style="color: #0649c0";>${list.getOk_code()}</b>' + '  ' + deposit;
 								}
 								
 								list_room_size.innerText = '${list.getOd_private_area()}m² · ${list.getOd_apply_floor()}층';
@@ -527,8 +527,8 @@
 			<c:when test="${check eq 'get' || lat eq 'undefined'}">
 			  const map = new google.maps.Map(document.getElementById("map"), {
 			      center: {
-			         lat: 37.566826,
-			         lng: 126.9786567
+			         lat: 37.497926, 
+			         lng: 127.027808
 			      },
 			      zoom: 18,
 			      mapTypeControl: false,
